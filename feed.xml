@@ -8,7 +8,7 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     
     <description>Building Blocks for the VR Web</description>
-    <pubDate>Mon, 22 Aug 2016 19:34:33 GMT</pubDate>
+    <pubDate>Tue, 23 Aug 2016 19:36:06 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -30,7 +30,7 @@ API</a></strong>, we aim higher towards state-of-the-art VR. With room-scale
 tracking, we can walk in a web page, and with tracked controller support, we
 can reach out into the world.</p>
 <a id="more"></a>
-<p>Grab the latest build at <a href="https://aframe.io/aframe-inspector/example/"><code>https://aframe.io/releases/0.3.0/aframe.min.js</code></a> or <code>npm install aframe</code>.</p>
+<p>Grab the latest build at <a href="https://aframe.io/releases/0.3.0/aframe.min.js"><code>https://aframe.io/releases/0.3.0/aframe.min.js</code></a> or <code>npm install aframe</code>.</p>
 <h2 id="what’s-new"><a href="#what’s-new" class="headerlink" title="What’s New?"></a>What’s New?</h2><p><strong>WebVR 1.0</strong> support is the highlight of this release. This includes:</p>
 <ul>
 <li>Better <strong>room-scale</strong> support to be able to walk/dash/duck/jump in a web
