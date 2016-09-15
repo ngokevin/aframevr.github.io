@@ -25,7 +25,7 @@
       data-aframe-version="0.3.0"
       data-docs-version="0.3.0">
   <head>
-    <title>Introduction –  Docs  – A-Frame</title>
+    <title>Building with MagicaVoxel –  Docs  – A-Frame</title>
     
 
 <script>
@@ -89,7 +89,7 @@
 
   </head>
   <body data-page-layout="docs"
-        data-page-type="introduction">
+        data-page-type="guides">
     
       <aside class="sidebar sidebar-mobile borderless-links c">
   <header id="header" class="header">
@@ -217,9 +217,9 @@
       
 
       <!-- Section title. -->
-      <h3 class="section-title docs-section-title section-title-active">
+      <h3 class="section-title docs-section-title section-title-inactive">
         <a href="/docs/0.3.0/introduction/"
-           class="section-title-link section-title-link-active">
+           class="section-title-link section-title-link-inactive">
           Introduction
         </a>
       </h3>
@@ -227,9 +227,9 @@
       <!-- Section links. -->
       <ol class="subnav section-subnav">
         
-          <li class="subnav-item  subnav-item-current">
+          <li class="subnav-item ">
             <a href="/docs/0.3.0/introduction/"
-               class="subnav-link current">
+               class="subnav-link">
               Introduction
             </a>
           </li>
@@ -267,9 +267,9 @@
       
 
       <!-- Section title. -->
-      <h3 class="section-title docs-section-title section-title-inactive">
+      <h3 class="section-title docs-section-title section-title-active">
         <a href="/docs/0.3.0/guides/"
-           class="section-title-link section-title-link-inactive">
+           class="section-title-link section-title-link-active">
           Guides
         </a>
       </h3>
@@ -291,9 +291,9 @@
             </a>
           </li>
         
-          <li class="subnav-item ">
+          <li class="subnav-item  subnav-item-current">
             <a href="/docs/0.3.0/guides/building-with-magicavoxel.html"
-               class="subnav-link">
+               class="subnav-link current">
               Building with MagicaVoxel
             </a>
           </li>
@@ -595,9 +595,9 @@
       <!-- Section links. -->
       <ol class="subnav section-subnav">
         
-          <li class="subnav-item  subnav-item-current">
+          <li class="subnav-item ">
             <a href="/docs/0.3.0/primitives/"
-               class="subnav-link current">
+               class="subnav-link">
               Introduction
             </a>
           </li>
@@ -769,81 +769,180 @@
 </aside>
 
 <!-- Documentation. -->
-<div class="content content--structured content--introduction copy">
+<div class="content content--structured content--guides copy">
   <div class="copy__wrap">
     <p class="page__section">
-      <a href="/docs/0.3.0/introduction/" class="borderless-link">
-        0.3.0 &rsaquo; Introduction
+      <a href="/docs/0.3.0/guides/" class="borderless-link">
+        0.3.0 &rsaquo; Guides
       </a>
     </p>
     
-    <h1 class="page__title">Introduction</h1>
+    <h1 class="page__title">Building with MagicaVoxel</h1>
 
     
     
-      <h2 id="what-is-a-frame"><a href="#what-is-a-frame" class="headerlink" title="What is A-Frame?"></a>What is A-Frame?</h2><p>A-Frame is an open-source WebVR framework for creating virtual reality (VR)
-experiences with HTML. We can build VR scenes that work across smartphones,
-desktop, the Oculus Rift, and the room-scale HTC Vive.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/0.3.0/aframe.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">color</span>=<span class="string">"#6173F4"</span> <span class="attr">opacity</span>=<span class="string">"0.8"</span> <span class="attr">depth</span>=<span class="string">"2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">a-sphere</span> <span class="attr">radius</span>=<span class="string">"2"</span> <span class="attr">src</span>=<span class="string">"texture.png"</span> <span class="attr">position</span>=<span class="string">"1 1 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sphere</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">a-sky</span> <span class="attr">color</span>=<span class="string">"#ECECEC"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="entity-component-system"><a href="#entity-component-system" class="headerlink" title="Entity-Component-System"></a>Entity-Component-System</h3><p>Diving deeper, A-Frame is a <a href="http://threejs.org/" target="_blank" rel="external">three.js</a> framework that brings the
-<a href="../core/">entity-component-system</a> pattern to the DOM; everything in a scene is an
-<strong>entity</strong> which we compose and attach <strong>components</strong> to add any appearance,
-behavior, and functionality. Under the hood, <code>&lt;a-box&gt;</code> actually looks like:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: box; depth: 2"</span></span></div><div class="line">          <span class="attr">material</span>=<span class="string">"color: #6173F4; opacity: 0.8"</span>&gt;<span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
-<p><code>&lt;a-entity&gt;</code> represents an entity, attributes represent components, and
-attribute values represent component properties. Components can do anything. Say
-someone publishes a <code>physics</code> component and someone else publishes an <code>explode</code>
-component. We can compose them together and attach them to the entity to add
-the behavior of exploding on collision.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: box; depth: 2"</span></span></div><div class="line">          <span class="attr">material</span>=<span class="string">"color: #6173F4; opacity: 0.8"</span></div><div class="line">          <span class="attr">physics</span>=<span class="string">"mass: 5; boundingBox: 1 1 2"</span></div><div class="line">          <span class="attr">explode</span>=<span class="string">"on: physics-collide; intensity: 3"</span>&gt;<span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="why-a-frame"><a href="#why-a-frame" class="headerlink" title="Why A-Frame?"></a>Why A-Frame?</h2><p>A-Frame was built by the <a href="http://mozvr.com" target="_blank" rel="external">Mozilla VR team</a> to make it <strong>quicker</strong> and
-<strong>easier</strong> to build 3D/VR scenes in order for them to prototype faster and to
-bridge the web development community into the WebVR ecosystem. For WebVR to
-succeed, it needs content. There are only a handful of WebGL developers in the
-world, but there are <em>millions</em> of web developers, designers, and artists.
-A-Frame puts 3D/VR content creation into the hands of everyone.</p>
-<h3 id="a-frame-reduces-boilerplate"><a href="#a-frame-reduces-boilerplate" class="headerlink" title="A-Frame Reduces Boilerplate"></a>A-Frame Reduces Boilerplate</h3><p>Without A-Frame, starting a proper WebVR project is a lot of effort. You need
-to know what you are doing and repeat the same tedious work for every scene:</p>
-<video autoplay loop src="/videos/boilerplate.mp4"></video>
+      <p><a href="https://ephtracy.github.io/" target="_blank" rel="external">MagicaVoxel</a> is a free and user-friendly tool for building
+3D scenes and models using <em>voxels</em> (i.e., blocks). MagicaVoxel makes modeling super
+easy, similar to building in Minecraft.</p>
+<p><img src="https://i.imgur.com/XYYXjIn.jpg" alt="magicavoxel"></p>
 
-<p>WebVR should thrive with long-tail, bite-sized experiences, but boilerplate is
-a strong barrier to motivation of wanting to build. In A-Frame, all boilerplate
-is reduced to a single line of HTML: <strong><code>&lt;a-scene&gt;</code></strong>.</p>
-<p>And rather than creating a mesh, creating a geometry, creating a material, then
-appending to scene, that is all also reduced to a single line of HTML.</p>
-<h3 id="a-frame-is-tailored-for-web-developers"><a href="#a-frame-is-tailored-for-web-developers" class="headerlink" title="A-Frame is Tailored for Web Developers"></a>A-Frame is Tailored for Web Developers</h3><p>With A-Frame based on the DOM, we can manipulate scenes as we would with other
-web application: <code>getAttribute</code>, <code>setAttribute</code>, <code>querySelector</code>, etc.  Most
-JavaScript frameworks and libraries integrate with A-Frame out of the box.  d3,
-React, Vue.js, Meteor, jQuery all work like a charm. A-Frame was built by web
-developers for web developers.</p>
-<h3 id="a-frame-provides-structure-to-three-js"><a href="#a-frame-provides-structure-to-three-js" class="headerlink" title="A-Frame Provides Structure to three.js"></a>A-Frame Provides Structure to three.js</h3><blockquote>
-<p>“A-Frame is like when MVC landed in traditional front-end work…[where]
-three.js is like jQuery.” &mdash; @wizgrav</p>
-</blockquote>
-<p><a href="http://threejs.org/" target="_blank" rel="external">three.js</a> has made it very accessible to develop 3D WebGL, but three.js
-code is often loosely structured. A-Frame provides a way to structure three.js
-code.</p>
-<p><strong>A-Frame is a declarative entity-component-system framework for three.js.</strong></p>
-<p>Developers can modularize three.js and JavaScript code within A-Frame
-components. These components can be composed with one another. If published and
-shared, these components can be used by other developers via HTML.</p>
-<h2 id="have-fun"><a href="#have-fun" class="headerlink" title="Have Fun!"></a>Have Fun!</h2><p>It is recommended to read through the <a href="../guides">Guides</a> and the <a href="../core/">Core</a>
-sections of the documentation. If you have any questions, join the other
-hundreds of developers on <a href="https://aframevr-slack.herokuapp.com/" target="_blank" rel="external">Slack</a>!</p>
+      
+
+
+  <h2>Table of Contents</h2>
+
+  <ul id="toc">
+    
+      <li>
+        <a href="#installation">Installation</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#tutorial">Tutorial</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li><a href="#viewport">Viewport</a></li>
+            
+              <li><a href="#color-palette">Color Palette</a></li>
+            
+              <li><a href="#brushes">Brushes</a></li>
+            
+              <li><a href="#actions">Actions</a></li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#exporting-to-a-frame">Exporting to A-Frame</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li><a href="#ply-with-baked-shadows">.PLY (with Baked Shadows)</a></li>
+            
+              <li><a href="#obj">.OBJ</a></li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+
+
+      
+<h2 id="installation"><a href="#installation" class="headerlink" title="Installation"></a>Installation</h2><p>MagicaVoxel works on Windows and OS X. On the <a href="https://ephtracy.github.io/" target="_blank" rel="external">MagicaVoxel
+homepage</a>, click the <em>Download</em> button and install the application:</p>
+<p><img src="https://i.imgur.com/GmgdyHs.jpg" alt="magicavoxel install"></p>
+<p>On OS X, make sure to allow third-party applications that have not been installed
+from the App Store in the <em>Security &amp; Privacy</em> settings:</p>
+<p><img src="https://i.imgur.com/iaa4pSO.jpg" alt="osx security"></p>
+<h2 id="tutorial"><a href="#tutorial" class="headerlink" title="Tutorial"></a>Tutorial</h2><p>The official tutorial video serves as a good introduction to using MagicaVoxel.
+The author quickly runs through many basic features in 10 minutes:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PPu7SJ1_bwc" frameborder="0" allowfullscreen></iframe>
+
+<p>The best way to learn the MagicaVoxel UI is to click around, play with application controls,
+and pay attention to the tooltips on hover. Many developers are able to create their first
+scene within a half hour!  Given the absence of official tutorials, however,
+the following serves as a quick guide to navigating the UI.</p>
+<h3 id="viewport"><a href="#viewport" class="headerlink" title="Viewport"></a>Viewport</h3><p>The center panel hosts the viewport where we build our model. We can change the
+viewport our mouse/trackpad or the <code>wasd</code> keys:</p>
+<ul>
+<li><strong>Pan</strong>: Hold <code>&lt;space&gt; + &lt;right-click&gt;</code> and move the mouse or trackpad, or
+hold <code>&lt;space&gt;</code> and press one of the <code>&lt;a&gt;</code> or <code>&lt;d&gt;</code> keys.</li>
+<li><strong>Rotate</strong>: Hold <code>&lt;right-click&gt;</code> and move the mouse or trackpad, or press one
+of the <code>&lt;a&gt;</code> or <code>&lt;d&gt;</code> keys.</li>
+<li><strong>Zoom</strong>: Scroll up and down with the mouse or trackpad, or press one of the
+<code>&lt;w&gt;</code> or <code>&lt;s&gt;</code> keys.</li>
+</ul>
+<p><img src="http://imgur.com/vq34Mkk.jpg" alt="magicavoxel viewport"></p>
+<p>The top right corner of the viewport allows you to change the bounding dimensions
+of the model. Note that in MagicaVoxel, the XY plane is horizontal and the Z
+axis points up.</p>
+<h3 id="color-palette"><a href="#color-palette" class="headerlink" title="Color Palette"></a>Color Palette</h3><p>The left panel is the color palette. You can use the default palettes,
+modify them, create your own, and save them. The palette is tied to the scene
+so if you change from the palette a color that a voxel is using, the voxel will
+update its color. At the bottom, there are tools to define your own color with
+sliders or via copying and pasting hex or rgb values:</p>
+<p><img src="https://i.imgur.com/vq34Mkk.jpg" alt="magicavoxel color palette"></p>
+<h3 id="brushes"><a href="#brushes" class="headerlink" title="Brushes"></a>Brushes</h3><p>The brushes panel is to the right of the color palette. Brushes add, erase, or
+paint voxels in various shapes, sizes, and patterns. With a brush selected,
+simply click in the viewport on your model to use it:</p>
+<p><img src="https://i.imgur.com/pqrUAFT.gif" alt="magicavoxel brushes"></p>
+<p>There are six brushes:</p>
+<ul>
+<li><strong>V (Voxel)</strong>: Works on individual or discrete groups of voxels.</li>
+<li><strong>F (Face)</strong>: Works on groups of adjacent voxels that are the same shape or color.</li>
+<li><strong>B (Box)</strong>: Works on a 2-dimensional box of voxels where we control the area
+of the box by dragging.</li>
+<li><strong>L (Line)</strong>: Works on a 1-dimensional line of voxels where we control the
+length of the line by dragging.</li>
+<li><strong>C (Center)</strong>: Works on a circle or square of voxels where we control the
+radius of the shape by dragging.</li>
+<li><strong>P (Pattern)</strong>: The pattern brush lets us use other MagicaVoxel models and paste them
+into the current model. Useful for placing repeated shapes.</li>
+</ul>
+<h3 id="actions"><a href="#actions" class="headerlink" title="Actions"></a>Actions</h3><p>There are four actions that work in conjunction with the brush type:</p>
+<ul>
+<li><strong>Attach (t)</strong>: Add voxel(s).</li>
+<li><strong>Erase (r)</strong>: Remove voxel(s).</li>
+<li><strong>Paint (g)</strong>: Change color of existing voxel(s).</li>
+<li><strong>Move</strong>: Moves entire model. Unfortunately, there is no way to select
+individual voxel(s) to move.</li>
+</ul>
+<p><img src="https://i.imgur.com/uLQcQrT.gif" alt="magicavoxel actions"></p>
+<p>Below the actions are three color picking tools to pick, remove, and place
+color. It is useful to know the <code>&lt;alt&gt; + &lt;click&gt;</code> shortcut to select a color by
+clicking on a voxel.</p>
+<h2 id="exporting-to-a-frame"><a href="#exporting-to-a-frame" class="headerlink" title="Exporting to A-Frame"></a>Exporting to A-Frame</h2><p>After creating your model, you can export it to an A-Frame scene for the world
+to see! We recommend exporting to either the <code>.PLY</code> or <code>.OBJ</code> formats.</p>
+<h3 id="ply-with-baked-shadows"><a href="#ply-with-baked-shadows" class="headerlink" title=".PLY (with Baked Shadows)"></a><code>.PLY</code> (with Baked Shadows)</h3><p><img src="https://i.imgur.com/OIdqrSH.jpg" alt="magicavoxel ply"></p>
+<p>The <a href="https://wikipedia.org/wiki/PLY_(file_format)" target="_blank" rel="external">PLY</a> format produces a large file size but includes <em>baked
+shadows</em>, meaning the rendered shadow colors are stored in the file. The
+A-Frame scenes shown above produce a ~5MB file size with baked shadows.
+It depends on your desired constraints whether or not file sizes on this order
+is tolerable, but exporting with baked shadows will look visually great in
+A-Frame.</p>
+<p>To see the <code>.PLY</code> model in A-Frame, use the <code>ply-model</code> component found
+in Don McCurdy’s <a href="https://github.com/donmccurdy/aframe-extras/" target="_blank" rel="external">aframe-extras</a>. Currently the model must be
+rotated by <code>-90 0 0</code> to display properly:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/0.3.0/aframe.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://rawgit.com/donmccurdy/aframe-extras/v2.1.1/dist/aframe-extras.loaders.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">a-asset-item</span> <span class="attr">id</span>=<span class="string">"myPlyModel"</span> <span class="attr">src</span>=<span class="string">"myModel.ply"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-asset-item</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></div><div class="line"></div><div class="line">      <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">ply-model</span>=<span class="string">"src: #myPlyModel"</span> <span class="attr">rotation</span>=<span class="string">"-90 0 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="obj"><a href="#obj" class="headerlink" title=".OBJ"></a><code>.OBJ</code></h3><p>The <code>.OBJ</code> format produces a much smaller file size than <code>.PLY</code>, but
+MagicaVoxel does not support baked exports to <code>.OBJ</code>. Exporting to <code>.OBJ</code> will
+also produce a <code>.MTL</code> for the colors and textures. You will need to include both
+and put them in the same directory as each other.</p>
+<p>To render a <code>.OBJ</code> in A-Frame with HTML:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/0.3.0/aframe.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://rawgit.com/donmccurdy/aframe-extras/v2.1.1/dist/aframe-extras.loaders.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">a-asset-item</span> <span class="attr">id</span>=<span class="string">"myModelObj"</span> <span class="attr">src</span>=<span class="string">"myModel.obj"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-asset-item</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">a-asset-item</span> <span class="attr">id</span>=<span class="string">"myModelMtl"</span> <span class="attr">src</span>=<span class="string">"myModel.mtl"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-asset-item</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></div><div class="line"></div><div class="line">      <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">obj-model</span>=<span class="string">"obj: #myModelObj; mtl: #myModelMtl"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>We will later try to produce guides to baking lightmaps and shadowmaps into the
+<code>.OBJ</code> using <a href="https://www.blender.org/" target="_blank" rel="external">Blender</a>.</p>
 
     
 
     <!-- Previous / Next navigation. -->
     <footer class="footer guide-links c">
       
+        <span class="float-left">
+          <a href="/docs/0.3.0/guides/building-with-components.html" class="guide-link guide-link-left">← Building with Components </a></span>
+      
       
         <span class="float-right">
-          <a href="/docs/0.3.0/introduction/getting-started.html" class="guide-link guide-link-right">Getting Started →</a></span>
+          <a href="/docs/0.3.0/guides/using-the-aframe-inspector.html" class="guide-link guide-link-right">Using the A-Frame Inspector →</a></span>
       
     </footer>
 
     <footer class="footer footnote">
-  <p>Caught a mistake or want to contribute to the documentation? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/introduction/index.md" class="github-file-link" target="_blank" rel="external">Suggest an edit to this page on GitHub</a></p>
+  <p>Caught a mistake or want to contribute to the documentation? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/guides/building-with-magicavoxel.md" class="github-file-link" target="_blank" rel="external">Suggest an edit to this page on GitHub</a></p>
 </footer>
 
   </div>
