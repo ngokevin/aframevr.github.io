@@ -25,7 +25,7 @@
       data-aframe-version="0.3.0"
       data-docs-version="master">
   <head>
-    <title>Animations –  Docs  – A-Frame</title>
+    <title>Using the A-Frame Inspector –  Docs  – A-Frame</title>
     
 
 <script>
@@ -89,7 +89,7 @@
 
   </head>
   <body data-page-layout="docs"
-        data-page-type="core">
+        data-page-type="guides">
     
       <aside class="sidebar sidebar-mobile borderless-links c">
   <header id="header" class="header">
@@ -267,9 +267,9 @@
       
 
       <!-- Section title. -->
-      <h3 class="section-title docs-section-title section-title-inactive">
+      <h3 class="section-title docs-section-title section-title-active">
         <a href="/docs/master/guides/"
-           class="section-title-link section-title-link-inactive">
+           class="section-title-link section-title-link-active">
           Guides
         </a>
       </h3>
@@ -298,9 +298,9 @@
             </a>
           </li>
         
-          <li class="subnav-item ">
+          <li class="subnav-item  subnav-item-current">
             <a href="/docs/master/guides/using-the-aframe-inspector.html"
-               class="subnav-link">
+               class="subnav-link current">
               Using the A-Frame Inspector
             </a>
           </li>
@@ -310,9 +310,9 @@
       
 
       <!-- Section title. -->
-      <h3 class="section-title docs-section-title section-title-active">
+      <h3 class="section-title docs-section-title section-title-inactive">
         <a href="/docs/master/core/"
-           class="section-title-link section-title-link-active">
+           class="section-title-link section-title-link-inactive">
           Concepts and API
         </a>
       </h3>
@@ -355,9 +355,9 @@
             </a>
           </li>
         
-          <li class="subnav-item  subnav-item-current">
+          <li class="subnav-item ">
             <a href="/docs/master/core/animations.html"
-               class="subnav-link current">
+               class="subnav-link">
               Animations
             </a>
           </li>
@@ -769,11 +769,11 @@
 </aside>
 
 <!-- Documentation. -->
-<div class="content content--structured content--core copy">
+<div class="content content--structured content--guides copy">
   <div class="copy__wrap">
     <p class="page__section">
-      <a href="/docs/master/core/" class="borderless-link">
-        master &rsaquo; Concepts and API
+      <a href="/docs/master/guides/" class="borderless-link">
+        master &rsaquo; Guides
       </a>
     </p>
     
@@ -782,333 +782,64 @@
 </blockquote>
 
     
-    <h1 class="page__title">Animations</h1>
+    <h1 class="page__title">Using the A-Frame Inspector</h1>
 
     
     
-      <blockquote>
-<p>Check out the
-<a href="https://github.com/ngokevin/aframe-animation-component" target="_blank" rel="external">aframe-animation-component</a>.</p>
-</blockquote>
-<p>Animations in A-Frame are defined by attaching an <code>&lt;a-animation&gt;</code> element as a
-child of the entity to animate. The API is roughly based after the <a href="http://www.w3.org/TR/web-animations/" target="_blank" rel="external">Web
-Animations</a> specification.</p>
-<p>As an introductory example, to define a 5-meter orbit on an entity about the
-Y-axis that takes 10 seconds, we can offset its position and animate the
-rotation of a parent entity. This animation starts with the initial rotation
-about the Y-axis of 0 degrees and goes around to 360 degrees. It’s defined with
-a duration of 10000 milliseconds, maintains the final value on each cycle of
-the animation, and loops indefinitely.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">position</span>=<span class="string">"5 0 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"rotation"</span></span></div><div class="line">               <span class="attr">dur</span>=<span class="string">"10000"</span></div><div class="line">               <span class="attr">fill</span>=<span class="string">"forwards"</span></div><div class="line">               <span class="attr">to</span>=<span class="string">"0 360 0"</span></div><div class="line">               <span class="attr">repeat</span>=<span class="string">"indefinite"</span>&gt;<span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
-
-      
-
-
-  <h2>Table of Contents</h2>
-
-  <ul id="toc">
-    
-      <li>
-        <a href="#attributes">Attributes</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#animating-different-types-of-attributes">Animating Different Types of Attributes</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#vec3-attributes">vec3 Attributes</a></li>
-            
-              <li><a href="#boolean-attributes">Boolean Attributes</a></li>
-            
-              <li><a href="#numeric-attributes">Numeric Attributes</a></li>
-            
-              <li><a href="#color-attributes">Color Attributes</a></li>
-            
-              <li><a href="#component-properties">Component Properties</a></li>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#begin">Begin</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#direction">Direction</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#easing">Easing</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#fill">Fill</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#repeat">Repeat</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#events">Events</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-  </ul>
-
-
-      
-<h2 id="attributes"><a href="#attributes" class="headerlink" title="Attributes"></a>Attributes</h2><p>Here is an overview of animation attributes. We’ll go into more detail below.</p>
-<table>
-<thead>
-<tr>
-<th>Attribute</th>
-<th>Description</th>
-<th>Default Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>attribute</td>
-<td>Attribute to animate. To specify a component attribute, use <code>componentName.property</code> syntax (e.g., <code>light.intensity</code>).</td>
-<td>rotation</td>
-</tr>
-<tr>
-<td>begin</td>
-<td>Event name to wait on before beginning animation.</td>
-<td>‘’</td>
-</tr>
-<tr>
-<td>delay</td>
-<td>Delay (in milliseconds) or event name to wait on before beginning animation.</td>
-<td>0</td>
-</tr>
-<tr>
-<td>direction</td>
-<td>Direction of the animation (between <code>from</code> and <code>to</code>). One of <code>alternate</code>, <code>alternateReverse</code>, <code>normal</code>, <code>reverse</code>.</td>
-<td>normal</td>
-</tr>
-<tr>
-<td>dur</td>
-<td>Duration in (milliseconds) of the animation.</td>
-<td>1000</td>
-</tr>
-<tr>
-<td>easing</td>
-<td>Easing function of the animation. There are very many to choose from.</td>
-<td>ease</td>
-</tr>
-<tr>
-<td>end</td>
-<td>Event name to wait on before stopping animation.</td>
-<td>‘’</td>
-</tr>
-<tr>
-<td>fill</td>
-<td>Determines effect of animation when not actively in play. One of <code>backwards</code>, <code>both</code>, <code>forwards</code>, <code>none</code>.</td>
-<td>forwards</td>
-</tr>
-<tr>
-<td>from</td>
-<td>Starting value.</td>
-<td>Current value.</td>
-</tr>
-<tr>
-<td>repeat</td>
-<td>Repeat count or <code>indefinite</code>.</td>
-<td>0</td>
-</tr>
-<tr>
-<td>to</td>
-<td>Ending value. Must be specified.</td>
-<td>None</td>
-</tr>
-</tbody>
-</table>
-<h2 id="animating-different-types-of-attributes"><a href="#animating-different-types-of-attributes" class="headerlink" title="Animating Different Types of Attributes"></a>Animating Different Types of Attributes</h2><p>A-Frame’s animation system can animate several possible categories of attributes.</p>
-<h3 id="vec3-attributes"><a href="#vec3-attributes" class="headerlink" title="vec3 Attributes"></a>vec3 Attributes</h3><p>A-Frame has several standard <code>vec3</code> components (i.e., <code>position</code>, <code>rotation</code>,
-and <code>scale</code>). These components consist of three factors: X, Y, and Z. We can
-pass three space-delimited numbers to the <code>from</code> and <code>to</code> attributes just as we
-would define them on an entity. In this case, the animation system will assume
-we are animating a <code>vec3</code> value.</p>
-<p>For example, if we want to animate an entity going from one spot to another, we
-can animate the <code>position</code> component.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"position"</span> <span class="attr">from</span>=<span class="string">"1 1 1"</span> <span class="attr">to</span>=<span class="string">"2 4 -8"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="boolean-attributes"><a href="#boolean-attributes" class="headerlink" title="Boolean Attributes"></a>Boolean Attributes</h3><p>A-Frame has several standard components that accept a single boolean value.
-Boolean values can be “animated” as well by flipping the boolean at the end of
-each animation cycle.</p>
-<p>For example, we can define an animation that toggles off the visibility of an
-entity after 5 seconds.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"visible"</span> <span class="attr">dur</span>=<span class="string">"5000"</span> <span class="attr">to</span>=<span class="string">"false"</span> <span class="attr">repeat</span>=<span class="string">"indefinite"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="numeric-attributes"><a href="#numeric-attributes" class="headerlink" title="Numeric Attributes"></a>Numeric Attributes</h3><p>We can animate numeric attributes as well. For example, we can animate the
-intensity of the light primitive.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-light</span> <span class="attr">intensity</span>=<span class="string">"1"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"intensity"</span> <span class="attr">to</span>=<span class="string">"3"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-light</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="color-attributes"><a href="#color-attributes" class="headerlink" title="Color Attributes"></a>Color Attributes</h3><p>We can animate any component property that has a color type. For example, we
-can animate a box from white to red.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"blushing-cube"</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"material.color"</span> <span class="attr">from</span>=<span class="string">"white"</span> <span class="attr">to</span>=<span class="string">"red"</span> <span class="attr">dur</span>=<span class="string">"1000"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="component-properties"><a href="#component-properties" class="headerlink" title="Component Properties"></a>Component Properties</h3><p>We can animate a certain property of a multi-property component. To do so, we
-select the component property using the dot syntax:
-<code>componentName.propertyName</code>.</p>
-<p>For example, to animate a cone’s top radius, we can select the <code>radiusTop</code>
-value with <code>geometry.radiusTop</code>.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: cone; radiusTop: 1"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"geometry.radiusTop"</span> <span class="attr">to</span>=<span class="string">"0.5"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="begin"><a href="#begin" class="headerlink" title="Begin"></a>Begin</h2><p>The <code>begin</code> attribute defines when the animation should start playing.</p>
-<p>This can either be a <em>number</em>, representing milliseconds to wait, or an <em>event
-name</em> to wait for. For example, we can define an animation that waits 2 seconds
-from when the animation is attached before scaling an entity.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"scale"</span> <span class="attr">begin</span>=<span class="string">"2000"</span> <span class="attr">to</span>=<span class="string">"2 2 2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>Or we can define an animation that waits for the parent element to trigger an
-event named <code>fade</code> before fading an entity.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"fading-cube"</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span> <span class="attr">material</span>=<span class="string">"opacity: 1"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"material.opacity"</span> <span class="attr">begin</span>=<span class="string">"fade"</span> <span class="attr">to</span>=<span class="string">"0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Trigger an event to begin fading.</span></div><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">'#fading-cube'</span>).emit(<span class="string">'fade'</span>);</div></pre></td></tr></table></figure>
-<h2 id="direction"><a href="#direction" class="headerlink" title="Direction"></a>Direction</h2><p>The <code>direction</code> attribute defines which way to animate between the starting
-value and the final value.</p>
-<p>When an alternating direction is defined, the animation will go back and forth
-between the <code>from</code> and <code>to</code> values like a yo-yo. Alternating directions only
-take affect when the animation is set to repeat.</p>
-<table>
-<thead>
-<tr>
-<th>Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>alternate</td>
-<td>On even-numbered cycles, animate from <code>from</code> to <code>to</code>. On odd-numbered cycles, animation from <code>to</code> to <code>from</code></td>
-</tr>
-<tr>
-<td>alternate-reverse</td>
-<td>On odd-numbered cycles, animate from <code>from</code> to <code>to</code>. On even-numbered cycles, animation from <code>to</code> to <code>from</code></td>
-</tr>
-<tr>
-<td>normal</td>
-<td>Animate from <code>from</code> to <code>to</code>.</td>
-</tr>
-<tr>
-<td>reverse</td>
-<td>Animate from <code>to</code> to <code>from</code>.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="easing"><a href="#easing" class="headerlink" title="Easing"></a>Easing</h2><p>The <code>easing</code> attribute defines the easing function of the animation, which
-defaults to <code>ease</code>. There are too many easing functions to list, but we can
-implicitly explain what all of them are.</p>
-<p>One possible value is <code>linear</code>. And the basic easing functions are <code>ease</code>,
-<code>ease-in</code>, <code>ease-out</code>, and <code>ease-in-out</code>.</p>
-<p>Then there are additional groups of easing functions. Each group of easing
-functions are prefixed by the above basic easing functions. The groups of
-easing functions are <code>cubic</code>, <code>quad</code>, <code>quart</code>, <code>quint</code>, <code>sine</code>, <code>expo</code>, <code>circ</code>,
-<code>elastic</code>, <code>back</code>, and <code>bounce</code>.</p>
-<p>For example, the <code>cubic</code> group of easing functions would consist of
-<code>ease-cubic</code>, <code>ease-in-cubic</code>, <code>ease-out-cubic</code>, <code>ease-in-out-cubic</code>.</p>
-<h2 id="fill"><a href="#fill" class="headerlink" title="Fill"></a>Fill</h2><p>The <code>fill</code> attribute defines the effect of animation when not actively in play.
-Think of <code>fill</code> as what values the animation sets on the entity <em>before</em> and/or
-<em>after</em> each animation cycle. Below are the possible values for <code>fill</code> and
-their effects.</p>
-<table>
-<thead>
-<tr>
-<th>Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>backwards</td>
-<td>Before the animation starts, set the starting value to the <code>from</code> value.</td>
-</tr>
-<tr>
-<td>both</td>
-<td>Combine the effects of both backwards fill and forwards fill.</td>
-</tr>
-<tr>
-<td>forwards</td>
-<td>After the animation finishes, the final value will stay at the <code>to</code> value. The default fill.</td>
-</tr>
-<tr>
-<td>none</td>
-<td>Before the animation starts, set the starting value to the initial value. After the animation finishes, reset the value to the initial value.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="repeat"><a href="#repeat" class="headerlink" title="Repeat"></a>Repeat</h2><p>The <code>repeat</code> attribute defines how often the animation repeats. We call each
-repeat of the animation a cycle. Repeat can either be a number that counts down
-on each animation cycle until it reaches <code>0</code> at which point the animation will
-end, or it can be set to <code>indefinite</code> and the animation will loop continuously
-until the animation is manually removed or stopped.</p>
-<h2 id="events"><a href="#events" class="headerlink" title="Events"></a>Events</h2><p>The <code>&lt;a-animation&gt;</code> element emits a couple of events.</p>
-<table>
-<thead>
-<tr>
-<th>Event Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>animationend</td>
-<td>Emitted when the animation finishes. In case of repeats, emitted when the repeat count reaches <code>0</code>. Not emitted for indefinite repeats.</td>
-</tr>
-<tr>
-<td>animationstart</td>
-<td>Emitted immediately when the animation begins playing.</td>
-</tr>
-</tbody>
-</table>
+      <p>The <a href="https://github.com/aframevr/aframe-inspector" target="_blank" rel="external">A-Frame Inspector</a> is a
+visual tool for inspecting and tweaking scenes. With the Inspector, we can:</p>
+<ul>
+<li>Drag, rotate, and scale entities using handles and helpers</li>
+<li>Tweak an entity’s components and their properties using widgets</li>
+<li>Immediately see results from changing values without having to go back and
+forth between code and the browser</li>
+</ul>
+<p>The Inspector is similar to the browser’s DOM inspector but tailored for 3D and
+A-Frame. We can toggle the Inspector to open up any A-Frame scene in the wild
+Let’s view source!</p>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/17754515/b5596eb6-6489-11e6-9485-4cb10fa5b100.png" alt="Inspector Preview"></p>
+<h2 id="opening-the-inspector"><a href="#opening-the-inspector" class="headerlink" title="Opening the Inspector"></a>Opening the Inspector</h2><p>The easiest way to use is to press the <strong><code>&lt;ctrl&gt; + &lt;alt&gt; + i</code></strong> shortcut on
+your keyboard. This will fetch the Inspector code via CDN and open up our scene
+in the Inspector. The same shortcut toggles the Inspector closed.</p>
+<p>Not only can we open our local scenes inside the Inspector, we can open any
+A-Frame scene in the wild using the Inspector (as long as the author has not
+explicitly disabled it).</p>
+<p>See the <a href="https://github.com/aframevr/aframe-inspector" target="_blank" rel="external">Inspector README</a> for details on serving local, development,
+or custom builds of the Inspector.</p>
+<h2 id="using-the-inspector"><a href="#using-the-inspector" class="headerlink" title="Using the Inspector"></a>Using the Inspector</h2><h3 id="scene-graph"><a href="#scene-graph" class="headerlink" title="Scene Graph"></a>Scene Graph</h3><p>The Inspector’s scene graph is a tree-based representation of the scene.  We
+can use the scene graph to <em>select, search, delete, clone, and add entities</em> or
+exporting HTML.</p>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/18565455/ae082fea-7b44-11e6-856f-2b9ca0e60bed.gif" alt="Inspector Scene Graph"></p>
+<p>The scene graph lists A-Frame entities rather than internal three.js objects.
+Given HTML is also a representation of the scene graph, the Inspector’s scene
+graph mirrors the underlying HTML closely. Entities are displayed using their
+HTML ID or HTML tag name.</p>
+<h3 id="viewport"><a href="#viewport" class="headerlink" title="Viewport"></a>Viewport</h3><p>The viewport displays the scene from the Inspector’s point of the view. We can
+rotate, pan, or zoom the viewport to change the view of the scene:</p>
+<ul>
+<li><strong>Rotate:</strong> hold down left mouse button (or one finger down on a trackpad) and drag</li>
+<li><strong>Pan:</strong> hold down right mouse button (or two fingers down on a trackpad) and drag</li>
+<li><strong>Zoom:</strong> scroll up and down (or two-finger scroll on a trackpad)</li>
+</ul>
+<p>From the viewport, we can also select entities and transform them:</p>
+<ul>
+<li><strong>Select</strong>: left-click on an entity</li>
+<li><strong>Transform</strong>: select a helper tool on the upper-right corner of the
+viewport, drag the red/blue/green helpers surrounding an entity to transform
+it</li>
+</ul>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/18565454/ad047c84-7b44-11e6-8c4a-0f1fe55c6682.gif" alt="Inspector Viewport"></p>
+<h3 id="components-panel"><a href="#components-panel" class="headerlink" title="Components Panel"></a>Components Panel</h3><p>The components panel displays the selected entity’s components and properties.
+We can modify values of common components (e.g., position, rotation, scale),
+modify values of attached components, add and remove mixins, and add and remove
+components.</p>
+<p>The type of widget for each property depends on the property type. For example,
+booleans use a checkbox, numbers use a value slide, and colors use a color
+picker.</p>
+<p>We can copy the HTML output of individual components. This is useful for
+visually tweaking and finding the desired value of a component and then syncing
+it back to source code.</p>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/18565449/aa63a7b6-7b44-11e6-999c-450c88812293.gif" alt="Inspector Components"></p>
 
     
 
@@ -1116,16 +847,13 @@ until the animation is manually removed or stopped.</p>
     <footer class="footer guide-links c">
       
         <span class="float-left">
-          <a href="/docs/master/core/scene.html" class="guide-link guide-link-left">← Scene </a></span>
+          <a href="/docs/master/guides/building-with-magicavoxel.html" class="guide-link guide-link-left">← Building with MagicaVoxel </a></span>
       
-      
-        <span class="float-right">
-          <a href="/docs/master/core/mixins.html" class="guide-link guide-link-right">Mixins →</a></span>
       
     </footer>
 
     <footer class="footer footnote">
-  <p>Caught a mistake or want to contribute to the documentation? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/core/animations.md" class="github-file-link" target="_blank" rel="external">Suggest an edit to this page on GitHub</a></p>
+  <p>Caught a mistake or want to contribute to the documentation? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/guides/using-the-aframe-inspector.md" class="github-file-link" target="_blank" rel="external">Suggest an edit to this page on GitHub</a></p>
 </footer>
 
   </div>

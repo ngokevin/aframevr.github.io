@@ -280,21 +280,28 @@
           <li class="subnav-item ">
             <a href="/docs/master/guides/"
                class="subnav-link">
-              Build with Basic HTML
+              Building with Basic HTML
             </a>
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/guides/build-with-components.html"
+            <a href="/docs/master/guides/building-with-components.html"
                class="subnav-link">
-              Build with Components
+              Building with Components
             </a>
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/guides/build-with-magicavoxel.html"
+            <a href="/docs/master/guides/building-with-magicavoxel.html"
                class="subnav-link">
-              Build with MagicaVoxel
+              Building with MagicaVoxel
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/guides/using-the-aframe-inspector.html"
+               class="subnav-link">
+              Using the A-Frame Inspector
             </a>
           </li>
         
@@ -370,16 +377,16 @@
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/core/AFRAME.html"
+            <a href="/docs/master/core/utils.html"
                class="subnav-link">
-              AFRAME Globals
+              Utils
             </a>
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/core/utils.html"
+            <a href="/docs/master/core/AFRAME.html"
                class="subnav-link">
-              Utils
+              AFRAME Globals
             </a>
           </li>
         
@@ -860,8 +867,13 @@
 <h2 id="caveats"><a href="#caveats" class="headerlink" title="Caveats"></a>Caveats</h2><p>iOS has a lot of restrictions on playing videos in the browser. To play an inline video texture, we must:</p>
 <ul>
 <li>Set the <code>&lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;&gt;</code> meta tag (will be injected if missing).</li>
-<li>Set the <code>webkit-playsinline</code> attribute to the video element.</li>
+<li>Set the <code>webkit-playsinline</code> attribute to the video element (is automatically added to all videos).</li>
 <li>Pin the webpage to the iOS homescreen.</li>
+</ul>
+<p>Inline video support on iOS 10 may change this. On certain Android devices or
+browsers, we must:</p>
+<ul>
+<li>Require user interaction to trigger the video (such as a click or tap event). See <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=178297" target="_blank" rel="external">Chromium Bug 178297</a>.</li>
 </ul>
 
     
