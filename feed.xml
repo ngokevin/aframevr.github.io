@@ -8,8 +8,28 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     
     <description>Building Blocks for the VR Web</description>
-    <pubDate>Wed, 31 Aug 2016 01:09:37 GMT</pubDate>
+    <pubDate>Fri, 16 Sep 2016 22:13:17 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>A Week of A-Frame 27</title>
+      <link>https://aframe.io/blog/awoa-27/</link>
+      <guid>https://aframe.io/blog/awoa-27/</guid>
+      <pubDate>Thu, 15 Sep 2016 07:00:00 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;A couple weeks of backlog since half the team was around Asia. But the WebVR
+show goes on! More Vive demos and some unique applications s
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>A couple weeks of backlog since half the team was around Asia. But the WebVR
+show goes on! More Vive demos and some unique applications such as with Kinect
+and green screen compositing.</p>
+]]></content:encoded>
+      
+      <comments>https://aframe.io/blog/awoa-27/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>A Week of A-Frame 26</title>
@@ -369,24 +389,6 @@ A Summer of A-Frame.</p>
 ]]></content:encoded>
       
       <comments>https://aframe.io/blog/awoa-14/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>A Week of A-Frame 13</title>
-      <link>https://aframe.io/blog/awoa-13/</link>
-      <guid>https://aframe.io/blog/awoa-13/</guid>
-      <pubDate>Fri, 13 May 2016 07:00:00 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;Got room-scale?&lt;/p&gt;
-
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>Got room-scale?</p>
-]]></content:encoded>
-      
-      <comments>https://aframe.io/blog/awoa-13/#disqus_thread</comments>
     </item>
     
   </channel>
