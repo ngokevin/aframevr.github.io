@@ -7,7 +7,7 @@
     <link>https://aframe.io/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     
-    <description>Building Blocks for the VR Web</description>
+    <description>A web framework for building VR experiences.</description>
     <pubDate>Fri, 16 Sep 2016 22:49:16 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
