@@ -8,8 +8,122 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     
     <description>A web framework for building VR experiences.</description>
-    <pubDate>Tue, 20 Sep 2016 17:20:15 GMT</pubDate>
+    <pubDate>Wed, 21 Sep 2016 07:57:44 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>A-Painter: Paint in VR in Your Browser</title>
+      <link>https://aframe.io/blog/a-painter/</link>
+      <guid>https://aframe.io/blog/a-painter/</guid>
+      <pubDate>Tue, 20 Sep 2016 19:00:00 GMT</pubDate>
+      <description>
+      
+        &lt;blockquote&gt;
+&lt;p&gt;Want to start painting now? Grab a &lt;a href=&quot;https://webvr.info&quot;&gt;WebVR-enabled browser&lt;/a&gt;, and
+head to &lt;a href=&quot;https://aframe.io/a-painter&quot;&gt;https://aframe.io/a-painter&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;Don’t have a headset? No problem, you can still &lt;a href=&quot;https://aframe.io/a-painter/?url=https://ucarecdn.com/3e089e07-be62-48e1-9f12-9a284c249e77/&quot;&gt;view paintings from any device&lt;/a&gt;!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/a-painter/apainter_painting.gif&quot; alt=&quot;Looped recording of drawing in A-Painter&quot;&gt;&lt;/p&gt;
+&lt;p&gt;We on the &lt;a href=&quot;https://mozvr.com/&quot;&gt;Mozilla VR&lt;/a&gt; team are hardcore fans of &lt;a href=&quot;https://www.tiltbrush.com/&quot;&gt;Tilt
+Brush&lt;/a&gt;. It’s a wonderful example of the power of VR
+as an expressive medium. In the last few weeks, we have been experimenting with
+our own Web-based interpretation of Tilt Brush. We wanted to show how easy is
+to produce and share your creations on the Web across platforms with no
+software installations.&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<blockquote>
+<p>Want to start painting now? Grab a <a href="https://webvr.info" target="_blank" rel="external">WebVR-enabled browser</a>, and
+head to <a href="https://aframe.io/a-painter">https://aframe.io/a-painter</a>!</p>
+<p>Don’t have a headset? No problem, you can still <a href="https://aframe.io/a-painter/?url=https://ucarecdn.com/3e089e07-be62-48e1-9f12-9a284c249e77/">view paintings from any device</a>!</p>
+</blockquote>
+<p><img src="/images/blog/a-painter/apainter_painting.gif" alt="Looped recording of drawing in A-Painter"></p>
+<p>We on the <a href="https://mozvr.com/" target="_blank" rel="external">Mozilla VR</a> team are hardcore fans of <a href="https://www.tiltbrush.com/" target="_blank" rel="external">Tilt
+Brush</a>. It’s a wonderful example of the power of VR
+as an expressive medium. In the last few weeks, we have been experimenting with
+our own Web-based interpretation of Tilt Brush. We wanted to show how easy is
+to produce and share your creations on the Web across platforms with no
+software installations.</p>
+<a id="more"></a>
+<p><img src="/images/blog/a-painter/foxlogo-1.png" alt="Screenshot of Mozilla VR fox in A-Painter"></p>
+<p>To browse paintings, you just need a browser with WebGL, but to fulfill your
+artistic urges you need a system with hand-tracked controllers. Today, that
+means only with the HTC Vive on Windows (though we hope this changes soon!).</p>
+<h2 id="what-can-i-do-with-a-painter-today"><a href="#what-can-i-do-with-a-painter-today" class="headerlink" title="What Can I Do With A-Painter Today?"></a>What Can I Do With A-Painter Today?</h2><ul>
+<li>Paint in 3D using hand-tracked motion controllers. Use both hands to paint!</li>
+<li>Share drawings with the world simply by copying and pasting a URL.</li>
+<li>View 3D drawings anywhere both with and without a headset.</li>
+<li>Paint on top of other people’s drawings and make them your own.</li>
+<li>Drag and drop images and <a href="https://aframe.io/docs/0.3.0/introduction/faq.html#where-can-i-find-assets"><code>OBJ</code>
+models</a>
+from your desktop to the browser, for a template or starting point to paint
+over.</li>
+<li>Save and load local binary files of your drawings.</li>
+<li>Over 30 brushes with a custom <a href="https://github.com/aframevr/a-painter#brush-api" target="_blank" rel="external">A-Painter Brush
+API</a> to easily create new
+ones.</li>
+</ul>
+<h2 id="how-to-play-with-it"><a href="#how-to-play-with-it" class="headerlink" title="How to Play With It"></a>How to Play With It</h2><p>It’s easy! Go to the <a href="https://aframe.io/a-painter"><strong>A-Painter web site</strong></a> with a <a href="https://webvr.info" target="_blank" rel="external">WebVR-enabled
+browser</a>, and put on your HTC Vive headset. Grab your controllers,
+hold the trigger button, and start painting!</p>
+<h3 id="controls"><a href="#controls" class="headerlink" title="Controls"></a>Controls</h3><p><img src="/images/blog/a-painter/controller_tooltips_medium.jpg" alt="Diagram of A-Painter controls"></p>
+<ul>
+<li><strong>Trigger</strong>: Hold down to paint (it’s pressure sensitive).</li>
+<li><strong>Thumbpad</strong>: Slide up and down to change the brush size.</li>
+<li><strong>Grip</strong>: Squeeze to undo the latest stroke.</li>
+<li><strong>Menu Button</strong>: Press to toggle the main menu.</li>
+</ul>
+<p>Once you open the main menu, you can modify the color, size, and brush type by
+pointing the other controller to the desired option and clicking using the
+trigger (and the controller being used to point and click is the one is the one
+that receives the new settings).</p>
+<p><img src="/images/blog/a-painter/menu.jpg" alt="Diagram of A-Painter menu options"></p>
+<ul>
+<li><strong>Color history</strong>: The latest seven colors used will be saved in these swatches.</li>
+<li><strong>Clear</strong>: Clears the painting. Use with care!</li>
+<li><strong>Save</strong>: The whole painting will be saved and uploaded to a server in a
+binary format, and outside of VR (but still in your browser) you will get a
+URL that you can use to share your painting and resume your work later.</li>
+<li><strong>Copy</strong>: The current brush settings (type, color, and size) of the
+controller holding the menu will be transferred to the pointing controller.</li>
+</ul>
+<p><img src="/images/blog/a-painter/apainter_menuc.gif" alt="Looped recording of changing brush options in A-Painter menu"></p>
+<h2 id="a-painter-is-extensible"><a href="#a-painter-is-extensible" class="headerlink" title="A-Painter is Extensible"></a>A-Painter is Extensible</h2><p>To create a new brush, implement the following interface, and register it by
+calling <code>AFRAME.registerBrush(brushName, definition, options)</code>.</p>
+<p>And from within your <code>AFRAME.registerBrush</code> call, define the following:</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">BrushInterface.prototype = &#123;</div><div class="line">  addPoint: <span class="function"><span class="keyword">function</span> (<span class="params">position, orientation, pointerPosition, pressure, timestamp</span>) </span>&#123;&#125;,</div><div class="line">  tick: <span class="function"><span class="keyword">function</span> (<span class="params">time, delta</span>) </span>&#123;&#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>The only required method to implement is <strong>addPoint</strong>. With <strong>addPoint</strong>, you
+should do something with the point, orientation, and pressure data returned
+from the controller (i.e., create or modify a geometry), and return <em>true</em> if
+you’ve added something to the scene and <code>false</code> otherwise. If you want to add
+dynamic behavior, implement the <strong>tick</strong> method, which will be called on every
+frame.</p>
+<p>Here is the code for a custom <code>spheres</code> brush:</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="comment">/* global AFRAME, THREE */</span></div><div class="line"></div><div class="line">AFRAME.registerBrush(</div><div class="line">  <span class="comment">// Name of brush.</span></div><div class="line">  <span class="string">'spheres'</span>,</div><div class="line"></div><div class="line">  <span class="comment">// Methods for brush definition.</span></div><div class="line">  &#123;</div><div class="line">    init: <span class="function"><span class="keyword">function</span> (<span class="params">color, width</span>) </span>&#123;</div><div class="line">      <span class="comment">// Initialize the material based on the stroke color.</span></div><div class="line">      <span class="keyword">this</span>.material = <span class="keyword">new</span> THREE.MeshStandardMaterial(&#123;</div><div class="line">        color: <span class="keyword">this</span>.data.color,</div><div class="line">        roughness: <span class="number">0.5</span>,</div><div class="line">        metalness: <span class="number">0.5</span>,</div><div class="line">        side: THREE.DoubleSide,</div><div class="line">        shading: THREE.FlatShading</div><div class="line">      &#125;);</div><div class="line">      <span class="keyword">this</span>.geometry = <span class="keyword">new</span> THREE.IcosahedronGeometry(<span class="number">1</span>, <span class="number">0</span>);</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="comment">// This method is called every time we need to add a point</span></div><div class="line">    <span class="comment">// to our stroke. It should return `true` if the point is</span></div><div class="line">    <span class="comment">// added correctly and `false` otherwise.</span></div><div class="line">    addPoint: <span class="function"><span class="keyword">function</span> (<span class="params">position, orientation, pointerPosition,</span></span></div><div class="line">                        pressure, timestamp) &#123;</div><div class="line">      <span class="comment">// Create a new sphere mesh to insert at the given position.</span></div><div class="line">      <span class="keyword">var</span> sphere = <span class="keyword">new</span> THREE.Mesh(<span class="keyword">this</span>.geometry, <span class="keyword">this</span>.material);</div><div class="line"></div><div class="line">      <span class="comment">// The scale is determined by the trigger pressure.</span></div><div class="line">      <span class="keyword">var</span> scale = <span class="keyword">this</span>.data.size / <span class="number">2</span> * pressure;</div><div class="line">      sphere.scale.set(scale, scale, scale);</div><div class="line">      sphere.initialScale = sphere.scale.clone();</div><div class="line"></div><div class="line">      <span class="comment">// Generate a random phase to be used in the tick animation.</span></div><div class="line">      sphere.phase = <span class="built_in">Math</span>.random() * <span class="built_in">Math</span>.PI * <span class="number">2</span>;</div><div class="line"></div><div class="line">      <span class="comment">// Set the position and orientation of the sphere to match</span></div><div class="line">      <span class="comment">// the controllers.</span></div><div class="line">      sphere.position.copy(pointerPosition);</div><div class="line">      sphere.rotation.copy(orientation);</div><div class="line"></div><div class="line">      <span class="comment">// Add the sphere to the `object3D`.</span></div><div class="line">      <span class="keyword">this</span>.object3D.add(sphere);</div><div class="line"></div><div class="line">      <span class="comment">// Return `true`, since we've correctly added a new point (sphere).</span></div><div class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="comment">// This method is called on every frame.</span></div><div class="line">    tick: <span class="function"><span class="keyword">function</span> (<span class="params">time, delta</span>) </span>&#123;</div><div class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.object3D.children.length; i++) &#123;</div><div class="line">        <span class="keyword">var</span> sphere = <span class="keyword">this</span>.object3D.children[i];</div><div class="line">        <span class="comment">// Calculate the sine value based on the time and the phase for</span></div><div class="line">        <span class="comment">// this sphere, and use it to scale the geometry.</span></div><div class="line">        <span class="keyword">var</span> sin = (<span class="built_in">Math</span>.sin(sphere.phase + time / <span class="number">500.0</span>) + <span class="number">1</span>) / <span class="number">2</span> + <span class="number">0.1</span>;</div><div class="line">        sphere.scale.copy(sphere.initialScale).multiplyScalar(sin);</div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="comment">// Additional options for this brush.</span></div><div class="line">  &#123;</div><div class="line">    thumbnail: <span class="string">'brushes/thumb_spheres.gif'</span>,</div><div class="line">    spacing: <span class="number">0.01</span></div><div class="line">  &#125;</div><div class="line">);</div></pre></td></tr></table></figure>
+<p><img src="/images/blog/a-painter/spheres-brush.gif" alt="Looped recording of walking around in a painting with the custom `spheres` brush in A-Painter"></p>
+<p><a href="https://github.com/aframevr/a-painter#brush-api" target="_blank" rel="external"><strong>Read more about creating custom brushes.</strong></a></p>
+<h2 id="perhaps-we-could…"><a href="#perhaps-we-could…" class="headerlink" title="Perhaps we could…"></a>Perhaps we could…</h2><p>While developing this tool, we got plenty of interesting ideas to implement.
+The future of A-Painter depends on you and its general acceptance and feedback,
+but here are some ideas of features we would like to add:</p>
+<ul>
+<li>More and better tools, such as a color picker and eraser</li>
+<li>More and better brushes</li>
+<li>Save screenshots and <code>GIF</code> animations</li>
+<li>Audio-reactive brushes</li>
+<li>Multi-user painters and spectators</li>
+<li>Import <a href="https://github.com/KhronosGroup/glTF" target="_blank" rel="external"><code>glTF</code></a> models</li>
+<li>Export to standard 3D file formats, such as <code>OBJ</code> and <code>glTF</code></li>
+<li>Dedicated web site with gallery of users’ submissions</li>
+<li>Post-processing filters</li>
+<li>Performance optimizations to existing brushes</li>
+</ul>
+<p>And, of course if you have an idea, issue, or want to contribute directly to
+the codebase, please feel free to join us at <strong><a href="https://github.com/aframevr/a-painter" target="_blank" rel="external">https://github.com/aframevr/a-painter</a></strong>.</p>
+]]></content:encoded>
+      
+      <comments>https://aframe.io/blog/a-painter/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>A Week of A-Frame 27</title>
@@ -371,24 +485,6 @@ A Summer of A-Frame.</p>
 ]]></content:encoded>
       
       <comments>https://aframe.io/blog/awoa-15/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>A Week of A-Frame 14</title>
-      <link>https://aframe.io/blog/awoa-14/</link>
-      <guid>https://aframe.io/blog/awoa-14/</guid>
-      <pubDate>Fri, 20 May 2016 07:00:00 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;I have A-Dream that one day A-Frame experiences become multi-user.&lt;/p&gt;
-
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>I have A-Dream that one day A-Frame experiences become multi-user.</p>
-]]></content:encoded>
-      
-      <comments>https://aframe.io/blog/awoa-14/#disqus_thread</comments>
     </item>
     
   </channel>
