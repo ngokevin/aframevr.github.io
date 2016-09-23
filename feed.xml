@@ -8,8 +8,51 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     
     <description>A web framework for building VR experiences.</description>
-    <pubDate>Wed, 21 Sep 2016 07:57:44 GMT</pubDate>
+    <pubDate>Fri, 23 Sep 2016 23:52:44 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>A Week of A-Frame 28</title>
+      <link>https://aframe.io/blog/awoa-28/</link>
+      <guid>https://aframe.io/blog/awoa-28/</guid>
+      <pubDate>Fri, 23 Sep 2016 07:00:00 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;&lt;a href=&quot;https://blog.mozvr.com/a-painter/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;A-Painter&lt;/strong&gt;&lt;/a&gt; has been released! It’s like
+Ti
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p><a href="https://blog.mozvr.com/a-painter/" target="_blank" rel="external"><strong>A-Painter</strong></a> has been released! It’s like
+Tilt Brush, but open source so you can help us create more brushes. You can
+share your paintings online for anyone to view in 3D. Or you can take other
+people’s paintings and make them your own! Want to share a painting?  Post it
+to this makeshift <a href="https://github.com/aframevr/a-painter/issues/99" target="_blank" rel="external">A-Painter gallery</a>! Check
+out some paintings so far:</p>
+<ul>
+<li><a href="https://aframe.io/a-painter/?url=https://ucarecdn.com/69c16e90-ee65-410c-82f6-23bf1ecc6d2f/">The World’s First VR Guestbook</a>, created in collaboration from multiple people.</li>
+<li><a href="https://aframe.io/a-painter/?url=https://ucarecdn.com/69c16e90-ee65-410c-82f6-23bf1ecc6d2f/"><em>The Gentle Robot</em></a>, by <a href="https://twitter.com/feiss" target="_blank" rel="external">@feiss</a></li>
+<li><a href="https://aframe.io/a-painter/?url=https://ucarecdn.com/bacf6186-96b1-404c-9751-e955ece04919/"><em>The Leap</em></a>, by <a href="https://twitter.com/feiss" target="_blank" rel="external">@feiss</a></li>
+<li><a href="https://aframe.io/a-painter/?url=https://ucarecdn.com/3f92dffd-1c66-400d-898a-9a9decd5f07a/"><em>Rose Bush</em></a>, by <a href="https://twitter.com/feiss" target="_blank" rel="external">@feiss</a></li>
+</ul>
+<p><a href="https://twitter.com/msfeldstein" target="_blank" rel="external">@msfeldstein</a> has even already contributed a
+Rainbow Brush. After having released A-Painter, we are currently working on
+more cool demos.</p>
+<p>Initial work on the <a href="https://github.com/aframevr/aframe-registry" target="_blank" rel="external"><strong>A-Frame Registry</strong></a> has
+started. The registry is a curated collection of A-Frame components. In the future,
+this could contain things like assets, controls, effects, or shaders. The
+registry currently fetches metadata from npm and builds JSON files respective
+to each version of A-Frame. This data can then be used to populate perhaps a
+Unity Store-like UI in the <a href="https://github.com/aframevr/aframe-inspector" target="_blank" rel="external">A-Frame
+Inspector</a>. Submit your components!</p>
+<p>Check out some of the more <em>physical</em> demonstrations of VR this week. See
+<a href="https://www.youtube.com/watch?v=jUPIQecyhOo" target="_blank" rel="external">full-body tracking</a> and
+<a href="https://twitter.com/andgokevin/status/779428404563095553" target="_blank" rel="external">punching</a> with
+A-Frame.</p>
+]]></content:encoded>
+      
+      <comments>https://aframe.io/blog/awoa-28/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>A-Painter: Paint in VR in Your Browser</title>
@@ -467,24 +510,6 @@ A Summer of A-Frame.</p>
 ]]></content:encoded>
       
       <comments>https://aframe.io/blog/awoa-16/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>A Week of A-Frame 15</title>
-      <link>https://aframe.io/blog/awoa-15/</link>
-      <guid>https://aframe.io/blog/awoa-15/</guid>
-      <pubDate>Fri, 27 May 2016 07:00:00 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;&lt;em&gt;A-Frame intensifies&lt;/em&gt; as we pass 2000 GitHub stars and 800 Slack members! Sneak peeks of multiuser, embedded scenes, room-scale, a
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p><em>A-Frame intensifies</em> as we pass 2000 GitHub stars and 800 Slack members! Sneak peeks of multiuser, embedded scenes, room-scale, asymmetric gaming, the A-Frame Editor, and link traversal at SFHTML5 WebVR meetup.</p>
-<p>Thanks to Matt Simpson for the many contributions this week!</p>
-]]></content:encoded>
-      
-      <comments>https://aframe.io/blog/awoa-15/#disqus_thread</comments>
     </item>
     
   </channel>
