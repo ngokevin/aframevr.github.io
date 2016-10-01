@@ -39,7 +39,7 @@
 
     <meta charset="utf-8">
     <meta name="robots" content="all">
-    <meta name="description" content="A web framework for building VR experiences.">
+    <meta name="description" content="A web framework for building virtual reality experiences.">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <link rel="canonical" href="https://aframe.io">
@@ -48,7 +48,7 @@
     <meta property="og:site_name" content="A-Frame">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aframe.io">
-    <meta property="og:description" content="A web framework for building VR experiences.">
+    <meta property="og:description" content="A web framework for building virtual reality experiences.">
     <meta property="og:image" content="http://aframe.io/images/card.png">
     <meta property="og:image:secure_url" content="https://aframe.io/images/card.png">
 
@@ -56,7 +56,7 @@
     <meta name="twitter:site" content="@aframevr">
     <meta name="twitter:creator" content="@aframevr">
     <meta name="twitter:title" content="A-Frame">
-    <meta name="twitter:description" content="A web framework for building VR experiences.">
+    <meta name="twitter:description" content="A web framework for building virtual reality experiences.">
     <meta name="twitter:image" content="https://aframe.io/images/card.png">
 
     <meta name="mobile-web-app-capable" content="yes">
@@ -878,7 +878,7 @@ and functionality of entities.</p>
       </li>
     
       <li>
-        <a href="#lifecycle-methods">Lifecycle Methods</a>
+        <a href="#interface-lifecycle-methods">Interface / Lifecycle Methods</a>
 
         <!-- Nested. -->
         
@@ -894,7 +894,7 @@ and functionality of entities.</p>
             
               <li><a href="#pause-and-play">.pause() and.play()`</a></li>
             
-              <li><a href="#updateschema">.updateSchema()</a></li>
+              <li><a href="#updateschema-data">.updateSchema(data)</a></li>
             
           </ul>
         
@@ -906,6 +906,8 @@ and functionality of entities.</p>
         <!-- Nested. -->
         
           <ul>
+            
+              <li><a href="#extendschema-schema">.extendSchema(schema)</a></li>
             
               <li><a href="#flushtodom">.flushToDOM()</a></li>
             
@@ -1167,9 +1169,11 @@ properties then the HTML usage syntax will look like <code>physics=&quot;mass: 2
 velocity: 1 1 1&quot;</code>.</p>
 <p>For example, a physics component might look like:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'physics-body'</span>, &#123;</div><div class="line">  schema: &#123;</div><div class="line">    boundingBox: &#123;</div><div class="line">      type: <span class="string">'vec3'</span>,</div><div class="line">      <span class="keyword">default</span>: &#123; x: <span class="number">1</span>, y: <span class="number">1</span>, z: <span class="number">1</span> &#125;</div><div class="line">    &#125;,</div><div class="line">    mass: &#123;</div><div class="line">      <span class="keyword">default</span>: <span class="number">0</span></div><div class="line">    &#125;,</div><div class="line">    velocity: &#123;</div><div class="line">      type: <span class="string">'vec3'</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="lifecycle-methods"><a href="#lifecycle-methods" class="headerlink" title="Lifecycle Methods"></a>Lifecycle Methods</h2><p>With the schema being the anatomy, the lifecycle methods are the physiology;
-the schema defines the data, the lifecycle methods <em>use</em> the data. A component
-has access to <code>this.data</code> which in a single-property schema is a value and in a
+<h2 id="interface-lifecycle-methods"><a href="#interface-lifecycle-methods" class="headerlink" title="Interface / Lifecycle Methods"></a>Interface / Lifecycle Methods</h2><p>When writing a component, we implement one or several methods of the component
+interface. Most of these methods are lifecycle handlers. With the schema being
+the anatomy, the lifecycle methods are the physiology; the schema defines the
+data, the lifecycle methods <em>use</em> the data. A component has access to
+<code>this.data</code> which in a single-property schema is a value and in a
 multi-property schema is an object.</p>
 <p>The handlers will almost always interact with the entity. Read about the
 <a href="./entity.html">entity API</a> if you have not already.</p>
@@ -1293,7 +1297,11 @@ dynamic behavior such as event listeners.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="updateschema"><a href="#updateschema" class="headerlink" title=".updateSchema()"></a><code>.updateSchema()</code></h3><p><code>.updateSchema</code> is optionally used to dynamically modify the schema.</p>
+<h3 id="updateschema-data"><a href="#updateschema-data" class="headerlink" title=".updateSchema(data)"></a><code>.updateSchema(data)</code></h3><p><code>.updateSchema</code> is an optional method used to dynamically modify the schema,
+usually depending on the value of other properties. The example below checks if
+the type changed to determine whether or not to update the schema using
+<code>extendSchema</code>:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'example'</span>, &#123;</div><div class="line">  updateSchema: (data) &#123;</div><div class="line">    <span class="keyword">var</span> newSchema;</div><div class="line">    <span class="keyword">if</span> (data.type !== <span class="keyword">this</span>.data.type) &#123;</div><div class="line">      newSchema = getNewSchema(data.type);</div><div class="line">      <span class="keyword">this</span>.extendSchema(newSchema);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>Example uses of <code>.updateSchema</code> by some A-Frame components:</p>
 <table>
 <thead>
@@ -1313,7 +1321,11 @@ dynamic behavior such as event listeners.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="methods-1"><a href="#methods-1" class="headerlink" title="Methods"></a>Methods</h2><h3 id="flushtodom"><a href="#flushtodom" class="headerlink" title=".flushToDOM()"></a><code>.flushToDOM()</code></h3><p><code>flushToDOM</code> will manually serialize the component’s data and update the DOM.
+<h2 id="methods-1"><a href="#methods-1" class="headerlink" title="Methods"></a>Methods</h2><h3 id="extendschema-schema"><a href="#extendschema-schema" class="headerlink" title=".extendSchema(schema)"></a><code>.extendSchema(schema)</code></h3><p>Attach the new <code>schema</code> to the base schema of the component. Useful if we want
+to change the schema based on certain properties. For example, the geometry
+component changes its schema based on the <code>primitive</code> property.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'example'</span>, &#123;</div><div class="line">  updateSchema: (data) &#123;</div><div class="line">    <span class="keyword">var</span> newSchema;</div><div class="line">    <span class="keyword">if</span> (data.type !== <span class="keyword">this</span>.data.type) &#123;</div><div class="line">      newSchema = getNewSchema(data.type);</div><div class="line">      <span class="keyword">this</span>.extendSchema(newSchema);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="flushtodom"><a href="#flushtodom" class="headerlink" title=".flushToDOM()"></a><code>.flushToDOM()</code></h3><p><code>flushToDOM</code> will manually serialize the component’s data and update the DOM.
 Read more about <a href="../components/debug.html#component-to-dom-serialization">component-to-DOM serialization</a>.</p>
 <h2 id="write-a-component"><a href="#write-a-component" class="headerlink" title="Write a Component"></a>Write a Component</h2><h3 id="line-component"><a href="#line-component" class="headerlink" title="Line Component"></a>Line Component</h3><p>Let’s build an example line component that renders a line. We want to make the
 property API flexible enough to be able to specify the color and vertices:</p>
@@ -1365,7 +1377,8 @@ want to more granularly update objects for better performance.</p>
     </footer>
 
     <footer class="footer footnote">
-  <p>Caught a mistake or want to contribute to the documentation? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/core/component.md" class="github-file-link" target="_blank" rel="external">Suggest an edit to this page on GitHub</a></p>
+  <p>Except where otherwise noted, content on this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="external">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.</p>
+  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/core/component.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
 </footer>
 
   </div>

@@ -7,9 +7,39 @@
     <link>https://aframe.io/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     
-    <description>A web framework for building VR experiences.</description>
-    <pubDate>Sat, 24 Sep 2016 01:30:45 GMT</pubDate>
+    <description>A web framework for building virtual reality experiences.</description>
+    <pubDate>Sat, 01 Oct 2016 04:08:58 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>A Week of A-Frame 29</title>
+      <link>https://aframe.io/blog/awoa-29/</link>
+      <guid>https://aframe.io/blog/awoa-29/</guid>
+      <pubDate>Sun, 09 Oct 2016 07:00:00 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;The A-Frame team has started working on &lt;strong&gt;A-Shooter&lt;/strong&gt;, a VR arcade first-person
+shooting demo. It is still in its very early
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>The A-Frame team has started working on <strong>A-Shooter</strong>, a VR arcade first-person
+shooting demo. It is still in its very early stages in concept and gameplay,
+but we currently have guns, enemies, points, health, waves, and game state.</p>
+<p><img src="/images/awoa/a-shooter-1.gif" alt="A-Shooter 1"></p>
+<p>Also featuring initial spline-based enemy movement:</p>
+<p><img src="/images/awoa/a-shooter-enemy-movement.jpg" alt="A-Shooter Enemy Movement"></p>
+<p>Other work includes <strong>hooking up the A-Frame Inspector with the A-Frame
+Registry</strong>, which includes community components and perhaps assets. Below we
+can see including mountains and text components from the registry from right
+from the Inspector.</p>
+<p><img src="/images/awoa/inspector-registry.gif" alt="Inspector Registry"></p>
+<p>And also with assets:</p>
+<p><img src="/images/awoa/inspector-textures.gif" alt="Inspector Textures"></p>
+]]></content:encoded>
+      
+      <comments>https://aframe.io/blog/awoa-29/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>A Week of A-Frame 28</title>
@@ -64,9 +94,9 @@ A-Frame.</p>
       <description>
       
         &lt;blockquote&gt;
-&lt;p&gt;Want to start painting now? Grab a &lt;a href=&quot;https://webvr.info&quot;&gt;WebVR-enabled browser&lt;/a&gt;, and
-head to &lt;a href=&quot;https://aframe.io/a-painter&quot;&gt;https://aframe.io/a-painter&lt;/a&gt;!&lt;/p&gt;
-&lt;p&gt;Don’t have a headset? No problem, you can still &lt;a href=&quot;https://aframe.io/a-painter/?url=https://ucarecdn.com/3e089e07-be62-48e1-9f12-9a284c249e77/&quot;&gt;view paintings from any device&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt; Want to start painting now? Head to &lt;a href=&quot;https://aframe.io/a-painter&quot;&gt;&lt;strong&gt;https://aframe.io/a-painter&lt;/strong&gt;&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt; &lt;small class=&quot;subintro&quot;&gt;Make sure you have a &lt;a href=&quot;https://webvr.info/get-chrome/&quot;&gt;WebVR-enabled browser&lt;/a&gt;. In Chromium, enable the flags for &lt;code&gt;chrome://flags/#enable-webvr&lt;/code&gt; and &lt;code&gt;chrome://flags/#enable-gamepad-extensions&lt;/code&gt;). &lt;a href=&quot;https://blog.mozvr.com/experimental-htc-vive-support-in-firefox-nightly/&quot;&gt;Firefox support&lt;/a&gt; is coming soon.&lt;/small&gt;&lt;/p&gt;
+&lt;p&gt;&lt;small class=&quot;subintro&quot;&gt;(Don’t have a headset? No problem &amp;ndash; you can still &lt;a href=&quot;https://aframe.io/a-painter/?url=https://ucarecdn.com/3e089e07-be62-48e1-9f12-9a284c249e77/&quot;&gt;view paintings from any device&lt;/a&gt;!)&lt;/small&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;img src=&quot;/images/blog/a-painter/apainter_painting.gif&quot; alt=&quot;Looped recording of drawing in A-Painter&quot;&gt;&lt;/p&gt;
 &lt;p&gt;We on the &lt;a href=&quot;https://mozvr.com/&quot;&gt;Mozilla VR&lt;/a&gt; team are hardcore fans of &lt;a href=&quot;https://www.tiltbrush.com/&quot;&gt;Tilt
@@ -79,9 +109,9 @@ software installations.&lt;/p&gt;
       </description>
       
       <content:encoded><![CDATA[<blockquote>
-<p>Want to start painting now? Grab a <a href="https://webvr.info" target="_blank" rel="external">WebVR-enabled browser</a>, and
-head to <a href="https://aframe.io/a-painter">https://aframe.io/a-painter</a>!</p>
-<p>Don’t have a headset? No problem, you can still <a href="https://aframe.io/a-painter/?url=https://ucarecdn.com/3e089e07-be62-48e1-9f12-9a284c249e77/">view paintings from any device</a>!</p>
+<p> Want to start painting now? Head to <a href="https://aframe.io/a-painter"><strong>https://aframe.io/a-painter</strong></a>!</p>
+<p> <small class="subintro">Make sure you have a <a href="https://webvr.info/get-chrome/" target="_blank" rel="external">WebVR-enabled browser</a>. In Chromium, enable the flags for <code>chrome://flags/#enable-webvr</code> and <code>chrome://flags/#enable-gamepad-extensions</code>). <a href="https://blog.mozvr.com/experimental-htc-vive-support-in-firefox-nightly/" target="_blank" rel="external">Firefox support</a> is coming soon.</small></p>
+<p><small class="subintro">(Don’t have a headset? No problem &ndash; you can still <a href="https://aframe.io/a-painter/?url=https://ucarecdn.com/3e089e07-be62-48e1-9f12-9a284c249e77/">view paintings from any device</a>!)</small></p>
 </blockquote>
 <p><img src="/images/blog/a-painter/apainter_painting.gif" alt="Looped recording of drawing in A-Painter"></p>
 <p>We on the <a href="https://mozvr.com/" target="_blank" rel="external">Mozilla VR</a> team are hardcore fans of <a href="https://www.tiltbrush.com/" target="_blank" rel="external">Tilt
@@ -492,26 +522,6 @@ straight week in London. Forecast calls for a storm next week.</p>
 ]]></content:encoded>
       
       <comments>https://aframe.io/blog/awoa-17/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>A Week of A-Frame 16</title>
-      <link>https://aframe.io/blog/awoa-16/</link>
-      <guid>https://aframe.io/blog/awoa-16/</guid>
-      <pubDate>Fri, 03 Jun 2016 07:00:00 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;The future is looking bright with WebVR being incubated by W3C. Look forward to
-A Summer of A-Frame.&lt;/p&gt;
-
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>The future is looking bright with WebVR being incubated by W3C. Look forward to
-A Summer of A-Frame.</p>
-]]></content:encoded>
-      
-      <comments>https://aframe.io/blog/awoa-16/#disqus_thread</comments>
     </item>
     
   </channel>
