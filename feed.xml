@@ -8,7 +8,7 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     
     <description>A web framework for building virtual reality experiences.</description>
-    <pubDate>Sat, 01 Oct 2016 04:08:58 GMT</pubDate>
+    <pubDate>Sat, 01 Oct 2016 04:46:47 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -18,14 +18,18 @@
       <pubDate>Sun, 09 Oct 2016 07:00:00 GMT</pubDate>
       <description>
       
-        &lt;p&gt;The A-Frame team has started working on &lt;strong&gt;A-Shooter&lt;/strong&gt;, a VR arcade first-person
-shooting demo. It is still in its very early
+        &lt;p&gt;The A-Frame team has started working on &lt;strong&gt;A-Shooter&lt;/strong&gt;, a room-scale VR arcade
+first-person shooting demo! It is still in its
       
       </description>
       
-      <content:encoded><![CDATA[<p>The A-Frame team has started working on <strong>A-Shooter</strong>, a VR arcade first-person
-shooting demo. It is still in its very early stages in concept and gameplay,
-but we currently have guns, enemies, points, health, waves, and game state.</p>
+      <content:encoded><![CDATA[<p>The A-Frame team has started working on <strong>A-Shooter</strong>, a room-scale VR arcade
+first-person shooting demo! It is still in its very early stages in concept and
+gameplay, but we currently have guns, enemies, points, health, waves, and game
+state.  These demos have brought back necessary improvements and fixes to
+A-Frame such as <a href="https://github.com/aframevr/aframe/pull/1954" target="_blank" rel="external">object pooling
+support</a>, which are needed for
+performant bullets and enemies.</p>
 <p><img src="/images/awoa/a-shooter-1.gif" alt="A-Shooter 1"></p>
 <p>Also featuring initial spline-based enemy movement:</p>
 <p><img src="/images/awoa/a-shooter-enemy-movement.jpg" alt="A-Shooter Enemy Movement"></p>
