@@ -726,30 +726,29 @@ ul {
   display: flex;
   flex-direction: column;
 }
-.example__viewsource {
-  background: rgba(0,0,0,0.35);
-  color: #fff;
-  display: block;
-  font-size: 12px;
-  line-height: 1.5;
-  padding: 5px 10px;
+.example__controls {
   position: absolute;
   text-transform: uppercase;
   top: 5px;
   right: 5px;
   z-index: 2;
+  font-size: 12px;
+  line-height: 1.5;
 }
-.example__viewsource[href="#"] {
-  display: none;
+.example__controls a {
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+  display: inline-block;
+  padding: 5px 10px;
 }
-.example__viewsource:active,
-.example__viewsource:hover {
+.example__controls a:active,
+.example__controls a:hover {
   background-color: #ef2d5e;
 }
-.aframe-animation .example__viewsource {
+.aframe-animation .example__controls {
   display: none;
 }
-[data-is-mobile="true"] .example__viewsource {
+[data-is-mobile="true"] .example__controls {
   display: none;
 }
 .page__title {
@@ -904,13 +903,13 @@ ul {
   }
 }
 @media screen and (min-width: 480px) {
-  .example__viewsource {
+  .example__controls {
     top: 20px;
     right: 20px;
   }
 }
 @media screen and (min-width: 800px) {
-  .example__viewsource {
+  .example__controls {
     top: 30px;
     right: 30px;
   }
