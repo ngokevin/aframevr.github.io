@@ -8,14 +8,43 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     
     <description>A web framework for building virtual reality experiences.</description>
-    <pubDate>Sat, 01 Oct 2016 21:26:56 GMT</pubDate>
+    <pubDate>Fri, 14 Oct 2016 22:21:44 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>A Week of A-Frame 30</title>
+      <link>https://aframe.io/blog/awoa-30/</link>
+      <guid>https://aframe.io/blog/awoa-30/</guid>
+      <pubDate>Fri, 14 Oct 2016 07:00:00 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;The big 30! We released A-Frame v0.3.2 to handle some breaking changes in
+nightly builds of Firefox and Chromium in regards to the WebVR 
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>The big 30! We released A-Frame v0.3.2 to handle some breaking changes in
+nightly builds of Firefox and Chromium in regards to the WebVR 1.1.
+specification.</p>
+<p>Work on the Registry continues with an updated frontend with inclusion of
+animation and physics:</p>
+<p><img src="/images/awoa/registrypage.jpg" alt="Registry"></p>
+<p>And those will soon be usable from the Inspector:</p>
+<p><img src="/images/awoa/inspector-registry-preview.gif" alt="Inspector"></p>
+<p>We’re also working on a new command-line tool,
+<a href="https://github.com/ngokevin/angle" target="_blank" rel="external">Angle</a> to make it easier for developers to
+create and consume components from the Registry, and get started building a new
+scene.</p>
+]]></content:encoded>
+      
+      <comments>https://aframe.io/blog/awoa-30/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>A Week of A-Frame 29</title>
       <link>https://aframe.io/blog/awoa-29/</link>
       <guid>https://aframe.io/blog/awoa-29/</guid>
-      <pubDate>Sun, 09 Oct 2016 07:00:00 GMT</pubDate>
+      <pubDate>Fri, 30 Sep 2016 07:00:00 GMT</pubDate>
       <description>
       
         &lt;p&gt;The A-Frame team has started working on &lt;strong&gt;A-Shooter&lt;/strong&gt;, a room-scale VR arcade
@@ -506,26 +535,6 @@ to say hi as well. There’s strong momentum heading into the second half of
 ]]></content:encoded>
       
       <comments>https://aframe.io/blog/awoa-18/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>A Week of A-Frame 17</title>
-      <link>https://aframe.io/blog/awoa-17/</link>
-      <guid>https://aframe.io/blog/awoa-17/</guid>
-      <pubDate>Fri, 10 Jun 2016 07:00:00 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;The entire Mozilla VR team, &lt;a href=&quot;https://twitter.com/donrmccurdy&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Don McCurdy&lt;/a&gt;, and
-&lt;a href=&quot;https:
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>The entire Mozilla VR team, <a href="https://twitter.com/donrmccurdy" target="_blank" rel="external">Don McCurdy</a>, and
-<a href="https://twitter.com/drawvr" target="_blank" rel="external">DrawVR</a> will be hacking on WebVR demos for a
-straight week in London. Forecast calls for a storm next week.</p>
-]]></content:encoded>
-      
-      <comments>https://aframe.io/blog/awoa-17/#disqus_thread</comments>
     </item>
     
   </channel>
