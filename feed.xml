@@ -8,7 +8,7 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     
     <description>A web framework for building virtual reality experiences.</description>
-    <pubDate>Fri, 14 Oct 2016 22:21:44 GMT</pubDate>
+    <pubDate>Fri, 14 Oct 2016 22:44:24 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -35,6 +35,7 @@ animation and physics:</p>
 <a href="https://github.com/ngokevin/angle" target="_blank" rel="external">Angle</a> to make it easier for developers to
 create and consume components from the Registry, and get started building a new
 scene.</p>
+<p><a href="https://youtu.be/zlxyjx3bJ28?t=14m40s" target="_blank" rel="external">And John Carmack uttered the words “A-Frame”</a>.</p>
 ]]></content:encoded>
       
       <comments>https://aframe.io/blog/awoa-30/#disqus_thread</comments>
