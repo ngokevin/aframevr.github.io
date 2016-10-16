@@ -504,6 +504,13 @@
           </li>
         
           <li class="subnav-item ">
+            <a href="/docs/master/components/pool.html"
+               class="subnav-link">
+              pool
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
             <a href="/docs/master/components/position.html"
                class="subnav-link">
               position
@@ -1119,6 +1126,16 @@ available depending on the material applied.</p>
 <td>640</td>
 </tr>
 <tr>
+<td>wireframe</td>
+<td>Whether to render just the geometry edges.</td>
+<td>false</td>
+</tr>
+<tr>
+<td>wireframeLinewidth</td>
+<td>Width in px of the rendered line.</td>
+<td>2</td>
+</tr>
+<tr>
 <td>src</td>
 <td>Image or video texture map. Can either be a selector to an <code>&lt;img&gt;</code> or <code>&lt;video&gt;</code>, or an inline URL.</td>
 <td>None</td>
@@ -1192,6 +1209,16 @@ such as images or videos. Set <code>shader</code> to <code>flat</code>:</p>
 <td>width</td>
 <td>Width of video (in pixels), if defining a video texture.</td>
 <td>640</td>
+</tr>
+<tr>
+<td>wireframe</td>
+<td>Whether to render just the geometry edges.</td>
+<td>false</td>
+</tr>
+<tr>
+<td>wireframeLinewidth</td>
+<td>Width in px of the rendered line.</td>
+<td>2</td>
 </tr>
 </tbody>
 </table>
@@ -1313,7 +1340,7 @@ uniform, set <code>is</code> to <code>uniform</code>:</p>
 </table>
 <h3 id="example-2"><a href="#example-2" class="headerlink" title="Example"></a>Example</h3><p>Here is a simple shader that sets the material to a flat color. The vertex
 shader shown is the default vertex shader. The shaders need to be a string:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerShader(<span class="string">'hello-world'</span>, &#123;</div><div class="line">  schema: &#123;</div><div class="line">    color: &#123;type: <span class="string">'vec3'</span>, <span class="keyword">default</span>: <span class="string">'0.5 0.5 0.5'</span>, is: <span class="string">'uniform'</span>&#125;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  vertexShader: [</div><div class="line">    <span class="string">'void main() &#123;'</span>,</div><div class="line">    <span class="string">'  gl_Position = projectionMatrix * modelViewMatrix * position;'</span>,</div><div class="line">    <span class="string">'&#125;'</span></div><div class="line">  ].join(<span class="string">'\n'</span>),</div><div class="line"></div><div class="line">  fragmentShader: [</div><div class="line">    <span class="string">'uniform vec3 color;'</span></div><div class="line">    <span class="string">'void main() &#123;'</span></div><div class="line">    <span class="string">'  gl_FragColor = vec4(color, 1.0);'</span>,</div><div class="line">    <span class="string">'&#125;'</span></div><div class="line">  ].join(<span class="string">'\n'</span>)</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerShader(<span class="string">'hello-world'</span>, &#123;</div><div class="line">  schema: &#123;</div><div class="line">    color: &#123;type: <span class="string">'vec3'</span>, <span class="keyword">default</span>: <span class="string">'0.5 0.5 0.5'</span>, is: <span class="string">'uniform'</span>&#125;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  vertexShader: [</div><div class="line">    <span class="string">'void main() &#123;'</span>,</div><div class="line">    <span class="string">'  gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);'</span>,</div><div class="line">    <span class="string">'&#125;'</span></div><div class="line">  ].join(<span class="string">'\n'</span>),</div><div class="line"></div><div class="line">  fragmentShader: [</div><div class="line">    <span class="string">'uniform vec3 color;'</span></div><div class="line">    <span class="string">'void main() &#123;'</span></div><div class="line">    <span class="string">'  gl_FragColor = vec4(color, 1.0);'</span>,</div><div class="line">    <span class="string">'&#125;'</span></div><div class="line">  ].join(<span class="string">'\n'</span>)</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>Then to use the custom shader, we set the material component’s <code>shader</code> property to
 the name of the registered shader. Then we pass the defined shader uniforms as
 properties like we would with components:</p>

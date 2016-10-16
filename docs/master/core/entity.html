@@ -504,6 +504,13 @@
           </li>
         
           <li class="subnav-item ">
+            <a href="/docs/master/components/pool.html"
+               class="subnav-link">
+              pool
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
             <a href="/docs/master/components/position.html"
                class="subnav-link">
               position
@@ -989,11 +996,15 @@ include applied mixins or default values:</p>
 </tr>
 <tr>
 <td>componentchanged</td>
-<td>One of the entity’s component’s data was modified.</td>
+<td>One of the entity’s components was modified.</td>
+</tr>
+<tr>
+<td>componentinit</td>
+<td>One of the entity’s components was initialized.</td>
 </tr>
 <tr>
 <td>componentremoved</td>
-<td>One of the entity’s component was removed.</td>
+<td>One of the entity’s components was removed.</td>
 </tr>
 <tr>
 <td>loaded</td>
@@ -1037,11 +1048,6 @@ include applied mixins or default values:</p>
 <td>Reference to the attached child element.</td>
 </tr>
 <tr>
-<td>componentremoved</td>
-<td>name</td>
-<td>Name of component that was removed.</td>
-</tr>
-<tr>
 <td>componentchanged</td>
 <td>name</td>
 <td>Name of component that had its data modified.</td>
@@ -1049,7 +1055,7 @@ include applied mixins or default values:</p>
 <tr>
 <td></td>
 <td>id</td>
-<td>Id of component that had its data modified.</td>
+<td>ID of component that had its data modified.</td>
 </tr>
 <tr>
 <td></td>
@@ -1060,6 +1066,31 @@ include applied mixins or default values:</p>
 <td></td>
 <td>oldData</td>
 <td>Component’s previous data, before it was modified.</td>
+</tr>
+<tr>
+<td>componentinitialized</td>
+<td>name</td>
+<td>Name of component that was initialized.</td>
+</tr>
+<tr>
+<td></td>
+<td>id</td>
+<td>ID of component that had its data modified.</td>
+</tr>
+<tr>
+<td></td>
+<td>data</td>
+<td>Component data.</td>
+</tr>
+<tr>
+<td>componentremoved</td>
+<td>name</td>
+<td>Name of component that was removed.</td>
+</tr>
+<tr>
+<td></td>
+<td>id</td>
+<td>ID of component that was removed.</td>
 </tr>
 <tr>
 <td>stateadded</td>

@@ -377,16 +377,16 @@
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/0.3.0/core/AFRAME.html"
+            <a href="/docs/0.3.0/core/utils.html"
                class="subnav-link">
-              AFRAME Globals
+              Utils
             </a>
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/0.3.0/core/utils.html"
+            <a href="/docs/0.3.0/core/AFRAME.html"
                class="subnav-link">
-              Utils
+              AFRAME Globals
             </a>
           </li>
         
@@ -866,7 +866,16 @@ and open it from the same directory as your HTML file.</li>
 <li>Or use Node and npm to start the local server with <code>npm install &amp;&amp; npm run start</code>.</li>
 </ul>
 <h2 id="include-the-js-build"><a href="#include-the-js-build" class="headerlink" title="Include the JS Build"></a>Include the JS Build</h2><p>If we want to just include the JS build from the CDN, we can drop a <code>&lt;script&gt;</code> tag straight into our HTML:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Production Version, Minified --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/&#123;&#123; version &#125;&#125;/aframe.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- Development Version, Uncompressed with Source Maps --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/&#123;&#123; version &#125;&#125;/aframe.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<pre>
+  <code>
+    <!-- Production Version, Minified -->
+    <script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
+
+    <!-- Development Version, Uncompressed with Source Maps -->
+    <script src="https://aframe.io/releases/0.3.0/aframe.js"></script>
+  </code>
+</pre>
+
 <p>If we want to serve it locally, we can download the JS build:</p>
 <p><a id="builds-prod" class="btn btn-download" href="https://aframe.io/releases/0.3.0/aframe.min.js" download="">Production Version <span>0.3.0</span></a> <em class="install-note">Minified</em>
 <a id="builds-dev" class="btn btn-download" href="https://aframe.io/releases/0.3.0/aframe.js" download="">Development Version <span>0.3.0</span></a> <em class="install-note">Uncompressed with Source Maps</em></p>
