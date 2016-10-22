@@ -291,12 +291,20 @@ dd code {
 p {
   word-spacing: 0.05em;
 }
-h1,
+h1 {
+  color: #305f83;
+}
 h2,
 h3,
 h4 {
-  font-weight: 600;
   color: #2c3e50;
+}
+h3 {
+  font-weight: 400;
+}
+h2,
+h4 {
+  font-weight: 500;
 }
 .btn {
   cursor: pointer;
@@ -336,11 +344,8 @@ h4 {
   width: 280px;
   margin-left: 20px;
 }
-.copy h1 {
-  margin: 0;
-}
 .copy h2 {
-  margin: 2em 0 0.8em;
+  margin: 1.5em 0 0.8em;
   padding-bottom: 0.7em;
   border-bottom: 1px solid #ddd;
 }
@@ -353,7 +358,7 @@ h4 {
 }
 .copy h3,
 .copy h4 {
-  margin: 2em 0 1.2em;
+  margin: 2em 0 0.25em;
   position: relative;
 }
 .copy figure,
@@ -492,19 +497,30 @@ h4 {
     margin-bottom: 20px;
   }
 }
-.content--structured .page__section,
+.page__section,
 .section-title,
 .install-note,
 .mobile-nav-btn,
 .nav-item {
   font-family: Andale Mono, Monaco, Courier, monospace;
 }
-.font-loaded-mono .content--structured .page__section,
+.font-loaded-mono .page__section,
 .font-loaded-mono .section-title,
 .font-loaded-mono .install-note,
 .font-loaded-mono .mobile-nav-btn,
 .font-loaded-mono .nav-item {
   font-family: Fira Mono, Andale Mono, Monaco, Courier, monospace;
+}
+.page__title {
+  color: #ef2d5e;
+  font: 300 36px/1.3 Helvetica, Arial, sans-serif;
+  margin: -7px 0 20px;
+}
+h2.post__heading {
+  margin: 0;
+}
+.font-loaded-sans .page__title {
+  font-family: Fira Sans, Helvetica, Arial, sans-serif;
 }
 a {
   border-bottom: 1px solid rgba(53,196,232,0.15);
@@ -530,8 +546,8 @@ a.click {
 .nav {
   border-top: 1px dashed rgba(0,0,0,0.1);
   border-bottom: 1px dashed rgba(0,0,0,0.1);
-  margin-bottom: 30px;
-  padding: 30px 0;
+  margin-bottom: 25px;
+  padding: 25px 0;
 }
 .nav-link {
   color: rgba(0,0,0,0.35);
@@ -603,12 +619,6 @@ a.click {
   display: flex;
   flex-direction: column;
 }
-.page__title {
-  font: 600 36px/1.3 Helvetica, Arial, sans-serif;
-}
-.font-loaded-sans .page__title {
-  font-family: Fira Sans, Helvetica, Arial, sans-serif;
-}
 .copy .footnote {
   border-top: 2px solid #eee;
   clear: both;
@@ -653,14 +663,15 @@ a.click {
 .copy__wrap > table tr:not(:last-child) td {
   border-bottom: 1px solid #eee;
 }
-.content--structured .page__section {
+p.page__section {
   font-size: 11px;
   font-weight: 600;
   line-height: 1.2;
-  margin: 0 0 5px;
+  margin: 0 0 10px;
   text-transform: uppercase;
 }
-.content--structured .page__section a {
+p.page__section a {
+  color: #7f8c8d;
   display: block;
 }
 .section-title,
@@ -681,9 +692,6 @@ a.click {
 .section-subnav {
   margin-bottom: 10px;
 }
-.copy .post__heading {
-  margin-bottom: 0;
-}
 .post__projects {
   display: flex;
   flex-wrap: wrap;
@@ -700,9 +708,6 @@ a.click {
 }
 .post__projects a:hover {
   border-color: #35c5e9;
-}
-.post-listing .post__projects a:nth-child(2) ~ a {
-  display: none;
 }
 .post__projects-text li p {
   display: inline;
@@ -723,7 +728,20 @@ a.click {
   margin-bottom: 15px;
 }
 .post__metadata p {
+  margin: 0;
+}
+.content--blog h1 + .post--listing {
+  margin-top: 9px /* To align the borders nicely since there's no visible <h1>. */;
+}
+.post--listing + .post--listing {
+  margin-top: 30px;
+}
+.post--listing .post__metadata p {
   margin: 20px 0 0;
+}
+/* Show only the first two thumbnails/previews. */
+.post--listing .post__projects a:nth-child(2) ~ a {
+  display: none;
 }
 .post__image {
   display: block;

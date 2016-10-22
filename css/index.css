@@ -291,12 +291,20 @@ dd code {
 p {
   word-spacing: 0.05em;
 }
-h1,
+h1 {
+  color: #305f83;
+}
 h2,
 h3,
 h4 {
-  font-weight: 600;
   color: #2c3e50;
+}
+h3 {
+  font-weight: 400;
+}
+h2,
+h4 {
+  font-weight: 500;
 }
 .btn {
   cursor: pointer;
@@ -336,11 +344,8 @@ h4 {
   width: 280px;
   margin-left: 20px;
 }
-.copy h1 {
-  margin: 0;
-}
 .copy h2 {
-  margin: 2em 0 0.8em;
+  margin: 1.5em 0 0.8em;
   padding-bottom: 0.7em;
   border-bottom: 1px solid #ddd;
 }
@@ -353,7 +358,7 @@ h4 {
 }
 .copy h3,
 .copy h4 {
-  margin: 2em 0 1.2em;
+  margin: 2em 0 0.25em;
   position: relative;
 }
 .copy figure,
