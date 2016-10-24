@@ -317,7 +317,7 @@ an end-to-end tool such as Unity. The easiest way to try out the A-Frame
 Inspector is to press <code>&lt;ctrl&gt; + &lt;alt&gt; + i</code> on any A-Frame scene using v0.3.0.</p>
 <p><img src="../../images/blog/v0.3.0-inspector.gif" alt="A-Frame Inspector Demo"></p>
 <p>Other noteworthy changes include significant performance improvements,
-improved support for multiple scenes embedded within a single webpage,
+improved support for multiple scenes embedded within a single web page,
 and support for multiple instances of components of the same type.</p>
 <p>Check out the <a href="https://github.com/aframevr/aframe/releases/tag/v0.3.0" target="_blank" rel="external">release notes</a> for the complete changelog, which
 includes a list of possible breaking changes.</p>
@@ -341,7 +341,7 @@ series to showcase community content, components, and contributions.</p>
 <ul>
 <li><strong>Component Packs:</strong> <a href="https://github.com/donmccurdy/aframe-extras" target="_blank" rel="external">aframe-extras</a> by <a href="https://github.com/donmccurdy/aframe-extras" target="_blank" rel="external">Don McCurdy</a> enables
 additional <strong>controls</strong>, <strong>physics</strong>, and loaders. <a href="https://github.com/ngokevin/k-frame" target="_blank" rel="external">k-frame</a>
-enables <strong>audio visualizations</strong>, <strong>multiuser</strong>, <strong>templating</strong>, layout, text,
+enables <strong>audio visualizations</strong>, <strong>multi-user</strong>, <strong>templating</strong>, layout, text,
 and improved animations.</li>
 <li><strong>Geometries:</strong> <a href="https://github.com/nylki/aframe-lsystem-component" target="_blank" rel="external">Procedural geometries</a>, <a href="https://github.com/bryik/aframe-bmfont-text-component" target="_blank" rel="external">Bitmap font text</a>,
 <a href="https://github.com/andreasplesch/aframe-heightgrid-component" target="_blank" rel="external">terrains</a>, <a href="https://github.com/donmccurdy/aframe-extras" target="_blank" rel="external">oceans</a>, and <a href="https://github.com/dbradleyfl/aframe-gridhelper" target="_blank" rel="external">grids</a>.</li>
@@ -354,7 +354,7 @@ and improved animations.</li>
 <p><img src="../../images/awoa/argon.gif" alt="A-Frame Augmented Reality with Argon Browser"></p>
 <h2 id="what’s-next"><a href="#what’s-next" class="headerlink" title="What’s Next?"></a>What’s Next?</h2><p>We want to make it <strong>easier to get started</strong> with A-Frame. This includes a
 refreshed homepage with new example scenes that act as starter kits. These
-examples will be accompanied with free assets, guides, and workflows tutorials
+examples will be accompanied with free assets, guides, and workflow tutorials
 on how to use A-Frame alongside tools such as <a href="https://ephtracy.github.io/" target="_blank" rel="external">MagicaVoxel</a> and
 <a href="https://www.blender.org/" target="_blank" rel="external">Blender</a>.</p>
 <p>We are also excited to improve the component discovery and consumption process
@@ -395,12 +395,12 @@ just about clear. Any time now!</p>
       <pubDate>Fri, 05 Aug 2016 07:00:00 GMT</pubDate>
       <description>
       
-        &lt;p&gt;0.3.0 &lt;a href=&quot;https://github.com/aframevr/aframe/milestone/2&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;milestone burndown&lt;/a&gt;!
-While we still try 
+        &lt;p&gt;0.3.0 &lt;a href=&quot;https://github.com/aframevr/aframe/milestone/2&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;milestone burn-down list&lt;/a&gt;!
+While we stil
       
       </description>
       
-      <content:encoded><![CDATA[<p>0.3.0 <a href="https://github.com/aframevr/aframe/milestone/2" target="_blank" rel="external">milestone burndown</a>!
+      <content:encoded><![CDATA[<p>0.3.0 <a href="https://github.com/aframevr/aframe/milestone/2" target="_blank" rel="external">milestone burn-down list</a>!
 While we still try to get the release out, augmented reality continues to creep
 in…</p>
 ]]></content:encoded>
@@ -423,8 +423,8 @@ in…</p>
 milestone</a> has been updated.</p>
 <p><a href="http://blairmacintyre.me/" target="_blank" rel="external">Blair MacIntyre</a>, a Georgia Tech professor researching
 augmented reality got A-Frame working in the Argon AR Browser:</p>
-<video autoplay loop src="/images/awoa/argon.mp4" width="240">
-</video>]]></content:encoded>
+<video autoplay loop src="/images/awoa/argon.mp4" width="240"></video>
+]]></content:encoded>
       
       <comments>https://aframe.io/blog/awoa-23/#disqus_thread</comments>
     </item>
@@ -437,13 +437,14 @@ augmented reality got A-Frame working in the Argon AR Browser:</p>
       <description>
       
         &lt;p&gt;Tracked controllers has landed! Use the HTC Vive controllers with A-Frame. NPR
-has published a WebVR site, rondagdag hooked up A-Frame to
+has published a WebVR site, &lt;a href=&quot;https://twitter.com/r
       
       </description>
       
       <content:encoded><![CDATA[<p>Tracked controllers has landed! Use the HTC Vive controllers with A-Frame. NPR
-has published a WebVR site, rondagdag hooked up A-Frame to control a robot with
-Leap Motion, and we now have an initial community code of conduct!</p>
+has published a WebVR site, <a href="https://twitter.com/rondagdag" target="_blank" rel="external">@rondagdag</a> hooked
+up A-Frame to control a robot with Leap Motion, and we now have an <a href="https://github.com/aframevr/aframe/blob/master/CODE_OF_CONDUCT.md" target="_blank" rel="external">initial
+community code of conduct</a>!</p>
 <p>0.3.0 is still in progress, and several members of the team will be out next
 week. We need to land <a href="https://github.com/aframevr/aframe/pull/1474" target="_blank" rel="external">improved embedded scene
 support</a>, fix the <a href="https://github.com/aframevr/aframe/issues/1541" target="_blank" rel="external">resolution
@@ -451,8 +452,8 @@ quality regression on VR
 mobile</a>, implement built-in
 link traversal support, and <a href="https://github.com/aframevr/aframe-site/tree/redesign" target="_blank" rel="external">refresh the
 homepage</a>. We may
-publish an official beta build next week to hold over depending on our
-progress.</p>
+publish an official beta build next week to hold folks over (depending on our
+progress).</p>
 ]]></content:encoded>
       
       <comments>https://aframe.io/blog/awoa-22/#disqus_thread</comments>
@@ -523,16 +524,16 @@ underway, and the slated release target for 0.3.0 is the end of next week!</p>
       <pubDate>Fri, 17 Jun 2016 07:00:00 GMT</pubDate>
       <description>
       
-        &lt;p&gt;The Mozilla VR team got together in London with contributors, &lt;a href=&quot;https://twitter.com/donrmccurdy&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Do
+        &lt;p&gt;The Mozilla VR team met up together in London with contributors, &lt;a href=&quot;https://twitter.com/donrmccurdy&quot; target=&quot;_blank&quot; rel=&quot;external&quot;
       
       </description>
       
-      <content:encoded><![CDATA[<p>The Mozilla VR team got together in London with contributors, <a href="https://twitter.com/donrmccurdy" target="_blank" rel="external">Don
+      <content:encoded><![CDATA[<p>The Mozilla VR team met up together in London with contributors, <a href="https://twitter.com/donrmccurdy" target="_blank" rel="external">Don
 McCurdy</a> and <a href="https://drawvr.com" target="_blank" rel="external">DrawVR</a>, who
 have been with A-Frame since the start. And
 <a href="https://twitter.com/georational" target="_blank" rel="external">@georational</a> from down the street stopped by
 to say hi as well. There’s strong momentum heading into the second half of
-2016, let’s do special things to finish off The Year of VR!</p>
+2016; let’s do special things to finish off The Year of VR!</p>
 ]]></content:encoded>
       
       <comments>https://aframe.io/blog/awoa-18/#disqus_thread</comments>
