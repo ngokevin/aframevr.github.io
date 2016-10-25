@@ -9,7 +9,7 @@ pre .constant {
   color: #0092db;
 }
 pre .keyword,
-pre .attribute {
+pre .attr {
   color: #e96900;
 }
 pre .number,
@@ -925,6 +925,8 @@ ul {
 }
 .home-feature-links li {
   line-height: 30px;
+  margin-left: -3px;
+  padding: 2px 4px 2px 3px;
   text-transform: uppercase;
 }
 .home-feature-links li:hover {
@@ -933,6 +935,7 @@ ul {
 .home-feature-links a {
   border: 0;
   color: #fff;
+  display: block;
 }
 [data-is-mobile="false"] .home-feature-links {
   display: block;

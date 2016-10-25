@@ -9,7 +9,7 @@ pre .constant {
   color: #0092db;
 }
 pre .keyword,
-pre .attribute {
+pre .attr {
   color: #e96900;
 }
 pre .number,
