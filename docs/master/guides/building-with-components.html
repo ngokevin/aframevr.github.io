@@ -377,16 +377,16 @@
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/core/AFRAME.html"
+            <a href="/docs/master/core/utils.html"
                class="subnav-link">
-              AFRAME Globals
+              Utils
             </a>
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/core/utils.html"
+            <a href="/docs/master/core/AFRAME.html"
                class="subnav-link">
-              Utils
+              AFRAME Globals
             </a>
           </li>
         
@@ -535,6 +535,13 @@
             <a href="/docs/master/components/scale.html"
                class="subnav-link">
               scale
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/screenshot.html"
+               class="subnav-link">
+              screenshot
             </a>
           </li>
         
@@ -863,7 +870,7 @@ swap the 360&deg; images.</p>
         
           <ul>
             
-              <li><a href="#update-raycaster-component">Update Raycaster Component</a></li>
+              <li><a href="#configuring-the-raycaster">Configuring the Raycaster</a></li>
             
               <li><a href="#set-image-component">Set-Image Component</a></li>
             
@@ -965,26 +972,12 @@ writing your own simple components.</p>
 <h2 id="writing-components"><a href="#writing-components" class="headerlink" title="Writing Components"></a>Writing Components</h2><p>The <a href="../core/component.html">component documentation</a> has detailed information on writing a
 component. The most basic component takes the form of:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'component-name'</span>, &#123;</div><div class="line">  <span class="comment">// Define component properties.</span></div><div class="line">  schema: &#123;&#125;,</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line">   * Run when component is attached.</div><div class="line">   * @member &#123;Element&#125; el - Entity.</div><div class="line">   * @member data - Component data.</div><div class="line">   */</div><div class="line">  init: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// Do stuff using `this.el` and `this.data`.</span></div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h3 id="update-raycaster-component"><a href="#update-raycaster-component" class="headerlink" title="Update Raycaster Component"></a>Update Raycaster Component</h3><p>First, let us whitelist the entities that the cursor’s raycaster is checking
-for intersections against. That way, the cursor will only click if something
-can be clicked, and it is also better for performance. The cursor is built on
-top of the <a href="http://threejs.org/docs/index.html#Reference/Core/Raycaster" target="_blank" rel="external">raycaster component</a>, and we can configure the
-raycaster. We update the raycaster component’s <code>objects</code> property which takes a
-selector:</p>
+<h3 id="configuring-the-raycaster"><a href="#configuring-the-raycaster" class="headerlink" title="Configuring the Raycaster"></a>Configuring the Raycaster</h3><p>We can specify the entities that the cursor’s raycaster checks for
+intersections against. That way, the cursor will only click if something can be
+clicked, and it is also better for performance. The cursor is built on top of
+the <a href="http://threejs.org/docs/index.html#Reference/Core/Raycaster" target="_blank" rel="external">raycaster component</a>, and we can configure the raycaster. We
+update the raycaster component’s <code>objects</code> property which takes a selector:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-cursor</span> <span class="attr">id</span>=<span class="string">"cursor"</span> <span class="attr">raycaster</span>=<span class="string">"objects: .link"</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>This list will be populated once the raycaster component attaches.
-Unfortunately since the links are templated, they won’t be found at that time.
-What we can do is write a component that refreshes our raycaster when the link
-attaches. Here is the skeleton of our component:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'update-raycaster'</span>, &#123;</div><div class="line">  <span class="attr">schema</span>: &#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>First, we fill out the <a href="../components/components.html#schema"><code>schema</code></a> so that we can pass in which raycaster to
-update. We make it a single-property schema that takes a selector such that we can
-simply do <code>update-raycaster=&quot;#cursor&quot;</code>:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'update-raycaster'</span>, &#123;</div><div class="line">  <span class="attr">schema</span>: &#123;</div><div class="line">    <span class="attr">type</span>: <span class="string">'selector'</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>Then we use that data to actually update the raycaster in the <code>init</code> lifecycle
-method, which is called when the component is attached to the entity. We grab
-the raycaster and update it:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'update-raycaster'</span>, &#123;</div><div class="line">  <span class="attr">schema</span>: &#123;</div><div class="line">    <span class="attr">type</span>: <span class="string">'selector'</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> raycasterEl = <span class="keyword">this</span>.data;</div><div class="line">    <span class="keyword">this</span>.data.components.raycaster.refreshObjects();</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <h3 id="set-image-component"><a href="#set-image-component" class="headerlink" title="Set-Image Component"></a>Set-Image Component</h3><blockquote>
 <p>View the full <a href="https://github.com/aframevr/360-image-viewer-boilerplate/blob/master/components/set-image.js" target="_blank" rel="external"><code>set-image</code> component on GitHub</a>.</p>
 </blockquote>

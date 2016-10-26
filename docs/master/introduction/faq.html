@@ -377,16 +377,16 @@
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/core/AFRAME.html"
+            <a href="/docs/master/core/utils.html"
                class="subnav-link">
-              AFRAME Globals
+              Utils
             </a>
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/core/utils.html"
+            <a href="/docs/master/core/AFRAME.html"
                class="subnav-link">
-              Utils
+              AFRAME Globals
             </a>
           </li>
         
@@ -535,6 +535,13 @@
             <a href="/docs/master/components/scale.html"
                class="subnav-link">
               scale
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/screenshot.html"
+               class="subnav-link">
+              screenshot
             </a>
           </li>
         
@@ -838,6 +845,17 @@ previously asked and answered questions.</p>
       </li>
     
       <li>
+        <a href="#how-is-a-frame’s-performance">How is A-Frame’s performance?</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
         <a href="#why-does-my-asset-e-g-image-video-model-not-load">Why does my asset (e.g., image, video, model) not load?</a>
 
         <!-- Nested. -->
@@ -1036,19 +1054,35 @@ Under the hood, it is a <a href="http://threejs.org" target="_blank" rel="extern
 and to kick-start the WebVR content ecosystem. It is easy to learn and fast to
 develop, allowing us to quickly prototype patterns and experiences. A-Frame is
 a vehicle in which to make WebVR successful.</p>
-<h2 id="how-can-i-get-started"><a href="#how-can-i-get-started" class="headerlink" title="How can I get started?"></a>How can I get started?</h2><p>A-Frame is very extensive across different disciplines so it can be difficult
-to know how to get started. We’ve tried our best to compile resources to get
-your started on your journey.</p>
-<p>The examples on the <a href="https://aframe.io">homepage</a> act as a starting point for you to
-read, copy, and paste code to quickly get started. Each example comes with an
-accompanying guide explaining how it was built and what components were used to
-built it that will help your understanding.</p>
-<p>Below the examples are various workflow <a href="../guides/">guides</a> featuring different
-tools and libraries. Select a guide based on what you are comfortable with
-(e.g., whether you know how to code, whether you know a certain framework,
-whether you know how to model).</p>
-<p>If you need additional support, <a href="#how-can-i-get-in-touch-with-the-aframe-team">contact us</a>! We are very interested
-in understanding learning curve difficulties.</p>
+<h2 id="how-can-i-get-started"><a href="#how-can-i-get-started" class="headerlink" title="How can I get started?"></a>How can I get started?</h2><p>Read the <a href="../introduction/">Introduction</a> to get a deeper feel of what A-Frame is.</p>
+<p>See the <a href="../introduction/getting-started.html">Getting Started</a> guide to get set up.</p>
+<p>Check out the <a href="../guides/">guides</a> for basic tutorials.</p>
+<p>Past that, you can browse the resources on the <a href="https://github.com/aframevr/awesome-aframe" target="_blank" rel="external"><code>awesome-aframe</code>
+repository</a>. If you need additional support, <a href="https://stackoverflow.com/questions/ask/?tags=aframe" target="_blank" rel="external">ask on
+StackOverflow</a>.</p>
+<h2 id="how-is-a-frame’s-performance"><a href="#how-is-a-frame’s-performance" class="headerlink" title="How is A-Frame’s performance?"></a>How is A-Frame’s performance?</h2><p>The layout system of the DOM have been one of the primary performance
+bottlenecks for web applications. A-Frame uses the DOM via Custom Elements as
+effectively data containers for objects in the scene graph. These elements are
+not touched by the browser’s rendering system and ultimately rendered with
+WebGL. This allows us to run 90+ FPS room-scale experiences in the HTC Vive.
+See <a href="https://blog.mozvr.com/a-painter" target="_blank" rel="external">A-Painter</a> for an example of a full A-Frame application running
+with smooth performance.</p>
+<ul>
+<li>The effects of <code>setAttribute</code> are synchronous. When modifying an entity’s
+position, there is almost zero overhead. Doing <code>setAttribute(&#39;position&#39;, {x:
+1, y: 2, z: 3})</code> is practically directly modifying the underlying three.js
+objects themselves.</li>
+<li>When changing an entity’s properties, data is not serialized back to the DOM. This
+reduces the DOM overhead and most modifications are done directly in memory,
+similar to Virtual DOM.</li>
+<li>HTML attributes explicitly set from an HTML file are cached in memory.</li>
+</ul>
+<p>A-Frame provides reasonable defaults that yield good performance for the most
+common use cases. However, performance is ultimately determined by the
+complexity and characteristics of each individual scene. To get the best use of
+resources, we will need deeper understanding about 3D graphics. Read these
+<a href="../introduction/best-pratices.html">best performance practices and guidelines</a> to help get you
+started.</p>
 <h2 id="why-does-my-asset-e-g-image-video-model-not-load"><a href="#why-does-my-asset-e-g-image-video-model-not-load" class="headerlink" title="Why does my asset (e.g., image, video, model) not load?"></a>Why does my asset (e.g., image, video, model) not load?</h2><p>If you are loading the asset from a different domain, make sure that the asset
 is served with <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" target="_blank" rel="external">cross-origin resource sharing (CORS) headers</a>. You could
 either find a host to serve the asset with CORS headers, or place the asset on
