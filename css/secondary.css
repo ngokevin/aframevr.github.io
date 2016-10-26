@@ -1097,7 +1097,7 @@ video {
     top: 0;
   }
 }
-.docs-search-wrapper p {
+.docs-search-wrapper .stackoverflow-link {
   font-family: Fira Sans, Helvetica, Arial, sans-serif;
   font-size: 12px;
   font-weight: 400;
@@ -1106,7 +1106,7 @@ video {
 }
 .algolia-autocomplete {
   font-family: Fira Sans, Helvetica, Arial, sans-serif;
-  text-transform: none;
+  font-size: 12px;
   width: 100%;
 }
 #search {
@@ -1132,7 +1132,7 @@ video {
   border: 0;
   color: #fafafa !important;
   font-weight: 300;
-  padding: 5px !important;
+  padding: 3px 5px !important;
 }
 /* Highlighted search terms */
 .algolia-docsearch-suggestion--highlight {
