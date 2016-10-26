@@ -87,6 +87,9 @@
 </script>
 
 
+
+    <!-- Search. -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
   </head>
   <body data-page-layout="docs"
         data-page-type="core">
@@ -186,32 +189,31 @@
 
 
   <div class="list">
-
-      <!-- Version dropdown. -->
-      <label class="subnav-label" for="docs-version"><b>Version</b></label>
-      <select id="docs-version" onchange="location = this.options[this.selectedIndex].getAttribute('data-href')">
-        
-          <option false
-                  data-href="/docs/master/introduction/">
-            master
-          </option>
-        
-          <option selected
-                  data-href="/docs/0.3.0/introduction/">
-            0.3.0
-          </option>
-        
-          <option false
-                  data-href="/docs/0.2.0/guide/">
-            0.2.0
-          </option>
-        
-          <option false
-                  data-href="/docs/0.1.0/guide/">
-            0.1.0
-          </option>
-        
-      </select>
+    <!-- Version dropdown. -->
+    <label class="subnav-label" for="docs-version"><b>Version</b></label>
+    <select id="docs-version" onchange="location = this.options[this.selectedIndex].getAttribute('data-href')">
+      
+        <option false
+                data-href="/docs/master/introduction/">
+          master
+        </option>
+      
+        <option selected
+                data-href="/docs/0.3.0/introduction/">
+          0.3.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.2.0/guide/">
+          0.2.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.1.0/guide/">
+          0.1.0
+        </option>
+      
+    </select>
 
     
       
@@ -377,16 +379,16 @@
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/0.3.0/core/AFRAME.html"
+            <a href="/docs/0.3.0/core/utils.html"
                class="subnav-link">
-              AFRAME Globals
+              Utils
             </a>
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/0.3.0/core/utils.html"
+            <a href="/docs/0.3.0/core/AFRAME.html"
                class="subnav-link">
-              Utils
+              AFRAME Globals
             </a>
           </li>
         
@@ -771,10 +773,11 @@
 <!-- Documentation. -->
 <div class="content content--structured content--core copy">
   <div class="copy__wrap">
-    <p class="page__section">
+    <p class="page__section docs-header">
       <a href="/docs/0.3.0/core/" class="borderless-link">
         0.3.0 &rsaquo; Concepts and API
       </a>
+      <input id="search" type="search" placeholder="&#128269; Search 0.3.0 documentation..."></input>
     </p>
     
     
@@ -864,6 +867,22 @@ included last, the final color of the cube will be blue.</p>
     
     
       <script src="/js/docs.js"></script>
+    
+    
+      <!-- Search. -->
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+      <script type="text/javascript">
+        docsearch({
+          apiKey: '9e4a51a1da70daf959bd4750a3fa8f52',
+          indexName: 'aframe',
+          inputSelector: '#search',
+          algoliaOptions: {
+            facetFilters: ['version:0.3.0'],
+            hitsPerPage: 10
+          },
+          debug: false
+        });
+      </script>
     
   </body>
 </html>
