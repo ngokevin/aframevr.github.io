@@ -527,6 +527,7 @@ a {
   color: #1497b8;
   position: relative;
   text-decoration: none;
+  -webkit-transition: 0.05s ease;
   transition: 0.05s ease;
 }
 a:hover {
@@ -553,6 +554,7 @@ a.click {
   color: rgba(0,0,0,0.35);
   display: block;
   padding: 0.25rem 0;
+  -webkit-transition: 0.05s color ease;
   transition: 0.05s color ease;
 }
 .nav-link:hover {
@@ -585,6 +587,7 @@ a.click {
   color: rgba(0,0,0,0.35);
   text-indent: -10px;
   padding-left: 10px;
+  -webkit-transition: 0.05s color ease;
   transition: 0.05s color ease;
   width: 100%;
 }
@@ -606,6 +609,8 @@ a.click {
   width: 100%;
 }
 .main {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 .sidebar {
@@ -613,11 +618,18 @@ a.click {
   width: 280px;
 }
 .content {
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .copy .footnote {
   border-top: 2px solid #eee;
@@ -695,8 +707,11 @@ a.click {
   margin-bottom: 10px;
 }
 .post__projects {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin: 15px 0 25px -1px;
 }
 .post__projects a {
@@ -725,7 +740,11 @@ a.click {
   content: "\00a0|\00a0";
 }
 .post__metadata {
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-bottom: 15px;
 }
@@ -823,6 +842,7 @@ a.click {
   background: #f8f8f8;
   border: 1px solid #ddd;
   border-radius: 2px;
+  -webkit-transition: 0.05s ease;
   transition: 0.05s ease;
   color: #666;
   display: inline-block;
@@ -835,6 +855,7 @@ a.click {
   margin-left: 0.5em;
   opacity: 0.5;
   height: 14px;
+  -webkit-transition: 0.05s opacity ease;
   transition: 0.05s opacity ease;
   vertical-align: middle;
   width: 12px;
@@ -861,6 +882,7 @@ a.click {
   font-family: Fira Mono, Andale Mono, Monaco, Courier, monospace;
   margin: 5px 0;
   padding: 12px 24px;
+  -webkit-transition: 0.15s ease;
   transition: 0.15s ease;
 }
 .copy a.btn.btn-download {
@@ -869,13 +891,16 @@ a.click {
 }
 .copy a.btn:hover {
   background-color: #609ac5;
-  transform: translate(0, 1px);
+  -webkit-transform: translate(0, 1px);
+          transform: translate(0, 1px);
+  -webkit-transition: none;
   transition: none;
 }
 .copy a.btn:active,
 .copy a.btn.click {
   background-color: #3c78a5;
-  transform: translate(0, 2px);
+  -webkit-transform: translate(0, 2px);
+          transform: translate(0, 2px);
 }
 .copy a.btn span {
   font-size: 0.8rem;
@@ -950,7 +975,9 @@ a.click {
 }
 @media screen and (max-width: 800px) {
   .sidebar {
-    order: 1;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
     padding: 0;
     width: 100%;
   }
@@ -988,6 +1015,7 @@ a.click {
     font-weight: 300px;
     letter-spacing: 0.05rem;
     text-align: center;
+    -webkit-transition: 0.05s ease-in;
     transition: 0.05s ease-in;
     text-transform: uppercase;
     padding: 8px 30px;
@@ -1012,7 +1040,10 @@ a.click {
     color: #fff;
   }
   .main {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     min-width: 100%;
   }
   .copy .footnote br {
@@ -1045,7 +1076,8 @@ a.click {
     width: 10px;
   }
   .section-title-active:before {
-    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
     left: -6px;
   }
   .section-title-inactive + .section-subnav {
@@ -1073,8 +1105,13 @@ video {
   max-height: 320px;
 }
 .docs-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column-reverse;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
   position: relative;
   width: 100%;
 }
@@ -1084,9 +1121,16 @@ video {
   }
 }
 .docs-search-wrapper {
-  align-items: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-bottom: 25px;
   max-width: 100%;
 }
