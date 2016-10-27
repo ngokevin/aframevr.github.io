@@ -8,8 +8,130 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     
     <description>A web framework for building virtual reality experiences. Make WebVR with HTML and the Entity-Component ecosystem. Works across HTC Vive, Oculus Rift, desktop, and mobile platforms.</description>
-    <pubDate>Sat, 22 Oct 2016 20:47:37 GMT</pubDate>
+    <pubDate>Thu, 27 Oct 2016 20:31:06 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Why iStaging Chose A-Frame</title>
+      <link>https://aframe.io/blog/istaging/</link>
+      <guid>https://aframe.io/blog/istaging/</guid>
+      <pubDate>Wed, 26 Oct 2016 19:00:00 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;When I joined &lt;a href=&quot;http://istaging.co/&quot;&gt;iStaging&lt;/a&gt; a year ago, I was in the position
+of picking a WebVR framework. A hard decision. Since WebVR was relatively
+young, like the new kid around the block.&lt;/p&gt;
+&lt;p&gt;iStaging wanted to build a tool for real estate agents to showcase their
+buildings and properties. To upload panoramic pictures of rooms, create floor
+plans, leave comments, set standpoints. Clients were to be immersed into a real
+estate VR experience from the comfort of their homes.&lt;/p&gt;
+&lt;p&gt;We checked &lt;a href=&quot;https://krpano.com/&quot;&gt;KRPano&lt;/a&gt;. It was cool. Full of features.
+However, it lacked the flexibility that we needed. And the information
+available on the Internet was very meager. The other framework that we
+investigated was &lt;a href=&quot;https://developers.google.com/vr/concepts/vrview&quot;&gt;Google VR
+View&lt;/a&gt;. However, it turned out
+to be just an image / video inserted inside an &lt;code&gt;iframe&lt;/code&gt;. Kind of disappointing.
+Then, one day, scrolling through Github’s trending list, we stumbled upon this
+WebVR framework created by some people at Mozilla. We tried it and we loved it.&lt;/p&gt;
+&lt;p&gt;Our virtual tour has since become one of our main products. Thanks to A-Frame
+(and the Mozilla VR team), iStaging has reached thousands of customers while
+partnering with companies like Microsoft, HTC, Lenovo, and Alibaba.&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>When I joined <a href="http://istaging.co/" target="_blank" rel="external">iStaging</a> a year ago, I was in the position
+of picking a WebVR framework. A hard decision. Since WebVR was relatively
+young, like the new kid around the block.</p>
+<p>iStaging wanted to build a tool for real estate agents to showcase their
+buildings and properties. To upload panoramic pictures of rooms, create floor
+plans, leave comments, set standpoints. Clients were to be immersed into a real
+estate VR experience from the comfort of their homes.</p>
+<p>We checked <a href="https://krpano.com/" target="_blank" rel="external">KRPano</a>. It was cool. Full of features.
+However, it lacked the flexibility that we needed. And the information
+available on the Internet was very meager. The other framework that we
+investigated was <a href="https://developers.google.com/vr/concepts/vrview" target="_blank" rel="external">Google VR
+View</a>. However, it turned out
+to be just an image / video inserted inside an <code>iframe</code>. Kind of disappointing.
+Then, one day, scrolling through Github’s trending list, we stumbled upon this
+WebVR framework created by some people at Mozilla. We tried it and we loved it.</p>
+<p>Our virtual tour has since become one of our main products. Thanks to A-Frame
+(and the Mozilla VR team), iStaging has reached thousands of customers while
+partnering with companies like Microsoft, HTC, Lenovo, and Alibaba.</p>
+<a id="more"></a>
+<video src="/videos/istaging.mp4" autoplay></video>
+
+<h2 id="html-based"><a href="#html-based" class="headerlink" title="HTML-Based"></a>HTML-Based</h2><p>Using <a href="https://threejs.org/" target="_blank" rel="external">Three.js</a> would have been like trying to build a
+table from scratch; cutting the wood and finding the nails ourselves. Working
+with KRPano would have been like getting a fully furnished house, but we would
+have had to tear down the walls and throw away the appliances that we didn’t
+need.</p>
+<p>A-Frame hit a sweet spot. It was like buying an IKEA desk that came with a
+manual and parts that we could assemble together. In order words, it gave us
+ready-to-use 3D components, while letting us put them together. And best of
+all, they were simple HTML tags, so &mdash; as front-end developers &mdash; we
+learned the framework in just a couple of days (without the need of coffee).</p>
+<p>It was extremely easy to get the properties of the 3D elements and apply them
+to our HTML. For example, we needed to get the rotation of the 3D camera and
+display its angle as a 2D “range of vision”. With A-Frame this was extremely
+simple. Since its custom elements behave like regular HTML elements, we could
+get the attribute like this: <code>const cameraRotation =
+camera.getAttribute(&#39;rotation&#39;)</code>. Using that information to set the range of
+vision was equally simple: <code>state.rangeOfVisionRotation = cameraRotation</code>. And
+here’s the HTML:</p>
+  <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">:style</span>=<span class="string">"rangeOfVisionRotation"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">"rangeOfVision.png"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">i</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="pluggable-and-mixable"><a href="#pluggable-and-mixable" class="headerlink" title="Pluggable and Mixable"></a>Pluggable and Mixable</h2><p>The best thing about A-Frame is that it works with plain HTML. So, it can be
+plugged into any framework and mixed with other tools like Lodash, React, and
+Angular. Or, in our case, <a href="https://vuejs.org/" target="_blank" rel="external">Vue.js</a>. The process couldn’t
+have been simpler. All we had to do was to import A-Frame and write stuff like
+the following to swap the panorama while assigning a default position and
+rotation:</p>
+  <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-sky</span></span></div><div class="line">  <span class="attr">:position</span>=<span class="string">"panoramaPosition"</span></div><div class="line">  <span class="attr">:rotation</span>=<span class="string">"panoramaRotation"</span></div><div class="line">  <span class="attr">:src</span>=<span class="string">"panoramaURL"</span></div><div class="line">  <span class="attr">:opacity</span>=<span class="string">"panoramaOpacity"</span>&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Beautiful.</p>
+<h2 id="complete"><a href="#complete" class="headerlink" title="Complete"></a>Complete</h2><p>A-Frame is one of the most complete frameworks out there. Its ecosystem
+includes physics and particle systems. You can even do cool things like walking
+in a 3D world and play with (<a href="https://blog.mozvr.com/a-painter/" target="_blank" rel="external">VR
+controllers</a>) like HTC Vive. Don’t think
+that’s enough? It also has an <a href="https://aframe.io/aframe-inspector/example/">visual
+interface</a> to inspect your 3D
+objects and a <a href="https://aframe.io/a-painter/">tool</a> to paint in a virtual space.</p>
+<h2 id="great-resources"><a href="#great-resources" class="headerlink" title="Great Resources"></a>Great Resources</h2><p>You can find practically anything in <a href="https://github.com/aframevr/awesome-aframe" target="_blank" rel="external">the <code>Awesome A-Frame</code>
+repo</a>. In our case, we were looking
+for a component that displayed text (e.g. to display the price tags and the
+location the standpoints led to). We weren’t satisfied with the first one.
+Neither with the second. Luckily, the third, which turned HTML elements into
+textures, worked perfectly.</p>
+<p>Another component that we’re using is one that makes 3D objects draggable and
+clickable:</p>
+  <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-image</span></span></div><div class="line">  <span class="attr">src</span>=<span class="string">"#stand-point"</span></div><div class="line">  <span class="attr">v-for</span>=<span class="string">"standPoint in standPoints"</span></div><div class="line">  <span class="attr">:position</span>=<span class="string">"standPointPosition"</span></div><div class="line">  @<span class="attr">click</span>=<span class="string">"goToStandPoint"</span></div><div class="line">  <span class="attr">cursor-listener</span>&gt;</div></pre></td></tr></table></figure>
+<p>The result:</p>
+<p><img src="https://i.stack.imgur.com/csm4q.png" alt="https://i.stack.imgur.com/csm4q.png"></p>
+<p>This lets real estate agents create standpoints to navigate between rooms. And
+not only that: they can also create price tags, more-information buttons, and
+more.</p>
+<h2 id="great-community"><a href="#great-community" class="headerlink" title="Great Community"></a>Great Community</h2><p>A-Frame has an awesome community. With other VR frameworks you’ll feel like an
+boat drifting alone in the ocean. With A-Frame, you’ll feel like a ship in a
+navy.</p>
+<p>On the <a href="https://aframe.io/slack">A-Frame Slack</a> (probably the biggest WebVR
+Slack channel), you can get help in a matter of seconds (okay, not that fast,
+but in less than a day). The community is so active, we don’t need to rely on
+Stack Overflow at all. Also, we’re always amazed by what we find in the
+<code>#projects</code> channel. We’ve seen stuff from AR experiments to VR games. You can
+easily lose yourself in those virtual worlds.</p>
+<h2 id="free-and-open-source"><a href="#free-and-open-source" class="headerlink" title="Free and Open Source"></a>Free and Open Source</h2><p>And last but not least, A-Frame is <a href="https://github.com/aframevr/aframe" target="_blank" rel="external">free and open source on
+Github</a>, so its development is rapid and
+community-based. You can follow every change and see big improvements between
+each version. It also gives you freedom. Freedom to use it for wherever you
+want and for any purpose.</p>
+<h2 id="final-words"><a href="#final-words" class="headerlink" title="Final Words"></a>Final Words</h2><p>To date, we have created more than 10K projects. And we believe the figures
+will increase, since <a href="http://toursler.com/360-ridelle-306" target="_blank" rel="external">more</a> and
+<a href="http://storage.net-fs.com/hosting/2727323/6/index.htm" target="_blank" rel="external">more</a> companies are
+using WebVR to showcase their real estate properties. How many of them will
+succeed? It’s hard to tell. The only certainty is that A-Frame will be the
+leading WebVR framework for a long time.</p>
+]]></content:encoded>
+      
+      <comments>https://aframe.io/blog/istaging/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>A Week of A-Frame 30</title>
@@ -515,28 +637,6 @@ underway, and the slated release target for 0.3.0 is the end of next week!</p>
 ]]></content:encoded>
       
       <comments>https://aframe.io/blog/awoa-19/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>A Week of A-Frame 18</title>
-      <link>https://aframe.io/blog/awoa-18/</link>
-      <guid>https://aframe.io/blog/awoa-18/</guid>
-      <pubDate>Fri, 17 Jun 2016 07:00:00 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;The Mozilla VR team met up together in London with contributors, &lt;a href=&quot;https://twitter.com/donrmccurdy&quot; target=&quot;_blank&quot; rel=&quot;external&quot;
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>The Mozilla VR team met up together in London with contributors, <a href="https://twitter.com/donrmccurdy" target="_blank" rel="external">Don
-McCurdy</a> and <a href="https://drawvr.com" target="_blank" rel="external">DrawVR</a>, who
-have been with A-Frame since the start. And
-<a href="https://twitter.com/georational" target="_blank" rel="external">@georational</a> from down the street stopped by
-to say hi as well. There’s strong momentum heading into the second half of
-2016; let’s do special things to finish off The Year of VR!</p>
-]]></content:encoded>
-      
-      <comments>https://aframe.io/blog/awoa-18/#disqus_thread</comments>
     </item>
     
   </channel>
