@@ -557,6 +557,7 @@ h4 {
   -webkit-transform: translate(-280px, 0);
   -webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0, 1);
   transition: all 0.4s cubic-bezier(0.4, 0, 0, 1);
+  visibility: hidden;
   width: 280px;
   z-index: 8;
 }
@@ -568,7 +569,8 @@ h4 {
   .sidebar {
     background: none;
     box-shadow: none;
-    position: relative;
+    position: fixed;
+    padding-right: 0;
     -webkit-transform: translate(0, 0);
     transform: translate(0, 0);
     -webkit-transition: none;
@@ -712,6 +714,7 @@ a.click {
 }
 @media (min-width: 768px) {
   .content {
+    padding-left: 280px;
     padding-top: 0;
   }
 }
