@@ -272,8 +272,12 @@ strong {
 }
 code,
 pre {
-  font-size: 0.9rem;
+  font-size: 13px;
   font-family: Andale Mono, Monaco, Courier, monospace;
+}
+[data-is-mobile="true"] code,
+[data-is-mobile="true"] pre {
+  font-size: 8.5px;
 }
 .font-loaded-mono code,
 .font-loaded-mono pre {
