@@ -708,7 +708,7 @@ a.click {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding-top: 80px;
+  padding-top: 60px;
 }
 @media (min-width: 768px) {
   .content {
