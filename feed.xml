@@ -8,7 +8,7 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     
     <description>A web framework for building virtual reality experiences. Make WebVR with HTML and the Entity-Component ecosystem. Works across HTC Vive, Oculus Rift, desktop, and mobile platforms.</description>
-    <pubDate>Thu, 27 Oct 2016 20:31:06 GMT</pubDate>
+    <pubDate>Thu, 27 Oct 2016 20:45:11 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -34,8 +34,9 @@ to be just an image / video inserted inside an &lt;code&gt;iframe&lt;/code&gt;. 
 Then, one day, scrolling through Github’s trending list, we stumbled upon this
 WebVR framework created by some people at Mozilla. We tried it and we loved it.&lt;/p&gt;
 &lt;p&gt;Our virtual tour has since become one of our main products. Thanks to A-Frame
-(and the Mozilla VR team), iStaging has reached thousands of customers while
-partnering with companies like Microsoft, HTC, Lenovo, and Alibaba.&lt;/p&gt;
+(and the &lt;a href=&quot;https://mozvr.com&quot;&gt;Mozilla VR team&lt;/a&gt;), iStaging has reached thousands
+of customers while partnering with companies like &lt;strong&gt;Microsoft, HTC, Lenovo, and
+Alibaba&lt;/strong&gt;.&lt;/p&gt;
       
       </description>
       
@@ -55,8 +56,9 @@ to be just an image / video inserted inside an <code>iframe</code>. Kind of disa
 Then, one day, scrolling through Github’s trending list, we stumbled upon this
 WebVR framework created by some people at Mozilla. We tried it and we loved it.</p>
 <p>Our virtual tour has since become one of our main products. Thanks to A-Frame
-(and the Mozilla VR team), iStaging has reached thousands of customers while
-partnering with companies like Microsoft, HTC, Lenovo, and Alibaba.</p>
+(and the <a href="https://mozvr.com" target="_blank" rel="external">Mozilla VR team</a>), iStaging has reached thousands
+of customers while partnering with companies like <strong>Microsoft, HTC, Lenovo, and
+Alibaba</strong>.</p>
 <a id="more"></a>
 <video src="/videos/istaging.mp4" autoplay></video>
 
