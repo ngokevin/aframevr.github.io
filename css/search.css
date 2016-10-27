@@ -19,7 +19,7 @@
 }
 @media (min-width: 768px) {
   #search {
-    width: 300px;
+    width: 240px;
   }
 }
 [data-is-ios="true"] #search {

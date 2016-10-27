@@ -1121,6 +1121,11 @@ video {
 [data-is-mobile="true"] #docs-version {
   border: 1px solid #ccc;
 }
+@media (min-width: 768px) {
+  [data-page-layout="docs"] .page__title {
+    max-width: 66%;
+  }
+}
 @media screen and (max-width: 800px) {
   .main {
     -webkit-box-orient: vertical;
