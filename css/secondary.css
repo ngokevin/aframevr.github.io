@@ -1022,23 +1022,23 @@ a.click {
   display: block;
   content: "";
 }
-.content--structured h2[id],
-.content--structured h3[id],
-.content--structured h4[id],
-.content--structured h5[id],
-.content--structured h6[id],
-.content--structured .copy__wrap > table[id] tr th:first-child,
-.content--structured .copy__wrap > table tr[id] td:first-child {
+.content h2[id],
+.content h3[id],
+.content h4[id],
+.content h5[id],
+.content h6[id],
+.content .copy__wrap > table[id] tr th:first-child,
+.content .copy__wrap > table tr[id] td:first-child {
   cursor: pointer;
   position: relative;
 }
-.content--structured h2[id]:before,
-.content--structured h3[id]:before,
-.content--structured h4[id]:before,
-.content--structured h5[id]:before,
-.content--structured h6[id]:before,
-.content--structured .copy__wrap > table[id] tr th:first-child:before,
-.content--structured .copy__wrap > table tr[id] td:first-child:before {
+.content h2[id]:before,
+.content h3[id]:before,
+.content h4[id]:before,
+.content h5[id]:before,
+.content h6[id]:before,
+.content .copy__wrap > table[id] tr th:first-child:before,
+.content .copy__wrap > table tr[id] td:first-child:before {
   border-bottom: 1px solid #fff;
   color: #ccc;
   content: "";
@@ -1048,29 +1048,29 @@ a.click {
   text-indent: 0;
   width: 1.5rem;
 }
-.content--structured h2[id]:target:before,
-.content--structured h3[id]:target:before,
-.content--structured h4[id]:target:before,
-.content--structured h5[id]:target:before,
-.content--structured h6[id]:target:before,
-.content--structured .copy__wrap > table[id] tr th:first-child:target:before,
-.content--structured .copy__wrap > table tr[id] td:first-child:target:before,
-.content--structured h2[id]:hover:before,
-.content--structured h3[id]:hover:before,
-.content--structured h4[id]:hover:before,
-.content--structured h5[id]:hover:before,
-.content--structured h6[id]:hover:before,
-.content--structured .copy__wrap > table[id] tr th:first-child:hover:before,
-.content--structured .copy__wrap > table tr[id] td:first-child:hover:before {
+.content h2[id]:target:before,
+.content h3[id]:target:before,
+.content h4[id]:target:before,
+.content h5[id]:target:before,
+.content h6[id]:target:before,
+.content .copy__wrap > table[id] tr th:first-child:target:before,
+.content .copy__wrap > table tr[id] td:first-child:target:before,
+.content h2[id]:hover:before,
+.content h3[id]:hover:before,
+.content h4[id]:hover:before,
+.content h5[id]:hover:before,
+.content h6[id]:hover:before,
+.content .copy__wrap > table[id] tr th:first-child:hover:before,
+.content .copy__wrap > table tr[id] td:first-child:hover:before {
   content: "#";
 }
-.content--structured h2[id]:hover:before,
-.content--structured h3[id]:hover:before,
-.content--structured h4[id]:hover:before,
-.content--structured h5[id]:hover:before,
-.content--structured h6[id]:hover:before,
-.content--structured .copy__wrap > table[id] tr th:first-child:hover:before,
-.content--structured .copy__wrap > table tr[id] td:first-child:hover:before {
+.content h2[id]:hover:before,
+.content h3[id]:hover:before,
+.content h4[id]:hover:before,
+.content h5[id]:hover:before,
+.content h6[id]:hover:before,
+.content .copy__wrap > table[id] tr th:first-child:hover:before,
+.content .copy__wrap > table tr[id] td:first-child:hover:before {
   color: #aaa;
 }
 #toc + ul a {
@@ -1167,5 +1167,33 @@ video {
   .content--structured .copy__wrap > table[id] tr th:first-child:before,
   .content--structured .copy__wrap > table tr[id] td:first-child:before {
     left: -1rem;
+  }
+}
+.tweets {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+@media screen and (min-width: 480px) {
+  .tweets {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .tweets .twitter-tweet {
+    width: 49% !important;
   }
 }
