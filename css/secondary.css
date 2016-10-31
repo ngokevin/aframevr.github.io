@@ -528,7 +528,11 @@ h4 {
 .mobile-header h1 {
   white-space: nowrap;
 }
-.mobile-header h1,
+.mobile-header h1 a {
+  border: none;
+  cursor: hover;
+}
+.mobile-header h1 a,
 .mobile-header #sidebar-toggle,
 .mobile-header span {
   color: #fafafa;
