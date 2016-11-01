@@ -8,8 +8,111 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     
     <description>A web framework for building virtual reality experiences. Make WebVR with HTML and the Entity-Component ecosystem. Works across HTC Vive, Oculus Rift, desktop, and mobile platforms.</description>
-    <pubDate>Tue, 01 Nov 2016 00:06:21 GMT</pubDate>
+    <pubDate>Tue, 01 Nov 2016 20:23:13 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Developing an A-Frame Teleport Component</title>
+      <link>https://aframe.io/blog/teleport-component/</link>
+      <guid>https://aframe.io/blog/teleport-component/</guid>
+      <pubDate>Tue, 01 Nov 2016 20:00:00 GMT</pubDate>
+      <description>
+      
+        &lt;blockquote&gt;
+&lt;p&gt;Want to jump right to it? &lt;a href=&quot;https://fernandojsg.github.io/aframe-teleport-controls&quot;&gt;Try the demos&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;&lt;small class=&quot;subintro&quot;&gt;Make sure you have a &lt;a href=&quot;https://webvr.info/get-chrome/&quot;&gt;WebVR-enabled browser&lt;/a&gt;. In Chromium, enable the flags for &lt;code&gt;chrome://flags/#enable-webvr&lt;/code&gt; and &lt;code&gt;chrome://flags/#enable-gamepad-extensions&lt;/code&gt;. &lt;a href=&quot;https://blog.mozvr.com/experimental-htc-vive-support-in-firefox-nightly/&quot;&gt;Firefox support&lt;/a&gt; is &lt;a href=&quot;https://iswebvrready.org/#htc-vive-support&quot;&gt;coming soon&lt;/a&gt;.&lt;/small&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The &lt;a href=&quot;http://www.vive.com&quot;&gt;HTC Vive&lt;/a&gt; introduced room scale VR letting users walk around naturally in the virtual space. While compelling, experiences are constrained to the available physical space of a few meters. In &lt;a href=&quot;http://store.steampowered.com/app/450390/&quot;&gt;The Lab&lt;/a&gt;, Valve introduced a system to select a distant point to teleport yourself instantaneously, allowing you to explore large virtual spaces without physical boundaries.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Today, We’re releasing an A-Frame teleport &lt;a href=&quot;https://aframe.io/docs/0.3.0/core/component.html&quot;&gt;component&lt;/a&gt;&lt;/strong&gt; so you can easily use this technique in your experiences. The idea is simple; when holding the thumbpad, a line is displayed between you and the place you want to go. Move your hand to change the target position and release to teleport!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/teleport-component/thelab.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<blockquote>
+<p>Want to jump right to it? <a href="https://fernandojsg.github.io/aframe-teleport-controls" target="_blank" rel="external">Try the demos</a>!</p>
+<p><small class="subintro">Make sure you have a <a href="https://webvr.info/get-chrome/" target="_blank" rel="external">WebVR-enabled browser</a>. In Chromium, enable the flags for <code>chrome://flags/#enable-webvr</code> and <code>chrome://flags/#enable-gamepad-extensions</code>. <a href="https://blog.mozvr.com/experimental-htc-vive-support-in-firefox-nightly/" target="_blank" rel="external">Firefox support</a> is <a href="https://iswebvrready.org/#htc-vive-support" target="_blank" rel="external">coming soon</a>.</small></p>
+</blockquote>
+<p>The <a href="http://www.vive.com" target="_blank" rel="external">HTC Vive</a> introduced room scale VR letting users walk around naturally in the virtual space. While compelling, experiences are constrained to the available physical space of a few meters. In <a href="http://store.steampowered.com/app/450390/" target="_blank" rel="external">The Lab</a>, Valve introduced a system to select a distant point to teleport yourself instantaneously, allowing you to explore large virtual spaces without physical boundaries.</p>
+<p><strong>Today, We’re releasing an A-Frame teleport <a href="https://aframe.io/docs/0.3.0/core/component.html">component</a></strong> so you can easily use this technique in your experiences. The idea is simple; when holding the thumbpad, a line is displayed between you and the place you want to go. Move your hand to change the target position and release to teleport!</p>
+<p><img src="/images/blog/teleport-component/thelab.jpg" alt=""></p>
+<a id="more"></a>
+<p>Just include the component, and then the <code>teleport</code> HTML attribute is all it takes to enable teleportation in your experience:</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">vive-controls</span>=<span class="string">âhand:</span> <span class="attr">left</span>â <span class="attr">teleport-controls</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="creating-a-curved-trajectory"><a href="#creating-a-curved-trajectory" class="headerlink" title="Creating a Curved Trajectory"></a>Creating a Curved Trajectory</h2><p>The first version of the component used a straight line to select the destination.</p>
+<p><img src="/images/blog/teleport-component/line.png" alt=""></p>
+<p>Using a straight ray only works when there’s a direct line of sight between you and your target destination. For instance, if you want to move to a higher position you won’t be able to point accurately with a straight line.</p>
+<p><img src="/images/blog/teleport-component/line-curve-comparison.png" alt=""></p>
+<p>The solution is to use a curved line to be able to select an occluded target destination. We use simple physics to determine a <a href="https://en.wikipedia.org/wiki/Projectile_motion" target="_blank" rel="external">projectile shot curve</a>:</p>
+<p><img src="/images/blog/teleport-component/formula.png" alt=""></p>
+<p>where:</p>
+<ul>
+<li><strong>p<sub>0</sub> (Initial position)</strong> is the initial position of the projectile. Is the controller position when the teleport button is pressed.</li>
+<li><strong>v<sub>0</sub> (Initial speed)</strong> is the speed at p0. Defined by the user, the higher the speed the further the distance.</li>
+<li><strong>t (time)</strong> is the time since shot.</li>
+<li><strong>a (acceleration)</strong> with gravity at 9.8m/s<sup>2</sup>.</li>
+</ul>
+<p><img src="/images/blog/teleport-component/curve.jpg" alt=""></p>
+<p>To paint the curve, we create an auxiliary <code>Mesh</code> class called <code>RayCurve</code>. Its constructor takes the number of points in the curve and a width value. Then you keep calling <code>setPoint(i, Vector3)</code> to define each point on the curve. It creates a <code>triangleStrip</code> mesh with two vertices for each point in the curve perpendicular to the direction of the line.</p>
+<p><img src="/images/blog/teleport-component/trianglestrip.jpg" alt=""></p>
+<p><img src="/images/blog/teleport-component/testing-curve.gif" alt=""></p>
+<h2 id="detecting-collisions"><a href="#detecting-collisions" class="headerlink" title="Detecting Collisions"></a>Detecting Collisions</h2><p>By default, we detect collisions against the floor (plane at origin <code>0, 0, 0</code> with the normal pointing up <code>0, 1, 0</code>), but you can define which entities to collide against. But in both cases, we use a raycaster that moves along the segments in the curve path checking collision within the distance between them.</p>
+<p><img src="/images/blog/teleport-component/raycasters.jpg" alt=""></p>
+<p>If the raycaster detects a collision, an entity will be placed at the target destination where the user will be teleported. If you don’t provide an entity, the component will create a cylinder with a gradient texture. When the user releases the button, the user (camera and controllers) will be teleported to the destination point.</p>
+<p>Here’s the pseudocode that showing how the curve painting and collision flow works:</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">lastPoint = p0;</div><div class="line">hitPoint = <span class="literal">null</span>;</div><div class="line">hit = <span class="literal">false</span>;</div><div class="line"><span class="keyword">for</span> (i = <span class="number">0</span> to numCurvePoints) &#123;</div><div class="line">  <span class="comment">// Get the next point on the curve.</span></div><div class="line">  nextPoint = parabolicCurve(p0, v0, a, i);</div><div class="line"></div><div class="line">  <span class="comment">// Add it to the curve mesh.</span></div><div class="line">  curve.addPoint(i, nextPoint);</div><div class="line"></div><div class="line">  <span class="comment">// Set up raycaster between next and previous point and run hit test.</span></div><div class="line">  raycaster.setFromSegment(lastPoint, nextPoint);</div><div class="line">  hitPoint = raycaster.intersect(collisionEntity)</div><div class="line">  <span class="keyword">if</span> (hitPoint &amp;&amp; validCollision(hitPoint)) &#123;</div><div class="line">    hit = <span class="literal">true</span>;</div><div class="line">    <span class="keyword">break</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>To prevent the user from teleporting over steep surfaces like walls, we used the <code>validCollision()</code> function. <code>validCollision()</code> will check if the angle between the face normal where the raycaster hit and the default ground normal (defined by the user and defaults to <code>UP=(0, 1, 0)</code>) is under a defined max angle.</p>
+<p><img src="/images/blog/teleport-component/landing-normal.png" alt=""></p>
+<p><img src="/images/blog/teleport-component/demo-mesh.gif" alt=""></p>
+<h2 id="using-events"><a href="#using-events" class="headerlink" title="Using Events"></a>Using Events</h2><p>The teleport component depends on the <a href="https://aframe.io/docs/0.3.0/components/tracked-controls.html">tracked-controls component</a> to handle the controller position, orientation, and button events. The default button to activate the teleport is the thumbpad so we added listeners for two buttons events:</p>
+<ul>
+<li><strong>thumbpadDown</strong> will activate and make the teleportation curve (which is generated on each <code>tick</code>) visible.</li>
+<li><strong>thumbpadUp</strong> will calculate the new position for the camera and do the teleportation if intersecting with a collidable entity.</li>
+</ul>
+<p>The teleport component will also emit a <code>teleported</code> event that contains the <code>oldCamPosition</code>, <code>newCamPosition</code>, and <code>hitPoint</code> every time the user teleports.</p>
+<h2 id="customizing-with-properties"><a href="#customizing-with-properties" class="headerlink" title="Customizing with Properties"></a>Customizing with Properties</h2><p>The teleport component has several properties to customize its appearance and behavior:</p>
+<ul>
+<li><strong>type:</strong> Type of teleportation, <code>line</code> or <code>parabolic</code>.</li>
+<li><strong>button:</strong> Which button to press to teleport.</li>
+<li><strong>collisionEntity:</strong> Selector of the mesh used to check for collisions. If no value provided, the plane <code>Y=0</code> is used.</li>
+<li><strong>hitEntity:</strong> Entity to show at the intersection point of the target destination. If none is provided, a cylinder is used.</li>
+<li><strong>hitCylinderColor:</strong> Color used for the default <code>hitEntity</code> primitives.</li>
+<li><strong>hitCylinderRadius:</strong> Radius used for the default <code>hitEntity</code> primitives.</li>
+<li><strong>curveHitColor:</strong> Color used when the curve is intersecting a collidable entity.</li>
+<li><strong>curveMissColor:</strong> Color used when the curve is not intersecting a collidable entity.</li>
+<li><strong>curveNumberPoints:</strong> Number of points used in the curve.</li>
+<li><strong>curveLineWidth:</strong> Line width of the curve.</li>
+<li><strong>curveShootingSpeed:</strong> Curve shooting speed. The bigger the value, the farther the distance.</li>
+<li><strong>maxLength:</strong> Max length of the ray when using <code>type: line</code> teleportation.</li>
+<li><strong>landingNormal:</strong> Normal vector to detect collisions with the <code>collisionEntity</code>.</li>
+<li><strong>landingMaxAngle:</strong> Angle threshold (in degrees) used together with <code>landingNormal</code> to detect the maximum steepness of a surface that can be teleported to.</li>
+</ul>
+<p><img src="/images/blog/teleport-component/customize.gif" alt=""></p>
+<h2 id="using-the-teleport-component-in-your-experience"><a href="#using-the-teleport-component-in-your-experience" class="headerlink" title="Using the Teleport Component in Your Experience"></a>Using the Teleport Component in Your Experience</h2><p><img src="/images/blog/teleport-component/existing-demos.gif" alt=""></p>
+<p>Using the component in an already existing experience is straightforward. Just include a <code>&lt;script&gt;</code> tag to the url of the component:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://unpkg.com/aframe-teleport-controls/dist/aframe-teleport-controls.min.js"</span></span></div></pre></td></tr></table></figure>
+<p>Then plug in the <code>teleport</code> component to your controller entities. For example, here’s an example adding the teleport component to both hands in <a href="https://aframe.io/a-painter">A-Painter</a>:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"left-hand"</span></span></div><div class="line">  <span class="attr">brush</span></div><div class="line">  <span class="attr">paint-controls</span>=<span class="string">"hand: left"</span></div><div class="line">  <span class="attr">ui</span></div><div class="line">  <span class="attr">teleport-controls</span>&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"right-hand"</span></span></div><div class="line">  <span class="attr">brush</span></div><div class="line">  <span class="attr">paint-controls</span>=<span class="string">"hand: right"</span></div><div class="line">  <span class="attr">ui</span></div><div class="line">  <span class="attr">teleport-controls</span>&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><img src="/images/blog/teleport-component/apainter-teleport.png" alt=""></p>
+<h3 id="from-the-inspector"><a href="#from-the-inspector" class="headerlink" title="From the Inspector"></a>From the Inspector</h3><p>You can also use the inspector to install the teleport component to an existing scene:</p>
+<ul>
+<li>Press <code>&lt;ctrl&gt; + &lt;alt&gt; + i</code> within an A-Frame scene running in the browser to launch the <a href="https://github.com/aframevr/aframe-inspector" target="_blank" rel="external">Inspector</a>.</li>
+<li>Select your controllers entities from the Scene Graph.</li>
+<li>Go to the right-hand entity panel and add the <code>teleport-controls</code> component from  <code>Add Component</code>.</li>
+<li>Hit <code>Esc</code> to go back to scene.</li>
+<li>Enjoy teleporting around the scene!</li>
+</ul>
+<p><img src="/images/blog/teleport-component/inspector.png" alt=""></p>
+<h2 id="perhaps-we-could…"><a href="#perhaps-we-could…" class="headerlink" title="Perhaps We Could…"></a>Perhaps We Could…</h2><p>Some possible ideas and features:</p>
+<ul>
+<li>Add an effects when performing the teleportation. Something like a simple fade in and out would work.</li>
+<li>Define the minimum time between teleportations.</li>
+<li>Let the user jump to every kind of surface without testing the normals. For example, teleport to the roof, and orientate the camera accordingly.</li>
+</ul>
+<p>Please feel free to contribute with ideas, code, or issues at <a href="https://github.com/fernandojsg/aframe-teleport-controls" target="_blank" rel="external">https://github.com/fernandojsg/aframe-teleport-controls</a>.</p>
+]]></content:encoded>
+      
+      <comments>https://aframe.io/blog/teleport-component/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>A Week of A-Frame 31 + 32</title>
@@ -229,7 +332,7 @@ existence, one of our developers had previously started on his own framework,
 using Angular to allow XML mark-up to be used to generate 3D scenes. Using
 A-Frame now seemed a no-brainer.</p>
 <a id="more"></a>
-<p><img src="/images/blog/ghost-train-builder-2.jpg" alt="Ghost Train Builder Prototype"></p>
+<p><img src="/images/blog/ghost-train-builder/ghost-train-builder-2.jpg" alt="Ghost Train Builder Prototype"></p>
 <h2 id="visuals"><a href="#visuals" class="headerlink" title="Visuals"></a>Visuals</h2><p>Early proof-of-concepts used flat-planes for rooms and coloured cubes for
 monsters. Adding lighting and pop-up animations soon followed. Our original
 plan had been just to purchase third-party game assets, but once we roped in
@@ -245,7 +348,7 @@ limbs and hundreds of polys - flat pop-ups conveyed part of that DIY charm of
 these rides, that sense of feeling slightly cheated that something so basic
 managed to make you jump. The bounce easing on the door and monster animations
 really helped with this.</p>
-<p><img src="/images/blog/ghost-train-builder-1.jpg" alt="Ghost Train Builder Prototype 2"></p>
+<p><img src="/images/blog/ghost-train-builder/ghost-train-builder-1.jpg" alt="Ghost Train Builder Prototype 2"></p>
 <h2 id="implementation"><a href="#implementation" class="headerlink" title="Implementation"></a>Implementation</h2><p>Being able to write your own A-Frame components using the underlying Three.js
 code, also enabled us to implement functionality we needed but hadn’t
 come as standard. To plot the course of the cart, we read in an array of 2D
@@ -278,7 +381,7 @@ three and four lights in each room, which looked amazing, but was the main
 culprit for crashing WebGL on mobile. So on mobile devices we reverted to only
 having one light in entire ride, attaching it to the cart so that it followed
 the user and switching its colour as the user transitioned between rooms.</p>
-<p><img src="/images/blog/ghost-train-builder-3.jpg" alt="Ghost Train Builder Screenshot 1"></p>
+<p><img src="/images/blog/ghost-train-builder/ghost-train-builder-3.jpg" alt="Ghost Train Builder Screenshot 1"></p>
 <h2 id="conclusion"><a href="#conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>This was of course a learning experience. There’s a lot of things we would have
 done differently if starting again from scratch (and you know, maybe next year
 we will…) but it’s safe to say we’re immensely proud of the results though.
@@ -287,7 +390,7 @@ you could do on a webpage was change the image on a button as the user moused
 over it, and today things like Ghost Train Builder are possible - no plugins,
 no downloads, just in the browser. These are exciting times and frameworks
 like A-Frame are making it even easier to be involved.</p>
-<p><img src="/images/blog/ghost-train-builder-4.jpg" alt="Ghost Train Builder Screenshot 2"></p>
+<p><img src="/images/blog/ghost-train-builder/ghost-train-builder-4.jpg" alt="Ghost Train Builder Screenshot 2"></p>
 ]]></content:encoded>
       
       <comments>https://aframe.io/blog/ghost-train-builder/#disqus_thread</comments>
@@ -864,26 +967,6 @@ progress).</p>
 ]]></content:encoded>
       
       <comments>https://aframe.io/blog/awoa-22/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>A Week of A-Frame 21</title>
-      <link>https://aframe.io/blog/awoa-21/</link>
-      <guid>https://aframe.io/blog/awoa-21/</guid>
-      <pubDate>Fri, 15 Jul 2016 07:00:00 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;Where’s 0.3.0? It will take yet another week or so. A lot of work on our plates,
-but it will be worth the wait!&lt;/p&gt;
-
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>Where’s 0.3.0? It will take yet another week or so. A lot of work on our plates,
-but it will be worth the wait!</p>
-]]></content:encoded>
-      
-      <comments>https://aframe.io/blog/awoa-21/#disqus_thread</comments>
     </item>
     
   </channel>

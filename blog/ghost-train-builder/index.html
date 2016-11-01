@@ -190,6 +190,13 @@ Builder was one such project, a s">
     <ul class="subnav section-subnav blog-subnav">
       
         <li class="subnav-item ">
+          <a href="/blog/teleport-component/"
+             class="subnav-link">
+            Developing an A-Frame Teleport Component
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
           <a href="/blog/awoa-31-32/"
              class="subnav-link">
             A Week of A-Frame 31 + 32
@@ -505,16 +512,16 @@ Builder was one such project, a s">
         </li>
       
         <li class="subnav-item ">
-          <a href="/blog/spheres-and-fog/"
+          <a href="/blog/drawvr-minecraft/"
              class="subnav-link">
-            Sense of Scale with Spheres and Fog
+            Creating a Minecraft Scene in WebVR
           </a>
         </li>
       
         <li class="subnav-item ">
-          <a href="/blog/drawvr-minecraft/"
+          <a href="/blog/spheres-and-fog/"
              class="subnav-link">
-            Creating a Minecraft Scene in WebVR
+            Sense of Scale with Spheres and Fog
           </a>
         </li>
       
@@ -604,7 +611,7 @@ Builder was one such project, a s">
 
         
   
-    <img src="/images/blog/ghost-train-builder.gif" alt="Halloween Feature! Building Ghost Train Builder">
+    <img src="/images/blog/ghost-train-builder/ghost-train-builder.gif" alt="Halloween Feature! Building Ghost Train Builder">
   
 
 
@@ -636,7 +643,7 @@ existence, one of our developers had previously started on his own framework,
 using Angular to allow XML mark-up to be used to generate 3D scenes. Using
 A-Frame now seemed a no-brainer.</p>
 <a id="more"></a>
-<p><img src="/images/blog/ghost-train-builder-2.jpg" alt="Ghost Train Builder Prototype"></p>
+<p><img src="/images/blog/ghost-train-builder/ghost-train-builder-2.jpg" alt="Ghost Train Builder Prototype"></p>
 <h2 id="visuals"><a href="#visuals" class="headerlink" title="Visuals"></a>Visuals</h2><p>Early proof-of-concepts used flat-planes for rooms and coloured cubes for
 monsters. Adding lighting and pop-up animations soon followed. Our original
 plan had been just to purchase third-party game assets, but once we roped in
@@ -652,7 +659,7 @@ limbs and hundreds of polys - flat pop-ups conveyed part of that DIY charm of
 these rides, that sense of feeling slightly cheated that something so basic
 managed to make you jump. The bounce easing on the door and monster animations
 really helped with this.</p>
-<p><img src="/images/blog/ghost-train-builder-1.jpg" alt="Ghost Train Builder Prototype 2"></p>
+<p><img src="/images/blog/ghost-train-builder/ghost-train-builder-1.jpg" alt="Ghost Train Builder Prototype 2"></p>
 <h2 id="implementation"><a href="#implementation" class="headerlink" title="Implementation"></a>Implementation</h2><p>Being able to write your own A-Frame components using the underlying Three.js
 code, also enabled us to implement functionality we needed but hadn’t
 come as standard. To plot the course of the cart, we read in an array of 2D
@@ -685,7 +692,7 @@ three and four lights in each room, which looked amazing, but was the main
 culprit for crashing WebGL on mobile. So on mobile devices we reverted to only
 having one light in entire ride, attaching it to the cart so that it followed
 the user and switching its colour as the user transitioned between rooms.</p>
-<p><img src="/images/blog/ghost-train-builder-3.jpg" alt="Ghost Train Builder Screenshot 1"></p>
+<p><img src="/images/blog/ghost-train-builder/ghost-train-builder-3.jpg" alt="Ghost Train Builder Screenshot 1"></p>
 <h2 id="conclusion"><a href="#conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>This was of course a learning experience. There’s a lot of things we would have
 done differently if starting again from scratch (and you know, maybe next year
 we will…) but it’s safe to say we’re immensely proud of the results though.
@@ -694,7 +701,7 @@ you could do on a webpage was change the image on a button as the user moused
 over it, and today things like Ghost Train Builder are possible - no plugins,
 no downloads, just in the browser. These are exciting times and frameworks
 like A-Frame are making it even easier to be involved.</p>
-<p><img src="/images/blog/ghost-train-builder-4.jpg" alt="Ghost Train Builder Screenshot 2"></p>
+<p><img src="/images/blog/ghost-train-builder/ghost-train-builder-4.jpg" alt="Ghost Train Builder Screenshot 2"></p>
 
 
         
