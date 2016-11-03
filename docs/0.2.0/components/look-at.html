@@ -109,6 +109,14 @@
     </a>
   </header>
 
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar">
+  <input type="search" class="search-field" placeholder="&#128269; Search 0.2.0 docs&hellip;"></input>
+  <p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p>
+</div>
+
   <ul id="nav" class="nav">
     
       <li  class="nav-item">
@@ -703,10 +711,13 @@
           0.2.0 &rsaquo; Components
         </a>
       </p>
-      <div class="docs-search-wrapper">
-        <input id="search" type="search" placeholder="&#128269; Search 0.2.0 docs&hellip;"></input>
-        <p class="stackoverflow-link">Got a question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p>
-      </div>
+      
+
+
+<div class="docs-search-wrapper docs-search-docs">
+  <input type="search" class="search-field" placeholder="&#128269; Search 0.2.0 docs&hellip;"></input>
+  <p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p>
+</div>
     </div>
     <h1 class="page__title">look-at</h1>
 
@@ -780,16 +791,18 @@
       <!-- Algolia search. -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
 <script type="text/javascript">
-  docsearch({
+  var searchConfig = {
     apiKey: '9e4a51a1da70daf959bd4750a3fa8f52',
     indexName: 'aframe',
-    inputSelector: '#search',
     algoliaOptions: {
       facetFilters: ['version:0.2.0'],
       hitsPerPage: 10
     },
     debug: false
-  });
+  };
+
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar .search-field'}));
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-docs .search-field'}));
 </script>
 
     

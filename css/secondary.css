@@ -1099,9 +1099,9 @@ video {
   }
 }
 .docs-search-wrapper {
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1112,19 +1112,26 @@ video {
   margin-bottom: 25px;
   max-width: 100%;
 }
-@media (min-width: 768px) {
-  .docs-search-wrapper {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-}
 .docs-search-wrapper .stackoverflow-link {
+  display: none;
   font-family: Fira Sans, Helvetica, Arial, sans-serif;
   font-size: 12px;
   font-weight: 400;
   margin-top: 5px;
   text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  .docs-search-wrapper .stackoverflow-link {
+    display: block;
+  }
+}
+.docs-search-docs {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 .docs-header + blockquote {
   margin: 4em 0 2em;
