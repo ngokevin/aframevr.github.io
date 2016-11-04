@@ -1223,6 +1223,9 @@ body:not([data-page-layout="docs"]) .docs-search-wrapper {
     width: 24% !important;
   }
 }
+.post--listing .tweets .twitter-tweet {
+  width: 48% !important;
+}
 .content--awoa .copy__wrap {
   max-width: 100%;
 }
