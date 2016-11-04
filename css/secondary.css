@@ -1125,6 +1125,9 @@ video {
     display: block;
   }
 }
+body:not([data-page-layout="docs"]) .docs-search-wrapper {
+  display: none !important;
+}
 .docs-search-docs {
   -webkit-box-align: end;
       -ms-flex-align: end;
@@ -1203,4 +1206,26 @@ video {
   .tweets .twitter-tweet {
     width: 49% !important;
   }
+}
+@media screen and (min-width: 1100px) {
+  .tweets {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .tweets .twitter-tweet {
+    margin-right: 10px;
+    width: 32% !important;
+  }
+}
+@media screen and (min-width: 1350px) {
+  .tweets .twitter-tweet {
+    width: 24% !important;
+  }
+}
+.content--awoa .copy__wrap {
+  max-width: 100%;
+}
+.content--awoa .copy__wrap p {
+  max-width: 700px;
 }
