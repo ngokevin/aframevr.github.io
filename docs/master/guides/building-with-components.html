@@ -377,16 +377,16 @@
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/core/AFRAME.html"
+            <a href="/docs/master/core/utils.html"
                class="subnav-link">
-              AFRAME Globals
+              Utils
             </a>
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/core/utils.html"
+            <a href="/docs/master/core/AFRAME.html"
                class="subnav-link">
-              Utils
+              AFRAME Globals
             </a>
           </li>
         
@@ -701,6 +701,13 @@
           </li>
         
           <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-isocahedron.html"
+               class="subnav-link">
+              &lt;a-octahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
             <a href="/docs/master/primitives/a-octahedron.html"
                class="subnav-link">
               &lt;a-octahedron&gt;
@@ -946,7 +953,7 @@ swap the 360&deg; images.</p>
 <li>Several images to choose from in the <a href="../core/asset-management-system.html">Asset Management System</a> within <code>&lt;a-assets&gt;</code>.</li>
 <li>Our 360&deg; image placeholder with <a href="../primitives/a-sky.html"><code>&lt;a-sky&gt;</code></a>.</li>
 <li>A <a href="../components/cursor.html">cursor</a> with visual feedback using event-driven
-<a href="../core/animations.html#begin">animations</a>, fixed to the <a href="../primitives/camera.html">camera</a>.</li>
+<a href="../core/animations.html#begin">animations</a>, fixed to the <a href="../primitives/a-camera.html">camera</a>.</li>
 </ul>
 <h2 id="using-standard-components"><a href="#using-standard-components" class="headerlink" title="Using Standard Components"></a>Using Standard Components</h2><p>Standard components are components that ship with A-Frame, like any standard
 library. We’ll go over how to attach these components to entities and configure
@@ -977,7 +984,7 @@ write our own code.</p>
 event-set. First, we have to include them. <a href="https://github.com/ngokevin/kframe/" target="_blank" rel="external">K-Frame</a> is a component
 pack by <a href="https://github.com/ngokevin" target="_blank" rel="external">Kevin Ngo</a>, an A-Frame core developer, that conveniently
 includes all three of these components in one bundle.</p>
-<p>To drop in K-Frame, download <a href="kmin"><code>k-frame.min.js</code></a> from the project’s
+<p>To drop in K-Frame, download <a href="https://raw.githubusercontent.com/ngokevin/kframe/master/dist/kframe.min.js" target="_blank" rel="external"><code>k-frame.min.js</code></a> from the project’s
 <a href="https://github.com/ngokevin/kframe/tree/master/dist" target="_blank" rel="external"><code>dist</code> folder</a> and include it in the <code>&lt;head&gt;</code> <em>after</em> A-Frame:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>360° Image Browser<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"lib/aframe.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"lib/k-frame.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">      <span class="comment">&lt;!-- ... --&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
 <h3 id="template-component"><a href="#template-component" class="headerlink" title="Template Component"></a>Template Component</h3><p>Currently, we have one link. We want to create three of them, one for each of
@@ -1007,7 +1014,7 @@ overlap. While we could manually position each link, we could instead use the
 automatically position its children to the specified layout.</p>
 <p>We create a wrapper entity around our links and attach the layout component
 using the <code>line</code> layout:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"links"</span> <span class="attr">layout</span>=<span class="string">"layout: line; margin: .75"</span> <span class="attr">position</span>=<span class="string">"-3 -1 -4"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">template</span>=<span class="string">"src: #plane"</span> <span class="attr">data-thumb</span>=<span class="string">"#city-thumb"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">template</span>=<span class="string">"src: #plane"</span> <span class="attr">data-thumb</span>=<span class="string">"#cubes-thumb"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">template</span>=<span class="string">"src: #plane"</span> <span class="attr">data-thumb</span>=<span class="string">"#sechelt-thumb"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"links"</span> <span class="attr">layout</span>=<span class="string">"layout: line; margin: 1.5"</span> <span class="attr">position</span>=<span class="string">"-3 -1 -4"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">template</span>=<span class="string">"src: #plane"</span> <span class="attr">data-thumb</span>=<span class="string">"#city-thumb"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">template</span>=<span class="string">"src: #plane"</span> <span class="attr">data-thumb</span>=<span class="string">"#cubes-thumb"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">template</span>=<span class="string">"src: #plane"</span> <span class="attr">data-thumb</span>=<span class="string">"#sechelt-thumb"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>Now our links are no longer overlapping without us having to calculate and
 fiddle with positions.</p>
 <h3 id="event-set-component"><a href="#event-set-component" class="headerlink" title="Event-Set Component"></a>Event-Set Component</h3><p>Lastly, we’ll add some visual feedback to our links. We want them to scale up
@@ -1020,7 +1027,7 @@ events.</p>
 over, scale them down as they are being clicked, and scale them back when they
 are no longer gazed upon. We are mimicking CSS <code>:hover</code> states. We can specify
 event names with <code>_event</code> properties, and the rest of the properties define the
-<code>setAttibute</code> calls. Notice that the event-set component can have <a href="../core/component.html#multiple-instances">multiple
+<code>setAttribute</code> calls. Notice that the event-set component can have <a href="../core/component.html#multiple-instancing">multiple
 instances</a>:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!-- ... --&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">id</span>=<span class="string">"link"</span> <span class="attr">type</span>=<span class="string">"text/nunjucks"</span>&gt;</span><span class="javascript"></span></div><div class="line">    &lt;a-plane <span class="class"><span class="keyword">class</span></span>=<span class="string">"link"</span> height=<span class="string">"1"</span> width=<span class="string">"1"</span></div><div class="line">             material=<span class="string">"shader: flat; src: &#123;&#123; thumb &#125;&#125;"</span></div><div class="line">             sound=<span class="string">"on: click; src: #click-sound"</span></div><div class="line">             event-set__1=<span class="string">"_event: mousedown; scale: 1 1 1"</span></div><div class="line">             event-set__2=<span class="string">"_event: mouseup; scale: 1.2 1.2 1"</span></div><div class="line">             event-set__3=<span class="string">"_event: mouseenter; scale: 1.2 1.2 1"</span></div><div class="line">             event-set__4=<span class="string">"_event: mouseleave; scale: 1 1 1"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">a-plane</span>&gt;</span></span></div><div class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>Wielding components, we were able to do a lot with just a few more lines of

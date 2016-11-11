@@ -28,7 +28,7 @@
       data-aframe-version="0.3.0"
       data-docs-version="master">
   <head>
-    <title>Using the A-Frame Inspector – A-Frame</title>
+    <title><a-octahedron> – A-Frame</title>
     
 
 <script>
@@ -46,7 +46,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="canonical" href="https://aframe.io">
     <meta property="fb:app_id" content="1535794316743373">
-    <meta property="og:title" content="Using the A-Frame Inspector – A-Frame">
+    <meta property="og:title" content="&lt;a-octahedron&gt; – A-Frame">
     <meta property="og:site_name" content="A-Frame">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aframe.io">
@@ -56,7 +56,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@aframevr">
     <meta name="twitter:creator" content="@aframevr">
-    <meta name="twitter:title" content="Using the A-Frame Inspector – A-Frame">
+    <meta name="twitter:title" content="<a-octahedron> – A-Frame">
     <meta name="twitter:description" content="A web framework for building virtual reality experiences. Make WebVR with HTML and the Entity-Component ecosystem. Works across HTC Vive, Oculus Rift, desktop, and mobile platforms.">
     <meta name="twitter:image" content="https://aframe.io/images/card.jpg">
     <meta name="mobile-web-app-capable" content="yes">
@@ -94,7 +94,7 @@
     
   </head>
 
-  <body data-page-layout="docs" data-page-type="guides">
+  <body data-page-layout="docs" data-page-type="primitives">
     <main id="main" class="main">
 
 
@@ -267,9 +267,9 @@
       
 
       <!-- Section title. -->
-      <h3 class="section-title docs-section-title section-title-active">
+      <h3 class="section-title docs-section-title section-title-inactive">
         <a href="/docs/master/guides/"
-           class="section-title-link section-title-link-active">
+           class="section-title-link section-title-link-inactive">
           Guides
         </a>
       </h3>
@@ -298,9 +298,9 @@
             </a>
           </li>
         
-          <li class="subnav-item  subnav-item-current">
+          <li class="subnav-item ">
             <a href="/docs/master/guides/using-the-aframe-inspector.html"
-               class="subnav-link current">
+               class="subnav-link">
               Using the A-Frame Inspector
             </a>
           </li>
@@ -599,9 +599,9 @@
       
 
       <!-- Section title. -->
-      <h3 class="section-title docs-section-title section-title-inactive">
+      <h3 class="section-title docs-section-title section-title-active">
         <a href="/docs/master/primitives/"
-           class="section-title-link section-title-link-inactive">
+           class="section-title-link section-title-link-active">
           Primitives
         </a>
       </h3>
@@ -700,16 +700,16 @@
             </a>
           </li>
         
-          <li class="subnav-item ">
+          <li class="subnav-item  subnav-item-current">
             <a href="/docs/master/primitives/a-isocahedron.html"
-               class="subnav-link">
+               class="subnav-link current">
               &lt;a-octahedron&gt;
             </a>
           </li>
         
-          <li class="subnav-item ">
+          <li class="subnav-item  subnav-item-current">
             <a href="/docs/master/primitives/a-octahedron.html"
-               class="subnav-link">
+               class="subnav-link current">
               &lt;a-octahedron&gt;
             </a>
           </li>
@@ -790,7 +790,7 @@
 </aside>
 
 <!-- Documentation. -->
-<div class="content content--structured content--guides copy">
+<div class="content content--structured content--primitives copy">
   <div class="mobile-header">
   <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
   <h1><a href="/">A-Frame</a></h1>
@@ -841,8 +841,8 @@
   <div class="copy__wrap">
     <div class="page__section docs-header">
       <p>
-        <a href="/docs/master/guides/" class="borderless-link">
-          master &rsaquo; Guides
+        <a href="/docs/master/primitives/" class="borderless-link">
+          master &rsaquo; Primitives
         </a>
       </p>
       
@@ -853,7 +853,7 @@
   <p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p>
 </div>
     </div>
-    <h1 class="page__title">Using the A-Frame Inspector</h1>
+    <h1 class="page__title">&lt;a-octahedron&gt;</h1>
 
     
     
@@ -865,75 +865,165 @@
 
     
     
-      <p>The <a href="https://github.com/aframevr/aframe-inspector" target="_blank" rel="external">A-Frame Inspector</a> is a
-visual tool for inspecting and tweaking scenes. With the Inspector, we can:</p>
-<ul>
-<li>Drag, rotate, and scale entities using handles and helpers</li>
-<li>Tweak an entity’s components and their properties using widgets</li>
-<li>Immediately see results from changing values without having to go back and
-forth between code and the browser</li>
-</ul>
-<p>The Inspector is similar to the browser’s DOM inspector but tailored for 3D and
-A-Frame. We can toggle the Inspector to open up any A-Frame scene in the wild
-Let’s view source!</p>
-<p><img src="https://cloud.githubusercontent.com/assets/674727/17754515/b5596eb6-6489-11e6-9485-4cb10fa5b100.png" alt="Inspector Preview"></p>
-<h2 id="opening-the-inspector"><a href="#opening-the-inspector" class="headerlink" title="Opening the Inspector"></a>Opening the Inspector</h2><p>The easiest way to use is to press the <strong><code>&lt;ctrl&gt; + &lt;alt&gt; + i</code></strong> shortcut on
-your keyboard. This will fetch the Inspector code via CDN and open up our scene
-in the Inspector. The same shortcut toggles the Inspector closed.</p>
-<p>Not only can we open our local scenes inside the Inspector, we can open any
-A-Frame scene in the wild using the Inspector (as long as the author has not
-explicitly disabled it).</p>
-<p>See the <a href="https://github.com/aframevr/aframe-inspector" target="_blank" rel="external">Inspector README</a> for details on serving local, development,
-or custom builds of the Inspector.</p>
-<h2 id="using-the-inspector"><a href="#using-the-inspector" class="headerlink" title="Using the Inspector"></a>Using the Inspector</h2><h3 id="scene-graph"><a href="#scene-graph" class="headerlink" title="Scene Graph"></a>Scene Graph</h3><p>The Inspector’s scene graph is a tree-based representation of the scene.  We
-can use the scene graph to <em>select, search, delete, clone, and add entities</em> or
-exporting HTML.</p>
-<p><img src="https://cloud.githubusercontent.com/assets/674727/18565455/ae082fea-7b44-11e6-856f-2b9ca0e60bed.gif" alt="Inspector Scene Graph"></p>
-<p>The scene graph lists A-Frame entities rather than internal three.js objects.
-Given HTML is also a representation of the scene graph, the Inspector’s scene
-graph mirrors the underlying HTML closely. Entities are displayed using their
-HTML ID or HTML tag name.</p>
-<h3 id="viewport"><a href="#viewport" class="headerlink" title="Viewport"></a>Viewport</h3><p>The viewport displays the scene from the Inspector’s point of the view. We can
-rotate, pan, or zoom the viewport to change the view of the scene:</p>
-<ul>
-<li><strong>Rotate:</strong> hold down left mouse button (or one finger down on a trackpad) and drag</li>
-<li><strong>Pan:</strong> hold down right mouse button (or two fingers down on a trackpad) and drag</li>
-<li><strong>Zoom:</strong> scroll up and down (or two-finger scroll on a trackpad)</li>
-</ul>
-<p>From the viewport, we can also select entities and transform them:</p>
-<ul>
-<li><strong>Select</strong>: left-click on an entity</li>
-<li><strong>Transform</strong>: select a helper tool on the upper-right corner of the
-viewport, drag the red/blue/green helpers surrounding an entity to transform
-it</li>
-</ul>
-<p><img src="https://cloud.githubusercontent.com/assets/674727/18565454/ad047c84-7b44-11e6-8c4a-0f1fe55c6682.gif" alt="Inspector Viewport"></p>
-<h3 id="components-panel"><a href="#components-panel" class="headerlink" title="Components Panel"></a>Components Panel</h3><p>The components panel displays the selected entity’s components and properties.
-We can modify values of common components (e.g., position, rotation, scale),
-modify values of attached components, add and remove mixins, and add and remove
-components.</p>
-<p>The type of widget for each property depends on the property type. For example,
-booleans use a checkbox, numbers use a value slide, and colors use a color
-picker.</p>
-<p>We can copy the HTML output of individual components. This is useful for
-visually tweaking and finding the desired value of a component and then syncing
-it back to source code.</p>
-<p><img src="https://cloud.githubusercontent.com/assets/674727/18565449/aa63a7b6-7b44-11e6-999c-450c88812293.gif" alt="Inspector Components"></p>
+      <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-isoacahedron</span> <span class="attr">color</span>=<span class="string">"#FF926B"</span> <span class="attr">radius</span>=<span class="string">"5"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-isocahedron</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="attributes"><a href="#attributes" class="headerlink" title="Attributes"></a>Attributes</h2><table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Component Mapping</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ambient-occlusion-map</td>
+<td>material.ambientOcclusionMap</td>
+<td>None</td>
+</tr>
+<tr>
+<td>ambient-occlusion-map-intensity</td>
+<td>material.ambientOcclusionMapIntensity</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ambient-occlusion-texture-offset</td>
+<td>material.ambientOcclusionTextureOffset</td>
+<td>0 0</td>
+</tr>
+<tr>
+<td>ambient-occlusion-texture-repeat</td>
+<td>material.ambientOcclusionTextureRepeat</td>
+<td>1 1</td>
+</tr>
+<tr>
+<td>color</td>
+<td>material.color</td>
+<td>#FFF</td>
+</tr>
+<tr>
+<td>detail</td>
+<td>geometry.detail</td>
+<td>0</td>
+</tr>
+<tr>
+<td>displacement-bias</td>
+<td>material.displacementBias</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>displacement-map</td>
+<td>material.displacementMap</td>
+<td>None</td>
+</tr>
+<tr>
+<td>displacement-scale</td>
+<td>material.displacementScale</td>
+<td>1</td>
+</tr>
+<tr>
+<td>displacement-texture-offset</td>
+<td>material.displacementTextureOffset</td>
+<td>0 0</td>
+</tr>
+<tr>
+<td>displacement-texture-repeat</td>
+<td>material.displacementTextureRepeat</td>
+<td>1 1</td>
+</tr>
+<tr>
+<td>env-map</td>
+<td>material.envMap</td>
+<td>None</td>
+</tr>
+<tr>
+<td>fog</td>
+<td>material.fog</td>
+<td>true</td>
+</tr>
+<tr>
+<td>height</td>
+<td>material.height</td>
+<td>256</td>
+</tr>
+<tr>
+<td>metalness</td>
+<td>material.metalness</td>
+<td>0</td>
+</tr>
+<tr>
+<td>normal-map</td>
+<td>material.normalMap</td>
+<td>None</td>
+</tr>
+<tr>
+<td>normal-scale</td>
+<td>material.normalScale</td>
+<td>1 1</td>
+</tr>
+<tr>
+<td>normal-texture-offset</td>
+<td>material.normalTextureOffset</td>
+<td>0 0</td>
+</tr>
+<tr>
+<td>normal-texture-repeat</td>
+<td>material.normalTextureRepeat</td>
+<td>1 1</td>
+</tr>
+<tr>
+<td>radius</td>
+<td>geometry.radius</td>
+<td>1</td>
+</tr>
+<tr>
+<td>repeat</td>
+<td>material.repeat</td>
+<td>1 1</td>
+</tr>
+<tr>
+<td>roughness</td>
+<td>material.roughness</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>spherical-env-map</td>
+<td>material.sphericalEnvMap</td>
+<td>None</td>
+</tr>
+<tr>
+<td>src</td>
+<td>material.src</td>
+<td>None</td>
+</tr>
+<tr>
+<td>width</td>
+<td>material.width</td>
+<td>512</td>
+</tr>
+<tr>
+<td>wireframe</td>
+<td>material.wireframe</td>
+<td>false</td>
+</tr>
+<tr>
+<td>wireframe-linewidth</td>
+<td>material.wireframeLinewidth</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
 
     
 
     <!-- Previous / Next navigation. -->
     <footer class="footer guide-links c">
       
-        <span class="float-left">
-          <a href="/docs/master/guides/building-with-magicavoxel.html" class="guide-link guide-link-left">← Building with MagicaVoxel </a></span>
-      
       
     </footer>
 
     <footer class="footer footnote">
   <p>Except where otherwise noted, content on this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="external">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.</p>
-  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/guides/using-the-aframe-inspector.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
+  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/primitives/a-isocahedron.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
 </footer>
 
   </div>

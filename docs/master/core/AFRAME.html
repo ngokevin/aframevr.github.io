@@ -376,17 +376,17 @@
             </a>
           </li>
         
-          <li class="subnav-item  subnav-item-current">
-            <a href="/docs/master/core/AFRAME.html"
-               class="subnav-link current">
-              AFRAME Globals
-            </a>
-          </li>
-        
           <li class="subnav-item ">
             <a href="/docs/master/core/utils.html"
                class="subnav-link">
               Utils
+            </a>
+          </li>
+        
+          <li class="subnav-item  subnav-item-current">
+            <a href="/docs/master/core/AFRAME.html"
+               class="subnav-link current">
+              AFRAME Globals
             </a>
           </li>
         
@@ -701,6 +701,13 @@
           </li>
         
           <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-isocahedron.html"
+               class="subnav-link">
+              &lt;a-octahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
             <a href="/docs/master/primitives/a-octahedron.html"
                class="subnav-link">
               &lt;a-octahedron&gt;
@@ -859,7 +866,7 @@
     
     
       <p>A-Frame exposes its public interface through the <code>window.AFRAME</code> browser
-global. This same interface is also exposed if requiring with Node
+global. This same interface is also exposed if requiring with CommonJS
 (<code>require(&#39;aframe&#39;)</code>).</p>
 <h2 id="aframe-properties"><a href="#aframe-properties" class="headerlink" title="AFRAME Properties"></a><code>AFRAME</code> Properties</h2><table>
 <thead>
@@ -869,6 +876,10 @@ global. This same interface is also exposed if requiring with Node
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>AComponent</td>
+<td><a href="./component.html">Component</a> prototype.</td>
+</tr>
 <tr>
 <td>AEntity</td>
 <td><a href="./entity.html">Entity</a> prototype.</td>
@@ -899,7 +910,7 @@ global. This same interface is also exposed if requiring with Node
 </tr>
 <tr>
 <td>registerElement</td>
-<td>A flavor of <code>document.registerElement</code> that calls parent prototype handlers before child ones.</td>
+<td>A flavor of <code>document.registerElement</code> for A-Frame nodes calls parent prototype handlers before child ones. The base class of A-Frame elements. Also see <code>registerPrimitive</code> for registering an A-Frame elements similar to <code>&lt;a-box&gt;</code>.</td>
 </tr>
 <tr>
 <td>registerGeometry</td>

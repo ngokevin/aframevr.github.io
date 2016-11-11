@@ -377,16 +377,16 @@
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/core/AFRAME.html"
+            <a href="/docs/master/core/utils.html"
                class="subnav-link">
-              AFRAME Globals
+              Utils
             </a>
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/core/utils.html"
+            <a href="/docs/master/core/AFRAME.html"
                class="subnav-link">
-              Utils
+              AFRAME Globals
             </a>
           </li>
         
@@ -701,6 +701,13 @@
           </li>
         
           <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-isocahedron.html"
+               class="subnav-link">
+              &lt;a-octahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
             <a href="/docs/master/primitives/a-octahedron.html"
                class="subnav-link">
               &lt;a-octahedron&gt;
@@ -862,7 +869,7 @@
 assets in one place and to preload and cache assets for better performance.</p>
 <p>Games and rich 3D experiences traditionally preload many of their assets, such
 as models or textures, before rendering their scenes. This makes sure that
-assets aren’t missing visually, and this is benenficial for performance to
+assets aren’t missing visually, and this is beneficial for performance to
 ensure scenes don’t try to fetch assets while rendering.</p>
 <p>Assets are placed within <code>&lt;a-assets&gt;</code>, and <code>&lt;a-assets&gt;</code> is placed within
 <code>&lt;a-scene&gt;</code>. Assets include:</p>
@@ -872,8 +879,8 @@ ensure scenes don’t try to fetch assets while rendering.</p>
 <li><code>&lt;img&gt;</code> - Image textures</li>
 <li><code>&lt;video&gt;</code> - Video textures</li>
 </ul>
-<p>The scene and all entities will block until all of these types of assets are
-fetched (or error out) before playing.</p>
+<p>The scene and all entities will block (i.e., the scene won’t render) until all
+of these types of assets are fetched (or error out) before playing.</p>
 
       
 
@@ -967,6 +974,17 @@ fetched (or error out) before playing.</p>
         
       </li>
     
+      <li>
+        <a href="#accessing-the-xhrloader-and-cache">Accessing the XHRLoader and Cache</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
   </ul>
 
 
@@ -984,10 +1002,11 @@ origin as the scene.</p>
 with CORS headers. We recommend GitHub Pages as a simple deployment platform.
 Or you could also upload assets using the <a href="https://aframe.io/aframe/examples/_uploader/">A-Frame + Uploadcare
 Uploader</a>, a service that serves files with CORS headers set.</p>
-<p>Given that CORS headers <em>are</em> set, <code>&lt;a-assets&gt;</code> will automatically set
+<p>Given that <a href="https://developer.mozilla.org/docs/Web/HTML/CORS_enabled_image" target="_blank" rel="external">CORS headers</a> <em>are</em> set, <code>&lt;a-assets&gt;</code> will automatically set
 <code>crossorigin</code> attributes on media elements (e.g., <code>&lt;audio&gt;</code>, <code>&lt;img&gt;</code>,
 <code>&lt;video&gt;</code>) if it detects the resource is on a different domain.</p>
-<h2 id="preloading-audio-and-video"><a href="#preloading-audio-and-video" class="headerlink" title="Preloading Audio and Video"></a>Preloading Audio and Video</h2><p>Audio and video assets will only block the scene if <code>autoplay</code> is set or if <code>preload=&quot;auto&quot;</code>:</p>
+<h2 id="preloading-audio-and-video"><a href="#preloading-audio-and-video" class="headerlink" title="Preloading Audio and Video"></a>Preloading Audio and Video</h2><p>Audio and video assets will only block the scene if <code>autoplay</code> is set or if
+<code>preload=&quot;auto&quot;</code>:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- These will not block. --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>=<span class="string">"blockus.mp3"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">"loadofblocks.mp4"</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- These will block. --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>=<span class="string">"blocky.mp3"</span> <span class="attr">autoplay</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">"blockiscooking.mp4"</span> <span class="attr">preload</span>=<span class="string">"auto"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="setting-a-timeout"><a href="#setting-a-timeout" class="headerlink" title="Setting a Timeout"></a>Setting a Timeout</h2><p>We can set a timeout that when reached, the scene will begin rendering and
 entities will begin initializing regardless of whether all the assets have
@@ -1017,7 +1036,11 @@ the <code>loaded</code> event when they say they have finished loading.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="load-progress-on-individual-assets"><a href="#load-progress-on-individual-assets" class="headerlink" title="Load Progress on Individual Assets"></a>Load Progress on Individual Assets</h2><h3 id="lt-a-asset-item-gt"><a href="#lt-a-asset-item-gt" class="headerlink" title="&lt;a-asset-item&gt;"></a><code>&lt;a-asset-item&gt;</code></h3><table>
+<h2 id="load-progress-on-individual-assets"><a href="#load-progress-on-individual-assets" class="headerlink" title="Load Progress on Individual Assets"></a>Load Progress on Individual Assets</h2><h3 id="lt-a-asset-item-gt"><a href="#lt-a-asset-item-gt" class="headerlink" title="&lt;a-asset-item&gt;"></a><code>&lt;a-asset-item&gt;</code></h3><p><code>&lt;a-asset-item&gt;</code> invokes the <a href="https://threejs.org/docs/#Reference/Loaders/XHRLoader" target="_blank" rel="external">three.js
+XHRLoader</a> and can be
+used for any type of file. When finished, it will set its <code>data</code> member with
+the text response.</p>
+<table>
 <thead>
 <tr>
 <th>Event Name</th>
@@ -1025,6 +1048,14 @@ the <code>loaded</code> event when they say they have finished loading.</p>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>error</td>
+<td>Fetch error. Event detail contains <code>xhr</code> with <code>XMLHttpRequest</code> instance.</td>
+</tr>
+<tr>
+<td>progress</td>
+<td>Emitted on progress. Event detail contains <code>xhr</code> with <code>XMLHttpRequest</code> instance, <code>loadedBytes</code>, and <code>totalBytes</code>.</td>
+</tr>
 <tr>
 <td>loaded</td>
 <td>Asset pointed to by <code>src</code> was loaded.</td>
@@ -1041,7 +1072,7 @@ the <code>loaded</code> event when they say they have finished loading.</p>
 </thead>
 <tbody>
 <tr>
-<td>loaded</td>
+<td>load</td>
 <td>Image was loaded.</td>
 </tr>
 </tbody>
@@ -1091,6 +1122,10 @@ already been fetched, it won’t be fetched again.</p>
 load, all assets will have been already fetched. As long as <code>&lt;a-asset-item&gt;</code>s
 are defined, and the entity is fetching files using some form
 <code>THREE.XHRLoader</code>, then caching will automatically work.</p>
+<h2 id="accessing-the-xhrloader-and-cache"><a href="#accessing-the-xhrloader-and-cache" class="headerlink" title="Accessing the XHRLoader and Cache"></a>Accessing the <code>XHRLoader</code> and Cache</h2><p>To access the three.js <code>XHRLoader</code> if we want to listen more closely:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">document</span>.querySelector(<span class="string">'a-assets'</span>).fileLoader);</div></pre></td></tr></table></figure>
+<p>To access the cache that stores XHR responses:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(THREE.Cache);</div></pre></td></tr></table></figure>
 
     
 

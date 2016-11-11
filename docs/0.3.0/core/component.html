@@ -945,7 +945,7 @@ and functionality of entities.</p>
             
               <li><a href="#tick-time-timedelta">.tick(time, timeDelta)</a></li>
             
-              <li><a href="#pause-and-play">.pause() and.play()`</a></li>
+              <li><a href="#pause-and-play">.pause() and .play()</a></li>
             
               <li><a href="#updateschema-data">.updateSchema(data)</a></li>
             
@@ -1332,7 +1332,7 @@ scene in milliseconds and the time difference from the last frame is passed
 into the tick handler.</p>
 <p>This is useful for things that need to update constantly such as controls or
 physics.</p>
-<h3 id="pause-and-play"><a href="#pause-and-play" class="headerlink" title=".pause() and.play()`"></a><code>.pause() and</code>.play()`</h3><p>The <code>.pause</code> and <code>.play</code> methods are invoked when the entity calls its own
+<h3 id="pause-and-play"><a href="#pause-and-play" class="headerlink" title=".pause() and .play()"></a><code>.pause()</code> and <code>.play()</code></h3><p>The <code>.pause</code> and <code>.play</code> methods are invoked when the entity calls its own
 <code>.pause</code> or <code>.play</code> methods. Components should use this to stop or resume any
 dynamic behavior such as event listeners.</p>
 <p>Example uses of <code>.pause</code> and <code>.play</code> by some A-Frame components:</p>
@@ -1403,7 +1403,8 @@ vertices.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">update: <span class="function"><span class="keyword">function</span> (<span class="params">oldData</span>) </span>&#123;</div><div class="line">  <span class="comment">// Set color with material.</span></div><div class="line">  <span class="keyword">var</span> material = <span class="keyword">new</span> THREE.LineBasicMaterial(&#123;</div><div class="line">    <span class="attr">color</span>: <span class="keyword">this</span>.data.color</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  <span class="comment">// Add vertices to geometry.</span></div><div class="line">  <span class="keyword">var</span> geometry = <span class="keyword">new</span> THREE.Geometry();</div><div class="line">  <span class="keyword">this</span>.data.path.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">vec3</span>) </span>&#123;</div><div class="line">    geometry.vertices.push(</div><div class="line">      <span class="keyword">new</span> THREE.Vector3(vec3.x, vec3.y, vec3.z)</div><div class="line">    );</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  <span class="comment">// Apply mesh.</span></div><div class="line">  <span class="keyword">this</span>.el.setObject3D(<span class="string">'mesh'</span>, <span class="keyword">new</span> THREE.Line(geometry, material));</div><div class="line">&#125;,</div><div class="line"></div><div class="line"><span class="comment">// ...</span></div></pre></td></tr></table></figure>
 <p>Here, we update the line by completely replacing it. Though sometimes, we might
 want to more granularly update objects for better performance.</p>
-<h4 id="remove-1"><a href="#remove-1" class="headerlink" title="Remove"></a>Remove</h4><p>For removal of the line mesh from the entity, we use <a href="./entity.html#remove-object3d"><code>Entity.removeObject3D</code></a>:</p>
+<h4 id="remove-1"><a href="#remove-1" class="headerlink" title="Remove"></a>Remove</h4><p>For removal of the line mesh from the entity, we use
+<a href="./entity.html#removeobject3d-type"><code>Entity.removeObject3D</code></a>:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">remove: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.el.removeObject3D(<span class="string">'mesh'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>This will remove the object from the entity’s scene graph.</p>
 <h4 id="usage"><a href="#usage" class="headerlink" title="Usage"></a>Usage</h4><p>Then with the line component written and registered, we can use it in HTML:</p>

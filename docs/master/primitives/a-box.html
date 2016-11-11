@@ -377,16 +377,16 @@
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/core/AFRAME.html"
+            <a href="/docs/master/core/utils.html"
                class="subnav-link">
-              AFRAME Globals
+              Utils
             </a>
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/core/utils.html"
+            <a href="/docs/master/core/AFRAME.html"
                class="subnav-link">
-              Utils
+              AFRAME Globals
             </a>
           </li>
         
@@ -701,6 +701,13 @@
           </li>
         
           <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-isocahedron.html"
+               class="subnav-link">
+              &lt;a-octahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
             <a href="/docs/master/primitives/a-octahedron.html"
                class="subnav-link">
               &lt;a-octahedron&gt;
@@ -870,6 +877,26 @@
 </thead>
 <tbody>
 <tr>
+<td>ambient-occlusion-map</td>
+<td>material.ambientOcclusionMap</td>
+<td>None</td>
+</tr>
+<tr>
+<td>ambient-occlusion-map-intensity</td>
+<td>material.ambientOcclusionMapIntensity</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ambient-occlusion-texture-offset</td>
+<td>material.ambientOcclusionTextureOffset</td>
+<td>0 0</td>
+</tr>
+<tr>
+<td>ambient-occlusion-texture-repeat</td>
+<td>material.ambientOcclusionTextureRepeat</td>
+<td>1 1</td>
+</tr>
+<tr>
 <td>color</td>
 <td>material.color</td>
 <td>#FFF</td>
@@ -880,9 +907,44 @@
 <td>1</td>
 </tr>
 <tr>
-<td>height</td>
-<td>geometry.height</td>
+<td>displacement-bias</td>
+<td>material.displacementBias</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>displacement-map</td>
+<td>material.displacementMap</td>
+<td>None</td>
+</tr>
+<tr>
+<td>displacement-scale</td>
+<td>material.displacementScale</td>
 <td>1</td>
+</tr>
+<tr>
+<td>displacement-texture-offset</td>
+<td>material.displacementTextureOffset</td>
+<td>0 0</td>
+</tr>
+<tr>
+<td>displacement-texture-repeat</td>
+<td>material.displacementTextureRepeat</td>
+<td>1 1</td>
+</tr>
+<tr>
+<td>env-map</td>
+<td>material.envMap</td>
+<td>None</td>
+</tr>
+<tr>
+<td>fog</td>
+<td>material.fog</td>
+<td>true</td>
+</tr>
+<tr>
+<td>height</td>
+<td>material.height</td>
+<td>256</td>
 </tr>
 <tr>
 <td>metalness</td>
@@ -890,14 +952,29 @@
 <td>0</td>
 </tr>
 <tr>
-<td>opacity</td>
-<td>material.opacity</td>
-<td>1</td>
+<td>normal-map</td>
+<td>material.normalMap</td>
+<td>None</td>
+</tr>
+<tr>
+<td>normal-scale</td>
+<td>material.normalScale</td>
+<td>1 1</td>
+</tr>
+<tr>
+<td>normal-texture-offset</td>
+<td>material.normalTextureOffset</td>
+<td>0 0</td>
+</tr>
+<tr>
+<td>normal-texture-repeat</td>
+<td>material.normalTextureRepeat</td>
+<td>1 1</td>
 </tr>
 <tr>
 <td>repeat</td>
 <td>material.repeat</td>
-<td>None</td>
+<td>1 1</td>
 </tr>
 <tr>
 <td>roughness</td>
@@ -920,14 +997,9 @@
 <td>1</td>
 </tr>
 <tr>
-<td>shader</td>
-<td>material.shader</td>
-<td>standard</td>
-</tr>
-<tr>
-<td>side</td>
-<td>material.side</td>
-<td>front</td>
+<td>spherical-env-map</td>
+<td>material.sphericalEnvMap</td>
+<td>None</td>
 </tr>
 <tr>
 <td>src</td>
@@ -935,14 +1007,19 @@
 <td>None</td>
 </tr>
 <tr>
-<td>transparent</td>
-<td>material.transparent</td>
+<td>width</td>
+<td>material.width</td>
+<td>512</td>
+</tr>
+<tr>
+<td>wireframe</td>
+<td>material.wireframe</td>
 <td>false</td>
 </tr>
 <tr>
-<td>width</td>
-<td>geometry.width</td>
-<td>1</td>
+<td>wireframe-linewidth</td>
+<td>material.wireframeLinewidth</td>
+<td>2</td>
 </tr>
 </tbody>
 </table>

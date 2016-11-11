@@ -377,16 +377,16 @@
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/core/AFRAME.html"
+            <a href="/docs/master/core/utils.html"
                class="subnav-link">
-              AFRAME Globals
+              Utils
             </a>
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/core/utils.html"
+            <a href="/docs/master/core/AFRAME.html"
                class="subnav-link">
-              Utils
+              AFRAME Globals
             </a>
           </li>
         
@@ -701,6 +701,13 @@
           </li>
         
           <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-isocahedron.html"
+               class="subnav-link">
+              &lt;a-octahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
             <a href="/docs/master/primitives/a-octahedron.html"
                class="subnav-link">
               &lt;a-octahedron&gt;
@@ -935,8 +942,8 @@ entity-component-system pattern refer to these as <em>assemblages</em>.</p>
 entities can be done with primitives:</p>
 <ul>
 <li>Positioning, rotating, and scaling</li>
-<li>Attaching <a href="../core/component.html">components</a> and <a href="../core/mixin.html">mixins</a></li>
-<li>Applying <a href="../core/animation.html">animations</a></li>
+<li>Attaching <a href="../core/component.html">components</a> and <a href="../core/mixins.html">mixins</a></li>
+<li>Applying <a href="../core/animations.html">animations</a></li>
 </ul>
 <p>For example, let’s take <code>&lt;a-box&gt;</code> primitive, and say someone writes a
 third-party physics component. We can attach it to <code>&lt;a-box&gt;</code> just as we would
@@ -951,7 +958,8 @@ element while providing some defaults. It defaults the <code>geometry.primitive<
 property to <code>box</code>. And it <em>maps</em> (i.e., proxies) the HTML <code>width</code> attribute to
 the underlying <code>geometry.width</code> property and the HTML <code>color</code> attribute to the
 underlying <code>material.color</code> property.</p>
-<h2 id="register-a-primitive"><a href="#register-a-primitive" class="headerlink" title="Register a Primitive"></a>Register a Primitive</h2><p>We can compose and register our own primitives for other people to consume.</p>
+<h2 id="register-a-primitive"><a href="#register-a-primitive" class="headerlink" title="Register a Primitive"></a>Register a Primitive</h2><p>We can compose and register our own primitives (i.e., register an element) for
+other people to easily use.</p>
 <p>For example, here is what the registration looks like for <code>&lt;a-box&gt;</code> primitive:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> extendDeep = AFRAME.utils.extendDeep;</div><div class="line"></div><div class="line"><span class="comment">// The mesh mixin provides common material properties for creating mesh-based primitives.</span></div><div class="line"><span class="comment">// This makes the material component a default component and maps all the base material properties.</span></div><div class="line"><span class="keyword">var</span> meshMixin = AFRAME.primitives.getMeshMixin();</div><div class="line"></div><div class="line">AFRAME.registerPrimitive(<span class="string">'a-box'</span>, extend(&#123;&#125;, meshMixin, &#123;</div><div class="line">  <span class="comment">// Preset default components. These components and component properties will be attached to the entity out-of-the-box.</span></div><div class="line">  defaultComponents: &#123;</div><div class="line">    <span class="attr">geometry</span>: &#123;<span class="attr">primitive</span>: <span class="string">'box'</span>&#125;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="comment">// Defined mappings from HTML attributes to component properties (using dots as delimiters). If we set `depth="5"` in HTML, then the primitive will automatically set `geometry="depth: 5"`.</span></div><div class="line">  mappings: &#123;</div><div class="line">    <span class="attr">depth</span>: <span class="string">'geometry.depth'</span>,</div><div class="line">    <span class="attr">height</span>: <span class="string">'geometry.height'</span>,</div><div class="line">    <span class="attr">width</span>: <span class="string">'geometry.width'</span></div><div class="line">  &#125;</div><div class="line">&#125;));</div></pre></td></tr></table></figure>
 <p>For example, Don McCurdy’s <a href="https://github.com/donmccurdy/aframe-extras" target="_blank" rel="external">aframe-extras</a> creates <code>&lt;a-ocean&gt;</code>
