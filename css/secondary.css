@@ -1152,7 +1152,7 @@ body:not([data-page-layout="docs"]) .docs-search-wrapper {
 }
 @media (min-width: 768px) {
   [data-page-layout="docs"] .page__title {
-    max-width: 66%;
+    max-width: 62%;
   }
 }
 @media screen and (max-width: 800px) {

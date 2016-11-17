@@ -929,6 +929,17 @@
       </li>
     
       <li>
+        <a href="#why-is-the-html-dom-not-updating-in-a-frame">Why is the HTML/DOM not updating in A-Frame?</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
         <a href="#why-does-my-video-not-play-on-mobile">Why does my video not play on mobile?</a>
 
         <!-- Nested. -->
@@ -1164,6 +1175,8 @@ the same domain as your scene.</p>
 with CORS headers. We recommend GitHub Pages as a simple deployment platform.
 Or you could also upload assets using the <a href="https://cdn.aframe.io/" target="_blank" rel="external">A-Frame + Uploadcare
 Uploader</a>, a service that serves files with CORS headers set.</p>
+<h2 id="why-is-the-html-dom-not-updating-in-a-frame"><a href="#why-is-the-html-dom-not-updating-in-a-frame" class="headerlink" title="Why is the HTML/DOM not updating in A-Frame?"></a>Why is the HTML/DOM not updating in A-Frame?</h2><p>For performance reasons, A-Frame does not update the DOM with component data.
+Use the <a href="https://aframe.io/docs/0.3.0/components/debug.html">debug component</a> to enable component-to-DOM serialization.</p>
 <h2 id="why-does-my-video-not-play-on-mobile"><a href="#why-does-my-video-not-play-on-mobile" class="headerlink" title="Why does my video not play on mobile?"></a>Why does my video not play on mobile?</h2><p>Mobile browsers have limitations with displaying inline video.</p>
 <p>Because of an <a href="https://developer.apple.com/library/iad/documentation/UserExperience/Conceptual/iAdJSProgGuide/PlayingVideosinAds/PlayingVideosinAds.html" target="_blank" rel="external">iOS platform restriction</a> in order to get inline video
 (with or without autoplay), we must:</p>
