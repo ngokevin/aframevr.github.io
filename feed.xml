@@ -8,7 +8,7 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     
     <description>A web framework for building virtual reality experiences. Make WebVR with HTML and the Entity-Component ecosystem. Works across HTC Vive, Oculus Rift, desktop, and mobile platforms.</description>
-    <pubDate>Thu, 15 Dec 2016 01:03:55 GMT</pubDate>
+    <pubDate>Thu, 15 Dec 2016 01:38:31 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -97,7 +97,7 @@ coordinate system. Keep an eye out for that!</p>
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/andgokevin" target="_blank" rel="external">@andgokevin</a> The way of making and the source are written here :) <a href="https://t.co/kXDBDDjcOk" target="_blank" rel="external">https://t.co/kXDBDDjcOk</a> <a href="https://t.co/mnVD66UKGq" target="_blank" rel="external">https://t.co/mnVD66UKGq</a></p>&mdash; ãã£ã¡ã¼ (@<em>touchy</em>) <a href="https://twitter.com/_touchy_/status/809185550296985600" target="_blank" rel="external">December 14, 2016</a></blockquote>
 </div>
 
-<p><a href="https://github.com/cjroth/aframe-phantomjs-continuous-streaming" target="_blank" rel="external">PhantomJS Continuous Streaming</a></p>
+<p><a href="https://github.com/cjroth/aframe-phantomjs-continuous-streaming" target="_blank" rel="external">PhantomJS Continuous Streaming</a> by <a href="https://twitter.com/chrisrxth" target="_blank" rel="external">@chrisrxth</a></p>
 <p><img src="https://github.com/cjroth/aframe-phantomjs-continuous-streaming/raw/master/screenshot.png" alt="PhantomJS"></p>
 <p><a href="https://github.com/kfarr/aframe-city-builder" target="_blank" rel="external">A-Frame City Builder</a> by <a href="http://twitter.com/kfarr" target="_blank" rel="external">@kfarr</a></p>
 <p><img src="http://i.imgur.com/1MggI2R.jpg" alt="City Builder"></p>
