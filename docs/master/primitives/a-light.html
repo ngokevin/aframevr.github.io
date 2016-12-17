@@ -25,7 +25,7 @@
       data-title="{title} | A-Frame"
       data-is-spa="false"
       data-ga-id="UA-24056643-4"
-      data-aframe-version="0.3.0"
+      data-aframe-version="0.4.0"
       data-docs-version="master">
   <head>
     <title><a-light> – A-Frame</title>
@@ -120,7 +120,7 @@
   <ul id="nav" class="nav">
     
       <li  class="nav-item">
-        <a href="/docs/0.3.0/introduction/"
+        <a href="/docs/0.4.0/introduction/"
            class="nav-link nav-link-docs current nav-link-disabled"
            
            >
@@ -194,6 +194,11 @@
         <option selected
                 data-href="/docs/master/introduction/">
           master
+        </option>
+      
+        <option false
+                data-href="/docs/0.4.0/introduction/">
+          0.4.0
         </option>
       
         <option false
@@ -280,7 +285,7 @@
           <li class="subnav-item ">
             <a href="/docs/master/guides/"
                class="subnav-link">
-              Building with Basic HTML
+              Building a Basic Scene
             </a>
           </li>
         
@@ -504,6 +509,13 @@
           </li>
         
           <li class="subnav-item ">
+            <a href="/docs/master/components/oculus-touch-controls.html"
+               class="subnav-link">
+              oculus-touch-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
             <a href="/docs/master/components/pool.html"
                class="subnav-link">
               pool
@@ -701,14 +713,14 @@
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/primitives/a-isocahedron.html"
+            <a href="/docs/master/primitives/a-octahedron.html"
                class="subnav-link">
               &lt;a-octahedron&gt;
             </a>
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/primitives/a-octahedron.html"
+            <a href="/docs/master/primitives/a-isocahedron.html"
                class="subnav-link">
               &lt;a-octahedron&gt;
             </a>
@@ -858,14 +870,14 @@
     
     
       <blockquote>
-<p><strong>NOTE:</strong> This version of the documentation tracks <strong>unstable</strong> development happening on <a href="https://github.com/aframevr/aframe/tree/master/dist">A-Frame’s <code>master</code> branch</a>. If you wish to try it out, grab the <a href="https://rawgit.com/aframevr/aframe/master/dist/aframe.min.js">unstable build</a>. Otherwise, head to the <a href="/docs/0.3.0/introduction/">documentation for the current 0.3.0 version</a></p>
+<p><strong>NOTE:</strong> This version of the documentation tracks <strong>unstable</strong> development happening on <a href="https://github.com/aframevr/aframe/tree/master/dist">A-Frame’s <code>master</code> branch</a>. If you wish to try it out, grab the <a href="https://rawgit.com/aframevr/aframe/master/dist/aframe.min.js">unstable build</a>. Otherwise, head to the <a href="/docs/0.4.0/introduction/">documentation for the current 0.4.0 version</a></p>
 </blockquote>
 
     
 
     
     
-      <p>The light primitive adjusts the lighting setup of the scene. It is an entity that maps attributes to properties of the <a href="../components/light.html">light component</a>.</p>
+      <p>A light changes the lighting and shading of the scene.</p>
 <h2 id="examples"><a href="#examples" class="headerlink" title="Examples"></a>Examples</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Red directional light shining from the top left. --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-light</span> <span class="attr">color</span>=<span class="string">"red"</span> <span class="attr">position</span>=<span class="string">"-1 1 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-light</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- Blue point light, 5 meters in the air. --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-light</span> <span class="attr">type</span>=<span class="string">"point"</span> <span class="attr">color</span>=<span class="string">"blue"</span> <span class="attr">position</span>=<span class="string">"0 5 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-light</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- Dim ambient lighting. --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-light</span> <span class="attr">type</span>=<span class="string">"ambient"</span> <span class="attr">color</span>=<span class="string">"#222"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-light</span>&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="attributes"><a href="#attributes" class="headerlink" title="Attributes"></a>Attributes</h2><table>
 <thead>
@@ -923,7 +935,8 @@
 </tr>
 </tbody>
 </table>
-<h2 id="differences-with-the-default-lighting"><a href="#differences-with-the-default-lighting" class="headerlink" title="Differences with the Default Lighting"></a>Differences with the Default Lighting</h2><p>When we add a light, A-Frame will remove the default lighting setup (i.e., one directional light from the top-left, and one small ambient light).</p>
+<h2 id="differences-with-the-default-lighting"><a href="#differences-with-the-default-lighting" class="headerlink" title="Differences with the Default Lighting"></a>Differences with the Default Lighting</h2><p>When we add a light, A-Frame will remove the default lighting setup (i.e., one
+directional light from the top-left, and one small ambient light).</p>
 
     
 

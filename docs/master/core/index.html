@@ -25,7 +25,7 @@
       data-title="{title} | A-Frame"
       data-is-spa="false"
       data-ga-id="UA-24056643-4"
-      data-aframe-version="0.3.0"
+      data-aframe-version="0.4.0"
       data-docs-version="master">
   <head>
     <title>Entity-Component-System – A-Frame</title>
@@ -120,7 +120,7 @@
   <ul id="nav" class="nav">
     
       <li  class="nav-item">
-        <a href="/docs/0.3.0/introduction/"
+        <a href="/docs/0.4.0/introduction/"
            class="nav-link nav-link-docs current nav-link-disabled"
            
            >
@@ -194,6 +194,11 @@
         <option selected
                 data-href="/docs/master/introduction/">
           master
+        </option>
+      
+        <option false
+                data-href="/docs/0.4.0/introduction/">
+          0.4.0
         </option>
       
         <option false
@@ -280,7 +285,7 @@
           <li class="subnav-item ">
             <a href="/docs/master/guides/"
                class="subnav-link">
-              Building with Basic HTML
+              Building a Basic Scene
             </a>
           </li>
         
@@ -504,6 +509,13 @@
           </li>
         
           <li class="subnav-item ">
+            <a href="/docs/master/components/oculus-touch-controls.html"
+               class="subnav-link">
+              oculus-touch-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
             <a href="/docs/master/components/pool.html"
                class="subnav-link">
               pool
@@ -701,14 +713,14 @@
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/primitives/a-isocahedron.html"
+            <a href="/docs/master/primitives/a-octahedron.html"
                class="subnav-link">
               &lt;a-octahedron&gt;
             </a>
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/primitives/a-octahedron.html"
+            <a href="/docs/master/primitives/a-isocahedron.html"
                class="subnav-link">
               &lt;a-octahedron&gt;
             </a>
@@ -858,19 +870,21 @@
     
     
       <blockquote>
-<p><strong>NOTE:</strong> This version of the documentation tracks <strong>unstable</strong> development happening on <a href="https://github.com/aframevr/aframe/tree/master/dist">A-Frame’s <code>master</code> branch</a>. If you wish to try it out, grab the <a href="https://rawgit.com/aframevr/aframe/master/dist/aframe.min.js">unstable build</a>. Otherwise, head to the <a href="/docs/0.3.0/introduction/">documentation for the current 0.3.0 version</a></p>
+<p><strong>NOTE:</strong> This version of the documentation tracks <strong>unstable</strong> development happening on <a href="https://github.com/aframevr/aframe/tree/master/dist">A-Frame’s <code>master</code> branch</a>. If you wish to try it out, grab the <a href="https://rawgit.com/aframevr/aframe/master/dist/aframe.min.js">unstable build</a>. Otherwise, head to the <a href="/docs/0.4.0/introduction/">documentation for the current 0.4.0 version</a></p>
 </blockquote>
 
     
 
     
     
-      <p>A-Frame is based on an <strong><a href="https://wikipedia.org/wiki/Entity_component_system" target="_blank" rel="external">entity-component-system pattern</a></strong> (ECS), a
-pattern common in game development that emphasizes composability over
-inheritance:</p>
+      <p>A-Frame is an <strong><a href="https://wikipedia.org/wiki/Entity_component_system" target="_blank" rel="external">entity-component-system</a></strong> (ECS) framework. The ECS
+pattern is a pattern common in game development that favors composability over
+traditional inheritance and hierarchy:</p>
 <ul>
 <li>An <a href="./entity.html">entity</a> is a general-purpose object that inherently does and renders nothing.</li>
-<li>A <a href="./component.html">component</a> is a reusable module that is plugged into entities in order to provide appearance, behavior, and/or functionality. They are plug-and-play for objects.</li>
+<li>A <a href="./component.html">component</a> is a reusable module that we plug into entities to
+provide appearance, behavior, and/or functionality. They are plug-and-play
+for objects.</li>
 <li>A <a href="./systems.html">system</a> provides global scope, services, and management to classes of components.</li>
 </ul>
 <p>ECS lets us build complex entities with rich behavior by plugging different
@@ -917,21 +931,36 @@ existing features.</p>
 <h2 id="concept"><a href="#concept" class="headerlink" title="Concept"></a>Concept</h2><p>As an abstract example, imagine a car is an entity:</p>
 <ul>
 <li>We can add a <code>color</code> component which affects the color of the car.</li>
-<li>We can add an <code>engine</code> component which has properties such as “horsepower” or “weight” which affect the speed of the car.</li>
-<li>We might add a <code>tire</code> component which has properties such as “grip” which affects the traction of the car.</li>
+<li>We can add an <code>engine</code> component which has properties such as “horsepower” or
+“weight” which affect the speed of the car.</li>
+<li>We might add a <code>tire</code> component which has properties such as “grip” which
+affects the traction of the car.</li>
 </ul>
-<p>These components could be mixed and matched and even used with other vehicles such as airplanes, motorcycles, or boats (where we wouldn’t specify a <code>tire</code> component).</p>
-<h2 id="composition"><a href="#composition" class="headerlink" title="Composition"></a>Composition</h2><p>Taking the pattern to A-Frame:</p>
+<p>We can mix and match components and even use them to create new types of
+vehicles such as airplanes, motorcycles, or boats (where we wouldn’t specify a
+<code>tire</code> component).</p>
+<h2 id="composition"><a href="#composition" class="headerlink" title="Composition"></a>Composition</h2><p>With this pattern, A-Frame represents:</p>
 <ul>
-<li>An entity is represented via an HTML element (i.e., <code>&lt;a-entity&gt;</code>).</li>
-<li>A component is represented via an HTML attribute.</li>
-<li>Component <strong>properties</strong> are represented by values defined via an HTML attribute.</li>
+<li>an entity as an HTML element (i.e., <code>&lt;a-entity&gt;</code>).</li>
+<li>a component as an HTML attribute.</li>
+<li>component <strong>properties</strong> as values defined by an HTML attribute.</li>
 </ul>
-<p>For example, to <em>compose</em> a tomato-colored sphere starting with an entity, we can attach the <a href="../components/geometry.html">geometry</a> and <a href="../components/material.html">material</a> components. Since the components take multiple properties, we define the property values using an inline-style syntax:</p>
+<p>For example, to <em>compose</em> a tomato-colored sphere starting with an entity, we
+can attach the <a href="../components/geometry.html">geometry</a> and <a href="../components/material.html">material</a> components. Since
+the components take multiple properties, we define the property values using an
+inline-style syntax:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: sphere; radius: 1.5"</span></span></div><div class="line">          <span class="attr">material</span>=<span class="string">"color: tomato; metalness: 0.7"</span>&gt;<span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>From there, we can attach more and more components to add whatever appearance, behavior, or funtionality we want. Attach the <a href="../components/light.html">light component</a> to have it emit light. Attach the <a href="../components/sound.html">sound component</a> to have it play sound. Attach the <a href="https://github.com/ngokevin/aframe-physics-components" target="_blank" rel="external">physics component</a> to have it be affected by gravity and collision detection:</p>
+<p>From there, we can attach more and more components to add whatever appearance,
+behavior, or funtionality we want. Attach the <a href="../components/light.html">light component</a> to have
+it emit light. Attach the <a href="../components/sound.html">sound component</a> to have it play sound.
+Attach the <a href="https://github.com/ngokevin/aframe-physics-components" target="_blank" rel="external">physics component</a> to affect the entity with gravity and
+collision detection:</p>
 <p><img src="https://i.imgur.com/0UIZFgs.gif" alt="Composing an Entity"></p>
-<p>We can even attach third-party components that other people have created. If someone writes a component that enables a mesh to explode, or a component that enables the mesh to use a canvas as its material texture, we could just drop the component into our A-Frame experience and use it immediately in HTML. The entity-component-system pattern enables great flexibility and extensibility.</p>
+<p>We can even attach third-party components that other people have created. If
+someone writes a component that enables a mesh to explode, or a component that
+enables the mesh to use a canvas as its material texture, we could just drop
+the component into our A-Frame experience and use it immediately in HTML. The
+entity-component-system pattern enables great flexibility and extensibility.</p>
 
     
 

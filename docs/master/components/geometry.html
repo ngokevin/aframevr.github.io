@@ -25,7 +25,7 @@
       data-title="{title} | A-Frame"
       data-is-spa="false"
       data-ga-id="UA-24056643-4"
-      data-aframe-version="0.3.0"
+      data-aframe-version="0.4.0"
       data-docs-version="master">
   <head>
     <title>geometry – A-Frame</title>
@@ -120,7 +120,7 @@
   <ul id="nav" class="nav">
     
       <li  class="nav-item">
-        <a href="/docs/0.3.0/introduction/"
+        <a href="/docs/0.4.0/introduction/"
            class="nav-link nav-link-docs current nav-link-disabled"
            
            >
@@ -194,6 +194,11 @@
         <option selected
                 data-href="/docs/master/introduction/">
           master
+        </option>
+      
+        <option false
+                data-href="/docs/0.4.0/introduction/">
+          0.4.0
         </option>
       
         <option false
@@ -280,7 +285,7 @@
           <li class="subnav-item ">
             <a href="/docs/master/guides/"
                class="subnav-link">
-              Building with Basic HTML
+              Building a Basic Scene
             </a>
           </li>
         
@@ -504,6 +509,13 @@
           </li>
         
           <li class="subnav-item ">
+            <a href="/docs/master/components/oculus-touch-controls.html"
+               class="subnav-link">
+              oculus-touch-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
             <a href="/docs/master/components/pool.html"
                class="subnav-link">
               pool
@@ -701,14 +713,14 @@
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/primitives/a-isocahedron.html"
+            <a href="/docs/master/primitives/a-octahedron.html"
                class="subnav-link">
               &lt;a-octahedron&gt;
             </a>
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/primitives/a-octahedron.html"
+            <a href="/docs/master/primitives/a-isocahedron.html"
                class="subnav-link">
               &lt;a-octahedron&gt;
             </a>
@@ -858,19 +870,17 @@
     
     
       <blockquote>
-<p><strong>NOTE:</strong> This version of the documentation tracks <strong>unstable</strong> development happening on <a href="https://github.com/aframevr/aframe/tree/master/dist">A-Frame’s <code>master</code> branch</a>. If you wish to try it out, grab the <a href="https://rawgit.com/aframevr/aframe/master/dist/aframe.min.js">unstable build</a>. Otherwise, head to the <a href="/docs/0.3.0/introduction/">documentation for the current 0.3.0 version</a></p>
+<p><strong>NOTE:</strong> This version of the documentation tracks <strong>unstable</strong> development happening on <a href="https://github.com/aframevr/aframe/tree/master/dist">A-Frame’s <code>master</code> branch</a>. If you wish to try it out, grab the <a href="https://rawgit.com/aframevr/aframe/master/dist/aframe.min.js">unstable build</a>. Otherwise, head to the <a href="/docs/0.4.0/introduction/">documentation for the current 0.4.0 version</a></p>
 </blockquote>
 
     
 
     
     
-      <p>The geometry component provides a basic shape for an entity. The general
-geometry is defined by the <code>primitive</code> property. Geometric primitives, in
-computer graphics, means an extremely basic shape. With the primitive defined,
-additional properties are used to further define the geometry. A material
-component is usually defined to provide a appearance alongside the
-shape to create a complete mesh.</p>
+      <p>The geometry component provides a basic shape for an entity. The <code>primitive</code>
+property defines the general shape. Geometric primitives, in computer graphics,
+are irreducible basic shapes. A material component is commonly defined to
+provide a appearance alongside the shape to create a complete mesh.</p>
 
       
 
@@ -975,11 +985,10 @@ shape to create a complete mesh.</p>
 </tbody>
 </table>
 <h3 id="mergeto"><a href="#mergeto" class="headerlink" title="mergeTo"></a><code>mergeTo</code></h3><p>Merging geometries reduces the number of draw calls, greatly improving
-performance under certain circumstances. Geometries that are merged will
-inherit the material of the target geometry. Thus, it’s useful when we have
-entities that share the same material.</p>
-<p>Once merged, the individual geometry can no longer be manipulated
-independently.</p>
+performance under certain circumstances. Merged geometries will inherit the
+material of the target geometry. Thus, it’s useful when we have entities that
+share the same material.</p>
+<p>Once merged, we can no longer manipulate the individual geometry independently.</p>
 <p>For geometry merging to be able to work, we will have to turn off <code>buffer</code> and
 turn on <code>skipCache</code>.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"target"</span> <span class="attr">geometry</span>=<span class="string">"primitive: box; buffer: false; skipCache: true"</span> <span class="attr">material</span>=<span class="string">"color: red"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: box; buffer: false; skipCache: true; mergeTo: #target"</span></span></div><div class="line">          <span class="attr">material</span>=<span class="string">"color: red"</span> <span class="attr">position</span>=<span class="string">"1 2 3"</span>&gt;<span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -1012,9 +1021,9 @@ turn on <code>skipCache</code>.</p>
 </tbody>
 </table>
 <h3 id="circle"><a href="#circle" class="headerlink" title="circle"></a><code>circle</code></h3><p>The circle geometry creates flat two-dimensional circles. These can be complete
-circles or partial circles (like Pac-Man). Note that because it is flat, only a
-single side of the circle will be rendered if “side: double” is not specified
-on the <code>material</code> component.</p>
+circles or partial circles (like Pac-Man). Note that because circles are flat,
+A-Frame will only render a single face of the circle if we don’t specify <code>side:
+double</code> on the <code>material</code> component.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: circle; radius: 1"</span> <span class="attr">material</span>=<span class="string">"side: double"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
 <table>
 <thead>
@@ -1113,8 +1122,8 @@ surfaces.</p>
 <p>We can create a basic cylinder using height and radius:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: cylinder; height: 3; radius: 2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>We can create a tube by making the cylinder open-ended, which removes the top
-and bottom surfaces of the cylinder such that the inside is visible. Then a
-double-sided material will be needed to render properly:</p>
+and bottom surfaces of the cylinder such that the inside is visible. Then we
+need a double-sided material to render properly:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Tube --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: cylinder; openEnded: true"</span> <span class="attr">material</span>=<span class="string">"side: double"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>We can create a cured surfaces by specifying the arc via <code>thetaLength</code> such
 that the cylinder doesn’t curve all the way around, making the cylinder
@@ -1205,9 +1214,9 @@ open-ended, and then making the material double-sided:</p>
 </tr>
 </tbody>
 </table>
-<h3 id="plane"><a href="#plane" class="headerlink" title="plane"></a><code>plane</code></h3><p>The plane geometry creates a flat surface. Because it is flat, only a single
-side of the plane will be rendered unless <code>side: double</code> is specified on the
-<code>material</code> component.</p>
+<h3 id="plane"><a href="#plane" class="headerlink" title="plane"></a><code>plane</code></h3><p>The plane geometry creates a flat surface. Because planes are flat, A-Frame
+will render only a single face of the plane unless we specify <code>side: double</code> on
+the <code>material</code> component.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: plane; height: 10; width: 10"</span> <span class="attr">material</span>=<span class="string">"side: double"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
 <table>
 <thead>
@@ -1230,9 +1239,9 @@ side of the plane will be rendered unless <code>side: double</code> is specified
 </tr>
 </tbody>
 </table>
-<h3 id="ring"><a href="#ring" class="headerlink" title="ring"></a><code>ring</code></h3><p>The ring geometry creates a flat ring, like a <a href="https://en.wikipedia.org/wiki/Compact_disc" target="_blank" rel="external">CD</a>. Because it is flat,
-only a single side of the ring will be rendered unless <code>side: double</code> is
-specified on the <code>material</code> component.</p>
+<h3 id="ring"><a href="#ring" class="headerlink" title="ring"></a><code>ring</code></h3><p>The ring geometry creates a flat ring, like a <a href="https://en.wikipedia.org/wiki/Compact_disc" target="_blank" rel="external">CD</a>. Because the ring is
+flat, A-Frame will only render a single face of the ring we specify <code>side:
+double</code> the <code>material</code> component.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: ring; radiusInner: 0.5; radiusOuter: 1"</span></span></div><div class="line">          <span class="attr">material</span>=<span class="string">"side: double"</span>&gt;<span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
 <table>
 <thead>
@@ -1277,8 +1286,8 @@ specified on the <code>material</code> component.</p>
 </table>
 <h3 id="sphere"><a href="#sphere" class="headerlink" title="sphere"></a><code>sphere</code></h3><p>The sphere geometry creates spheres (e.g., balls). We can create a basic sphere:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: sphere; radius: 2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>We can create various polyhedrons and abstract shapes by specifying the number
-of horizontal angles and faces:</p>
+<p>We can create polyhedrons and abstract shapes by specifying the number of
+horizontal angles and faces:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: sphere; segmentsWidth: 2; segmentsHeight: 8"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
 <table>
 <thead>
@@ -1382,9 +1391,9 @@ of horizontal angles and faces:</p>
 </tr>
 </tbody>
 </table>
-<h3 id="torusknot"><a href="#torusknot" class="headerlink" title="torusKnot"></a><code>torusKnot</code></h3><p>The torus knot geometry creates a pretzel shape, the particular shape of which
-is defined by a pair of coprime integers, <code>p</code> and <code>q</code>. If <code>p</code> and <code>q</code> are not
-coprime the result will be a torus link:</p>
+<h3 id="torusknot"><a href="#torusknot" class="headerlink" title="torusKnot"></a><code>torusKnot</code></h3><p>The torus knot geometry creates a pretzel shape. A pair of coprime integers,
+<code>p</code> and <code>q</code>, defines the particular shape of the pretzel. If <code>p</code> and <code>q</code> are
+not coprime the result will be a torus link:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: torusKnot; p: 3; q:7"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
 <table>
 <thead>
@@ -1428,16 +1437,16 @@ coprime the result will be a torus link:</p>
 </tbody>
 </table>
 <h2 id="register-a-custom-geometry"><a href="#register-a-custom-geometry" class="headerlink" title="Register a Custom Geometry"></a>Register a Custom Geometry</h2><p>We can register our own geometries using <code>AFRAME.registerGeometry</code> and creating
-an object that is an instance of <a href="http://threejs.org/docs/#Reference/Core/Geometry" target="_blank" rel="external"><code>THREE.Geometry</code></a>. All
-built-in geometries in A-Frame are registered using this API.</p>
-<p>Here is how the <code>box</code> geometry is registered.</p>
+an object that is an instance of <a href="http://threejs.org/docs/#Reference/Core/Geometry" target="_blank" rel="external"><code>THREE.Geometry</code></a>. A-Frame
+registers all built-in geometries using this API. Here is how A-Frame registers
+the <code>box</code> geometry:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerGeometry(<span class="string">'box'</span>, &#123;</div><div class="line">  <span class="attr">schema</span>: &#123;</div><div class="line">    <span class="attr">depth</span>: &#123;<span class="attr">default</span>: <span class="number">1</span>, <span class="attr">min</span>: <span class="number">0</span>&#125;,</div><div class="line">    <span class="attr">height</span>: &#123;<span class="attr">default</span>: <span class="number">1</span>, <span class="attr">min</span>: <span class="number">0</span>&#125;,</div><div class="line">    <span class="attr">width</span>: &#123;<span class="attr">default</span>: <span class="number">1</span>, <span class="attr">min</span>: <span class="number">0</span>&#125;,</div><div class="line">    <span class="attr">segmentsHeight</span>: &#123;<span class="attr">default</span>: <span class="number">1</span>, <span class="attr">min</span>: <span class="number">1</span>, <span class="attr">max</span>: <span class="number">20</span>, <span class="attr">type</span>: <span class="string">'int'</span>&#125;,</div><div class="line">    <span class="attr">segmentsWidth</span>: &#123;<span class="attr">default</span>: <span class="number">1</span>, <span class="attr">min</span>: <span class="number">1</span>, <span class="attr">max</span>: <span class="number">20</span>, <span class="attr">type</span>: <span class="string">'int'</span>&#125;,</div><div class="line">    <span class="attr">segmentsDepth</span>: &#123;<span class="attr">default</span>: <span class="number">1</span>, <span class="attr">min</span>: <span class="number">1</span>, <span class="attr">max</span>: <span class="number">20</span>, <span class="attr">type</span>: <span class="string">'int'</span>&#125;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.geometry = <span class="keyword">new</span> THREE.BoxGeometry(data.width, data.height, data.depth);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>Like with registering components, we provide a name, a
 <a href="../core/component.html#schema">schema</a> that will expose the properties of the geometry, and
-lifecycle methods. Then the geometry needs to be created and set on
+lifecycle methods. Then we need to create the geometry and set on
 <code>this.geometry</code> through the <code>init</code> and <code>update</code> lifecycle methods.</p>
 <p>When a geometry component sets its <code>primitive</code> property to the custom geometry
-name, the properties of the custom geometry can be set on the geometry
+name, we can set the properties of the custom geometry on the geometry
 component. Say we registered a custom geometry:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerGeometry(<span class="string">'example'</span>, &#123;</div><div class="line">  <span class="attr">schema</span>: &#123;</div><div class="line">    <span class="attr">vertices</span>: &#123;</div><div class="line">      <span class="attr">default</span>: [<span class="string">'-10 10 0'</span>, <span class="string">'-10 -10 0'</span>, <span class="string">'10 -10 0'</span>],</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> geometry = <span class="keyword">new</span> THREE.Geometry();</div><div class="line">    geometry.vertices.push.call(</div><div class="line">      geometry.vertices,</div><div class="line">      data.vertices.map(<span class="function"><span class="keyword">function</span> (<span class="params">vertex</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> points = vertex.split(<span class="string">' '</span>).map(<span class="built_in">parseInt</span>);</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> THREE.Vector3(points[<span class="number">0</span>], points[<span class="number">1</span>], points[<span class="number">2</span>]);</div><div class="line">      &#125;);</div><div class="line">    );</div><div class="line">    geometry.faces.push(<span class="keyword">new</span> THREE.Face3(<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>));</div><div class="line">    <span class="keyword">this</span>.geometry = geometry;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>We can then use that custom geometry in HTML:</p>
