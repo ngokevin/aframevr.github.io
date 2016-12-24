@@ -8,8 +8,50 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     
     <description>A web framework for building virtual reality experiences. Make WebVR with HTML and the Entity-Component ecosystem. Works across HTC Vive, Oculus Rift, desktop, and mobile platforms.</description>
-    <pubDate>Sat, 17 Dec 2016 06:00:33 GMT</pubDate>
+    <pubDate>Sat, 24 Dec 2016 00:12:20 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Taking Screenshots in A-Frame</title>
+      <link>https://aframe.io/blog/screenshot/</link>
+      <guid>https://aframe.io/blog/screenshot/</guid>
+      <pubDate>Fri, 23 Dec 2016 18:00:00 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;Did you know that &lt;a href=&quot;/blog/aframe-v0.4.0/&quot;&gt;A-Frame v0.4.0&lt;/a&gt; lets you take a
+screenshot of any scene? Press &lt;code&gt;&amp;lt;ctrl&amp;gt; + &amp;lt;alt&amp;gt; + s&lt;/code&gt; to take a regular
+screenshot or &lt;code&gt;&amp;lt;ctrl&amp;gt; + &amp;lt;alt&amp;gt; + &amp;lt;shift&amp;gt; + s&lt;/code&gt; to capture an equirectangular
+panorama.&lt;/p&gt;
+&lt;p&gt;The latter is very handy to create scene previews so users can take a quick
+peek without having to wait for the whole experience to load. You could create
+a gallery of content that presents a grid of interactive previews without the
+overhead of initializing every single scene.&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>Did you know that <a href="/blog/aframe-v0.4.0/">A-Frame v0.4.0</a> lets you take a
+screenshot of any scene? Press <code>&lt;ctrl&gt; + &lt;alt&gt; + s</code> to take a regular
+screenshot or <code>&lt;ctrl&gt; + &lt;alt&gt; + &lt;shift&gt; + s</code> to capture an equirectangular
+panorama.</p>
+<p>The latter is very handy to create scene previews so users can take a quick
+peek without having to wait for the whole experience to load. You could create
+a gallery of content that presents a grid of interactive previews without the
+overhead of initializing every single scene.</p>
+<a id="more"></a>
+<p>Below is what it takes to create a preview of the A-Frame <a href="https://aframe.io/aframe/examples/showcase/anime-UI/">Anime UI
+example</a> based on an
+image generated with <code>&lt;ctrl&gt; + &lt;alt&gt; + &lt;shift&gt; + s</code>:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">embedded</span> <span class="attr">style</span>=<span class="string">"height:400px; width: 100%; margin: auto;"</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="name">a-sky</span> <span class="attr">src</span>=<span class="string">"/images/blog/screenshot.png"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>And below is the result! The example looks like the normal example, but it’s
+actually a skysphere:</p>
+<p><script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
+<a-scene embedded="" style="height:400px; width: 100%; margin: auto;">
+  <a-sky src="/images/blog/screenshot.png"></a-sky>
+</a-scene></p>
+]]></content:encoded>
+      
+      <comments>https://aframe.io/blog/screenshot/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>A-Frame v0.4.0 - The Registry</title>
@@ -1272,102 +1314,6 @@ pressed <code>&lt;ctrl&gt; + &lt;alt&gt; + i</code> on any scene running v0.3.0 
 ]]></content:encoded>
       
       <comments>https://aframe.io/blog/awoa-26/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>A-Frame v0.3.0 - Walk in a Web Page</title>
-      <link>https://aframe.io/blog/aframe-v0.3.0/</link>
-      <guid>https://aframe.io/blog/aframe-v0.3.0/</guid>
-      <pubDate>Tue, 16 Aug 2016 17:00:00 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;A-Frame &lt;strong&gt;v0.3.0&lt;/strong&gt; has dropped! With support for the &lt;strong&gt;&lt;a href=&quot;https://w3c.github.io/webvr/&quot;&gt;new WebVR 1.0
-API&lt;/a&gt;&lt;/strong&gt;, we aim higher towards state-of-the-art VR. With room-scale
-tracking, we can walk in a web page, and with tracked controller support, we
-can reach out into the world.&lt;/p&gt;
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>A-Frame <strong>v0.3.0</strong> has dropped! With support for the <strong><a href="https://w3c.github.io/webvr/" target="_blank" rel="external">new WebVR 1.0
-API</a></strong>, we aim higher towards state-of-the-art VR. With room-scale
-tracking, we can walk in a web page, and with tracked controller support, we
-can reach out into the world.</p>
-<a id="more"></a>
-<p>Grab the latest build at <a href="https://aframe.io/releases/0.3.0/aframe.min.js"><code>https://aframe.io/releases/0.3.0/aframe.min.js</code></a> or <code>npm install aframe</code>.</p>
-<h2 id="what’s-new"><a href="#what’s-new" class="headerlink" title="What’s New?"></a>What’s New?</h2><p><strong>WebVR 1.0</strong> support is the highlight of this release. This includes:</p>
-<ul>
-<li>Better <strong>room-scale</strong> support to be able to walk/dash/duck/jump in a web
-page with the HTC Vive.</li>
-<li>Hitting <strong>90 frames per second</strong> due to being able to push content directly to the headset
-display rather than mirroring a desktop display. This also allows us to have different
-content on the desktop display than the headset, opening the door for asynchronous gameplay
-and spectator modes.</li>
-</ul>
-<p>As a corollary, A-Frame now supports <strong>tracked controllers</strong> with the HTC Vive.
-Tracked controllers go hand-in-hand with room-scale. Grab an HTC Vive and the
-<a href="https://webvr.info/get-chrome/" target="_blank" rel="external">experimental WebVR-enabled Chromium build</a>
-(which currently supports the Vive) and try out the <a href="https://aframe.io/aframe/examples/showcase/tracked-controls/">basic hand controls
-demo</a> or <a href="https://bryik.github.io/aframe-ball-throw/" target="_blank" rel="external">ball
-throw</a>.</p>
-<p><a href="https://bryik.github.io/aframe-ball-throw/" target="_blank" rel="external"><img src="../../images/awoa/ball-throw.gif" alt="A-Frame Ball Throw Demo"></a></p>
-<p>We are also releasing the much-anticipated <strong>A-Frame Inspector</strong> (<a href="https://aframe.io/aframe-inspector/example/">view
-demo</a>). The current primary purpose of the Inspector is to
-serve as a complementary tool for inspecting and tweaking scenes alongside
-code; it is more akin to your favorite browser’s DOM Inspector rather than
-an end-to-end tool such as Unity. The easiest way to try out the A-Frame
-Inspector is to press <code>&lt;ctrl&gt; + &lt;alt&gt; + i</code> on any A-Frame scene using v0.3.0.</p>
-<p><img src="../../images/blog/v0.3.0-inspector.gif" alt="A-Frame Inspector Demo"></p>
-<p>Other noteworthy changes include significant performance improvements,
-improved support for multiple scenes embedded within a single web page,
-and support for multiple instances of components of the same type.</p>
-<p>Check out the <a href="https://github.com/aframevr/aframe/releases/tag/v0.3.0" target="_blank" rel="external">release notes</a> for the complete changelog, which
-includes a list of possible breaking changes.</p>
-<h2 id="what-have-people-built"><a href="#what-have-people-built" class="headerlink" title="What Have People Built?"></a>What Have People Built?</h2><p>A-Frame’s popularity has grown immensely, leading it to be the WebVR framework
-of choice. In less than a year, the <a href="https://github.com/aframevr/aframe" target="_blank" rel="external">GitHub repository</a> has over <strong>2800
-stargazers and 60 contributors</strong>. There are over <strong>1200 members</strong> on the
-<a href="https://aframevr-slack.herokuapp.com" target="_blank" rel="external">A-Frame Slack channel</a>.</p>
-<p>We started producing weekly roundups with the <em><a href="https://aframe.io">A Week of A-Frame</a></em>
-series to showcase community content, components, and contributions.</p>
-<p>In the last four months, we have featured over <strong>150 high quality scenes</strong>:</p>
-<div class="post__projects">
-  <a href="https://sandbox.donmccurdy.com/vr/island/" title="MagicaVoxel Island" style="background-image: url(../../images/awoa/island.gif)" target="_blank" rel="external"></a>
-  <a href="https://ngokevin.github.io/aframe-audio-visualizer-components/spectrum/" title="Audio Visualizer" style="background-image: url(../../images/awoa/audio-visualizer-components-update.gif)" target="_blank" rel="external"></a>
-  <a href="http://tbaloo.com/tumbvr/madeinhexels" title="TumbVR" style="background-image: url(../../images/awoa/tumbvr.jpg)" target="_blank" rel="external"></a>
-  <a href="https://musicpua.firebaseapp.com/" title="Virtual Symphony" style="background-image: url(../../images/awoa/virtual-symphony-2.gif)" target="_blank" rel="external"></a>
-  <a href="http://www.skyislandsvr.com/pages/SadIsland.html" title="Sad Island" style="background-image: url(../../images/awoa/sad-island.jpg)" target="_blank" rel="external"></a>
-  <a href="https://shopifyvr.myshopify.com/pages/virtual-reality" title="Shopify VR" style="background-image: url(../../images/awoa/shopify.jpg)" target="_blank" rel="external"></a>
-</div>
-
-<p>…and nearly <strong>50 community components</strong>:</p>
-<ul>
-<li><strong>Component Packs:</strong> <a href="https://github.com/donmccurdy/aframe-extras" target="_blank" rel="external">aframe-extras</a> by <a href="https://github.com/donmccurdy/aframe-extras" target="_blank" rel="external">Don McCurdy</a> enables
-additional <strong>controls</strong>, <strong>physics</strong>, and loaders. <a href="https://github.com/ngokevin/k-frame" target="_blank" rel="external">k-frame</a>
-enables <strong>audio visualizations</strong>, <strong>multi-user</strong>, <strong>templating</strong>, layout, text,
-and improved animations.</li>
-<li><strong>Geometries:</strong> <a href="https://github.com/nylki/aframe-lsystem-component" target="_blank" rel="external">Procedural geometries</a>, <a href="https://github.com/bryik/aframe-bmfont-text-component" target="_blank" rel="external">Bitmap font text</a>,
-<a href="https://github.com/andreasplesch/aframe-heightgrid-component" target="_blank" rel="external">terrains</a>, <a href="https://github.com/donmccurdy/aframe-extras" target="_blank" rel="external">oceans</a>, and <a href="https://github.com/dbradleyfl/aframe-gridhelper" target="_blank" rel="external">grids</a>.</li>
-<li><strong>Materials:</strong> <a href="https://github.com/mayognaise/aframe-gif-shader" target="_blank" rel="external">GIF</a>, <a href="https://github.com/mayognaise/aframe-html-shader" target="_blank" rel="external">HTML</a>, <a href="https://github.com/bryik/aframe-cubemap-component" target="_blank" rel="external">cubemaps</a>,
-<a href="https://github.com/wallabyway/aframe-stereocube" target="_blank" rel="external">stereo cubemaps</a>, and <a href="https://github.com/oscarmarinmiro/aframe-video-controls" target="_blank" rel="external">video controls</a>.</li>
-<li><strong>Miscellaneous:</strong> <a href="https://github.com/openleap/aframe-leap-hands" target="_blank" rel="external">Leap Motion controls</a>, <a href="https://github.com/richardanaya/aframe-webvr-controller" target="_blank" rel="external">Vive controls</a>,
-<a href="https://github.com/AltspaceVR/aframe-altspace-component" target="_blank" rel="external">AltSpaceVR integration</a>, <a href="https://github.com/xirvr/aframe-gltf" target="_blank" rel="external">glTF</a>, and <a href="https://github.com/IdeaSpaceVR/aframe-particle-system-component" target="_blank" rel="external">particle systems</a>.</li>
-</ul>
-<p>There have even been a couple of <strong>augmented reality</strong> prototypes:</p>
-<p><img src="../../images/awoa/argon.gif" alt="A-Frame Augmented Reality with Argon Browser"></p>
-<h2 id="what’s-next"><a href="#what’s-next" class="headerlink" title="What’s Next?"></a>What’s Next?</h2><p>We want to make it <strong>easier to get started</strong> with A-Frame. This includes a
-refreshed homepage with new example scenes that act as starter kits. These
-examples will be accompanied with free assets, guides, and workflow tutorials
-on how to use A-Frame alongside tools such as <a href="https://ephtracy.github.io/" target="_blank" rel="external">MagicaVoxel</a> and
-<a href="https://www.blender.org/" target="_blank" rel="external">Blender</a>.</p>
-<p>We are also excited to improve the component discovery and consumption process
-to have an easy place to find great community components. We’ll also be
-thinking about asset curation and discovery which should sound great if you’ve
-ever had trouble finding free 3D models.</p>
-<p>Check out the <a href="https://github.com/aframevr/aframe/blob/master/ROADMAP.md" target="_blank" rel="external">official roadmap</a> for what we currently have planned
-over the next several months.</p>
-<p><img src="../../images/blog/v0.3.0.png" alt="v0.3.0"></p>
-]]></content:encoded>
-      
-      <comments>https://aframe.io/blog/aframe-v0.3.0/#disqus_thread</comments>
     </item>
     
   </channel>
