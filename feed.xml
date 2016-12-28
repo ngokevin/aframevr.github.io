@@ -8,7 +8,7 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     
     <description>A web framework for building virtual reality experiences. Make WebVR with HTML and the Entity-Component ecosystem. Works across HTC Vive, Oculus Rift, desktop, and mobile platforms.</description>
-    <pubDate>Wed, 28 Dec 2016 21:26:40 GMT</pubDate>
+    <pubDate>Wed, 28 Dec 2016 21:40:25 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -20,6 +20,9 @@
       
         &lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
 
+&lt;p&gt;Happy birthday to A-Frame! We released v0.4.0. Activity is picking back up
+again after the holidays as the good tidings of pull requests and components
+roll in. Let’s keep WebVR going in 2017!&lt;/p&gt;
 &lt;div class=&quot;tweets tweets-feature&quot;&gt;
 &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Happy first 🎂 to A-Frame! Got a surprise 🎁: the release of v0.4.0! Featuring the Registry and Oculus Touch support 👌 &lt;a href=&quot;https://t.co/UQ17E75gUD&quot;&gt;https://t.co/UQ17E75gUD&lt;/a&gt; &lt;a href=&quot;https://t.co/k3JsuGhCTT&quot;&gt;pic.twitter.com/k3JsuGhCTT&lt;/a&gt;&lt;/p&gt;&amp;mdash; A-Frame (@aframevr) &lt;a href=&quot;https://twitter.com/aframevr/status/809978724066197505&quot;&gt;December 17, 2016&lt;/a&gt;&lt;/blockquote&gt;
 
@@ -35,6 +38,9 @@
       
       <content:encoded><![CDATA[<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+<p>Happy birthday to A-Frame! We released v0.4.0. Activity is picking back up
+again after the holidays as the good tidings of pull requests and components
+roll in. Let’s keep WebVR going in 2017!</p>
 <div class="tweets tweets-feature">
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Happy first 🎂 to A-Frame! Got a surprise 🎁: the release of v0.4.0! Featuring the Registry and Oculus Touch support 👌 <a href="https://t.co/UQ17E75gUD" target="_blank" rel="external">https://t.co/UQ17E75gUD</a> <a href="https://t.co/k3JsuGhCTT" target="_blank" rel="external">pic.twitter.com/k3JsuGhCTT</a></p>&mdash; A-Frame (@aframevr) <a href="https://twitter.com/aframevr/status/809978724066197505" target="_blank" rel="external">December 17, 2016</a></blockquote>
 
