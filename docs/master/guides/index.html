@@ -889,7 +889,7 @@ VR (or even programming), we’ll take this guide slowly step-by-step.</p>
 by pressing <code>&lt;ctrl&gt; + &lt;alt&gt; + i</code>. <strong>Note:</strong> the CSS for the Inspector currently
 conflict with the A-Frame site styles, so visuals may look ugly.</p>
 <div>
-  <script src="http://localhost:9000/dist/aframe.js"></script>
+  <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
   <script src="https://unpkg.com/aframe-bmfont-text-component@0.1.4/dist/aframe-bmfont-text-component.min.js"></script>
   <a-scene embedded="" style="height: 320px; width: 100%">
     <a-assets>
@@ -1138,7 +1138,7 @@ Let’s first apply the rotation and scale components:</p>
 a single parent and multiple children. Child entities inherit transformations
 (i.e., position, rotation, and scale) from their parent.</p>
 <p>For example, we could have a sphere as a child of a box:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">position</span>=<span class="string">"0 2 0"</span> <span class="attr">rotation</span>=<span class="string">"0 45 45"</span> <span class="attr">scale</span>=<span class="string">"2 4 2"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-sphere</span> <span class="attr">position</span>=<span class="string">"1 0 3"</span>&gt;</span><span class="tag">&lt;<span class="name">a-sphere</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">position</span>=<span class="string">"0 2 0"</span> <span class="attr">rotation</span>=<span class="string">"0 45 45"</span> <span class="attr">scale</span>=<span class="string">"2 4 2"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-sphere</span> <span class="attr">position</span>=<span class="string">"1 0 3"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sphere</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>If we calculate the sphere’s world position, it would be <code>1 2 3</code>, achieved by
 composing the sphere’s parent position with its own position. Similarly, for
 rotation and scale, the sphere would inherit the box’s rotation and scale. The
