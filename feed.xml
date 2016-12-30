@@ -8,14 +8,14 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     
     <description>A web framework for building virtual reality experiences. Make WebVR with HTML and the Entity-Component ecosystem. Works across HTC Vive, Oculus Rift, desktop, and mobile platforms.</description>
-    <pubDate>Wed, 28 Dec 2016 22:23:32 GMT</pubDate>
+    <pubDate>Fri, 30 Dec 2016 21:35:28 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
       <title>A Week of A-Frame 40 - 41</title>
       <link>https://aframe.io/blog/awoa-40-41/</link>
       <guid>https://aframe.io/blog/awoa-40-41/</guid>
-      <pubDate>Wed, 28 Dec 2016 21:00:00 GMT</pubDate>
+      <pubDate>Wed, 28 Dec 2016 13:00:00 GMT</pubDate>
       <description>
       
         &lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
@@ -179,7 +179,7 @@ roll in. Let’s keep WebVR going in 2017!</p>
       <title>Taking Screenshots in A-Frame</title>
       <link>https://aframe.io/blog/screenshot/</link>
       <guid>https://aframe.io/blog/screenshot/</guid>
-      <pubDate>Fri, 23 Dec 2016 18:00:00 GMT</pubDate>
+      <pubDate>Fri, 23 Dec 2016 10:00:00 GMT</pubDate>
       <description>
       
         &lt;p&gt;Did you know that &lt;a href=&quot;/blog/aframe-v0.4.0/&quot;&gt;A-Frame v0.4.0&lt;/a&gt; lets you take a
@@ -221,7 +221,7 @@ actually a skysphere:</p>
       <title>A-Frame v0.4.0 - The Registry</title>
       <link>https://aframe.io/blog/aframe-v0.4.0/</link>
       <guid>https://aframe.io/blog/aframe-v0.4.0/</guid>
-      <pubDate>Fri, 16 Dec 2016 18:00:00 GMT</pubDate>
+      <pubDate>Fri, 16 Dec 2016 10:00:00 GMT</pubDate>
       <description>
       
         &lt;p&gt;&lt;strong&gt;Happy first birthday to A-Frame!&lt;/strong&gt;. A-Frame was born exactly one year ago
@@ -338,7 +338,7 @@ carry that momentum and then some into 2017!</p>
       <title>A Week of A-Frame 35 - 39</title>
       <link>https://aframe.io/blog/awoa-35-39/</link>
       <guid>https://aframe.io/blog/awoa-35-39/</guid>
-      <pubDate>Wed, 14 Dec 2016 21:00:00 GMT</pubDate>
+      <pubDate>Wed, 14 Dec 2016 13:00:00 GMT</pubDate>
       <description>
       
         &lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
@@ -530,7 +530,7 @@ coordinate system. Keep an eye out for that!</p>
       <title>A Week of A-Frame 34</title>
       <link>https://aframe.io/blog/awoa-34/</link>
       <guid>https://aframe.io/blog/awoa-34/</guid>
-      <pubDate>Fri, 11 Nov 2016 21:00:00 GMT</pubDate>
+      <pubDate>Fri, 11 Nov 2016 13:00:00 GMT</pubDate>
       <description>
       
         &lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
@@ -631,7 +631,7 @@ coordinate system. Keep an eye out for that!</p>
       <title>A Week of A-Frame 33</title>
       <link>https://aframe.io/blog/awoa-33/</link>
       <guid>https://aframe.io/blog/awoa-33/</guid>
-      <pubDate>Fri, 04 Nov 2016 20:00:00 GMT</pubDate>
+      <pubDate>Fri, 04 Nov 2016 13:00:00 GMT</pubDate>
       <description>
       
         &lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
@@ -712,7 +712,7 @@ coordinate system. Keep an eye out for that!</p>
       <title>Developing an A-Frame Teleport Component</title>
       <link>https://aframe.io/blog/teleport-component/</link>
       <guid>https://aframe.io/blog/teleport-component/</guid>
-      <pubDate>Tue, 01 Nov 2016 20:00:00 GMT</pubDate>
+      <pubDate>Tue, 01 Nov 2016 13:00:00 GMT</pubDate>
       <description>
       
         &lt;blockquote&gt;
@@ -815,7 +815,7 @@ coordinate system. Keep an eye out for that!</p>
       <title>A Week of A-Frame 31 + 32</title>
       <link>https://aframe.io/blog/awoa-31-32/</link>
       <guid>https://aframe.io/blog/awoa-31-32/</guid>
-      <pubDate>Mon, 31 Oct 2016 19:00:00 GMT</pubDate>
+      <pubDate>Mon, 31 Oct 2016 12:00:00 GMT</pubDate>
       <description>
       
         &lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
@@ -970,7 +970,7 @@ of A-Frame</a>.</p>
       <title>Halloween Feature! Building Ghost Train Builder</title>
       <link>https://aframe.io/blog/ghost-train-builder/</link>
       <guid>https://aframe.io/blog/ghost-train-builder/</guid>
-      <pubDate>Mon, 31 Oct 2016 15:00:00 GMT</pubDate>
+      <pubDate>Mon, 31 Oct 2016 08:00:00 GMT</pubDate>
       <description>
       
         &lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://ghosttrainbuilder.com&quot;&gt;RIDE THE GHOST TRAIN&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
@@ -1097,7 +1097,7 @@ like A-Frame are making it even easier to be involved.</p>
       <title>Why iStaging Chose A-Frame</title>
       <link>https://aframe.io/blog/istaging/</link>
       <guid>https://aframe.io/blog/istaging/</guid>
-      <pubDate>Wed, 26 Oct 2016 19:00:00 GMT</pubDate>
+      <pubDate>Wed, 26 Oct 2016 12:00:00 GMT</pubDate>
       <description>
       
         &lt;p&gt;When I joined &lt;a href=&quot;http://istaging.co/&quot;&gt;iStaging&lt;/a&gt; a year ago, I was in the position
@@ -1222,7 +1222,7 @@ leading WebVR framework for a long time.</p>
       <title>A Week of A-Frame 30</title>
       <link>https://aframe.io/blog/awoa-30/</link>
       <guid>https://aframe.io/blog/awoa-30/</guid>
-      <pubDate>Fri, 14 Oct 2016 07:00:00 GMT</pubDate>
+      <pubDate>Fri, 14 Oct 2016 00:00:00 GMT</pubDate>
       <description>
       
         &lt;p&gt;The big 30! We released A-Frame v0.3.2 to handle some breaking changes in
@@ -1252,7 +1252,7 @@ scene.</p>
       <title>A Week of A-Frame 29</title>
       <link>https://aframe.io/blog/awoa-29/</link>
       <guid>https://aframe.io/blog/awoa-29/</guid>
-      <pubDate>Fri, 30 Sep 2016 07:00:00 GMT</pubDate>
+      <pubDate>Fri, 30 Sep 2016 00:00:00 GMT</pubDate>
       <description>
       
         &lt;p&gt;The A-Frame team has started working on &lt;strong&gt;A-Shooter&lt;/strong&gt;, a room-scale VR arcade
@@ -1286,7 +1286,7 @@ from the Inspector.</p>
       <title>A Week of A-Frame 28</title>
       <link>https://aframe.io/blog/awoa-28/</link>
       <guid>https://aframe.io/blog/awoa-28/</guid>
-      <pubDate>Fri, 23 Sep 2016 07:00:00 GMT</pubDate>
+      <pubDate>Fri, 23 Sep 2016 00:00:00 GMT</pubDate>
       <description>
       
         &lt;p&gt;&lt;a href=&quot;https://blog.mozvr.com/a-painter/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;A-Painter&lt;/strong&gt;&lt;/a&gt; has been released! It’s like
@@ -1331,7 +1331,7 @@ A-Frame.</p>
       <title>A-Painter: Paint in VR in Your Browser</title>
       <link>https://aframe.io/blog/a-painter/</link>
       <guid>https://aframe.io/blog/a-painter/</guid>
-      <pubDate>Tue, 20 Sep 2016 19:00:00 GMT</pubDate>
+      <pubDate>Tue, 20 Sep 2016 12:00:00 GMT</pubDate>
       <description>
       
         &lt;blockquote&gt;
@@ -1445,7 +1445,7 @@ the codebase, please feel free to join us at <strong><a href="https://github.com
       <title>A Week of A-Frame 27</title>
       <link>https://aframe.io/blog/awoa-27/</link>
       <guid>https://aframe.io/blog/awoa-27/</guid>
-      <pubDate>Thu, 15 Sep 2016 07:00:00 GMT</pubDate>
+      <pubDate>Thu, 15 Sep 2016 00:00:00 GMT</pubDate>
       <description>
       
         &lt;p&gt;A couple weeks of backlog since half the team was around Asia. But the WebVR
